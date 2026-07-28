@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글로컬소프트 (GLOCALSOFT) - Global & Local Software Innovation</title>
+  <meta name="description" content="글로벌 기술 표준과 로컬 전문성을 결합한 맞춤형 AI, 웹/앱, 클라우드 엔터프라이즈 솔루션 개발 전문기업 글로컬소프트입니다.">
+  <meta name="keywords" content="글로컬소프트, 소프트웨어 개발, AI 솔루션, 웹 개발, 앱 개발, 클라우드, SI, 외주 개발">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="글로컬소프트 (GLOCALSOFT)">
+  <meta property="og:description" content="글로벌 기술 표준과 로컬 기술력의 결합, 글로컬소프트">
+  <meta property="og:image" content="assets/hero-bg.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="dark-theme">
+  <!-- Background Glow FX -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Header / Navigation -->
+  <header id="header" class="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" id="brandLogo">
+        <img src="assets/logo.png" alt="GLOCALSOFT 로고" class="logo-img">
+        <span class="logo-text">GLOCAL<span class="highlight">SOFT</span></span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link active" data-i18n="nav_home">홈</a></li>
+          <li><a href="#about" class="nav-link" data-i18n="nav_about">회사소개</a></li>
+          <li><a href="#services" class="nav-link" data-i18n="nav_services">서비스</a></li>
+          <li><a href="#tech" class="nav-link" data-i18n="nav_tech">기술스택</a></li>
+          <li><a href="#calculator" class="nav-link" data-i18n="nav_calculator">견적계산기</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="nav_contact">문의하기</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="lang-toggle-btn" id="langToggleBtn" aria-label="Language Toggle">
+          <i class="fa-solid fa-globe"></i> <span id="currentLangLabel">EN</span>
+        </button>
+        <a href="#contact" class="btn btn-primary nav-cta" id="navCta" data-i18n="nav_cta">상담 신청</a>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          <span data-i18n="hero_badge">🌱 전남에서 펼쳐지는 IT 혁신</span>
+        </div>
+        <h1 class="hero-title" data-i18n="hero_title">
+          농촌형 소도시에서도<br>
+          IT 기술이 꽃 피웁니다<br>
+          <span class="gradient-text">글로컬소프트</span>
+        </h1>
+        <p class="hero-subtitle" data-i18n="hero_subtitle">
+          전라남도의 작은 소도시에서 시작된 글로컬소프트는 IT 불모지의 한계를 넘어, 지역 사회가 미래 AI·SW 산업에서 소외되지 않고 무한한 가능성을 열어갈 수 있도록 맞춤형 개발과 실무 코딩 교육을
+          주도합니다.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#calculator" class="btn btn-gradient btn-lg" id="heroCalcBtn" data-i18n="hero_btn_calc">
+            <i class="fa-solid fa-calculator"></i> 예상 견적 계산하기
+          </a>
+          <a href="#services" class="btn btn-outline btn-lg" id="heroPortBtn" data-i18n="hero_btn_services">
+            <i class="fa-solid fa-layer-group"></i> 서비스 둘러보기
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-card">
+            <h3 class="stat-number"><span class="counter" data-target="150">0</span>+</h3>
+            <p class="stat-label" data-i18n="stat_projects">완료된 프로젝트</p>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-card">
+            <h3 class="stat-number"><span class="counter" data-target="99">0</span>.8%</h3>
+            <p class="stat-label" data-i18n="stat_satisfaction">고객 만족도</p>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-card">
+            <h3 class="stat-number"><span class="counter" data-target="10">0</span>년+</h3>
+            <p class="stat-label" data-i18n="stat_experience">누적 업력 & 노하우</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="visual-frame glow-border">
+          <img src="assets/hero-bg.png" alt="Glocalsoft Software Architecture Visualization" class="hero-img">
+          <div class="visual-card-float card-top-right">
+            <i class="fa-solid fa-seedling icon-accent"></i>
+            <div>
+              <strong>전남의 IT 거점</strong>
+              <span>지역 상생 & 디지털 전환</span>
+            </div>
+          </div>
+          <div class="visual-card-float card-bottom-left">
+            <i class="fa-solid fa-graduation-cap icon-success"></i>
+            <div>
+              <strong>실무 코딩 교육</strong>
+              <span>미래 AI/SW 인재 양성</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-subtitle" data-i18n="about_subtitle">OUR MISSION & VISION</span>
+        <h2 class="section-title" data-i18n="about_title">지방과 소도시도 미래 기술의 중심이 될 수 있습니다</h2>
+        <p class="section-desc" data-i18n="about_desc">
+          글로컬소프트는 IT 산업의 변방이라 여겨지던 전남 영광군에서 시작되었습니다. 공간적 한계에 갇히지 않고, 첨단 AI·SW 개발과 1:1 실무 교육으로 지역 비즈니스의 디지털 전환과 미래 인재 양성을
+          책임집니다.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card highlight-card">
+          <div class="card-icon"><i class="fa-solid fa-seedling"></i></div>
+          <h3 data-i18n="val1_title">Local Innovation</h3>
+          <p data-i18n="val1_desc">IT 불모지 전남 영광에서 출발하여 지역 사회와 소상공인이 미래 디지털 혁신에서 소외되지 않도록 돕습니다.</p>
+        </div>
+
+        <div class="about-card">
+          <div class="card-icon"><i class="fa-solid fa-earth-americas"></i></div>
+          <h3 data-i18n="val2_title">Global Standard</h3>
+          <p data-i18n="val2_desc">수도권과의 격차를 없애는 차세대 웹, 앱, AI 기술력으로 세계적 기준에 부합하는 솔루션을 개발합니다.</p>
+        </div>
+
+        <div class="about-card">
+          <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3 data-i18n="val3_title">Edu & Talent Hub</h3>
+          <p data-i18n="val3_desc">지역 청소년, 청년, 기업을 위한 실무 중심 코딩 교육으로 지역 인재가 미래 기술 주역으로 성장하도록 양성합니다.</p>
+        </div>
+
+        <div class="about-card">
+          <div class="card-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+          <h3 data-i18n="val4_title">Coexistence & Future</h3>
+          <p data-i18n="val4_desc">농축수산 및 지역 특화 산업의 스마트 디지털 전환(DX)을 이끌며 지역 사회와 함께 지속 가능한 내일을 만듭니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section services-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-subtitle" data-i18n="services_subtitle">OUR CORE SERVICES</span>
+        <h2 class="section-title" data-i18n="services_title">지역의 가능성을 기술로 완성하는 핵심 서비스</h2>
+        <p class="section-desc" data-i18n="services_desc">실무 코딩 교육부터 맞춤형 웹/앱 개발, AI 솔루션, 지역 산업 스마트 연동까지 전담 엔지니어가 밀착
+          지원합니다.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-item-card" data-service="web-app">
+          <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <h3 data-i18n="srv1_title">맞춤형 웹 & 앱 개발</h3>
+          <p data-i18n="srv1_desc">반응형 고성능 웹 플랫폼, iOS/Android 하이브리드 및 네이티브 앱 개발로 최상의 사용자 경험을 선물합니다.</p>
+          <ul class="service-tags">
+            <li>React / Next.js</li>
+            <li>Flutter / Native</li>
+            <li>Node.js / Spring</li>
+          </ul>
+          <button class="btn-text service-modal-btn" data-modal="web-app" data-i18n="btn_learn_more">상세보기 <i
+              class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <div class="service-item-card" data-service="ai-data">
+          <div class="service-icon"><i class="fa-solid fa-robot"></i></div>
+          <h3 data-i18n="srv2_title">AI & 데이터 솔루션</h3>
+          <p data-i18n="srv2_desc">기업 전용 LLM 구축, RAG 기반 지식 검색 알고리즘, 머신러닝 데이터 분석 파이프라인을 연동합니다.</p>
+          <ul class="service-tags">
+            <li>OpenAI / Claude API</li>
+            <li>Python / PyTorch</li>
+            <li>Vector DB / RAG</li>
+          </ul>
+          <button class="btn-text service-modal-btn" data-modal="ai-data" data-i18n="btn_learn_more">상세보기 <i
+              class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <div class="service-item-card" data-service="cloud-devops">
+          <div class="service-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+          <h3 data-i18n="srv3_title">클라우드 & DevOps</h3>
+          <p data-i18n="srv3_desc">AWS/GCP/Azure 인프라 설계, 마이크로서비스(MSA) 전환, CI/CD 파이프라인 자동화로 무장애 시스템 구현.</p>
+          <ul class="service-tags">
+            <li>AWS / GCP</li>
+            <li>Kubernetes / Docker</li>
+            <li>Terraform / GitHub Actions</li>
+          </ul>
+          <button class="btn-text service-modal-btn" data-modal="cloud-devops" data-i18n="btn_learn_more">상세보기 <i
+              class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <div class="service-item-card" data-service="si-enterprise">
+          <div class="service-icon"><i class="fa-solid fa-network-wired"></i></div>
+          <h3 data-i18n="srv4_title">엔터프라이즈 SI & ERP</h3>
+          <p data-i18n="srv4_desc">기업 내 ERP/CRM, 결제 시스템, API 게이트웨이 및 대용량 트래픽 처리 백엔드 시스템 연동 구축.</p>
+          <ul class="service-tags">
+            <li>Legacy Modernization</li>
+            <li>API Mesh</li>
+            <li>Enterprise Security</li>
+          </ul>
+          <button class="btn-text service-modal-btn" data-modal="si-enterprise" data-i18n="btn_learn_more">상세보기 <i
+              class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <div class="service-item-card" data-service="ui-ux">
+          <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <h3 data-i18n="srv5_title">UI/UX 디자인 & 브랜드</h3>
+          <p data-i18n="srv5_desc">직관적이고 미려한 디자인 시스템 구축, 사용자 여정 지도(CJMs) 및 인터랙티브 프로토타이핑 설계.</p>
+          <ul class="service-tags">
+            <li>Figma / Design System</li>
+            <li>User Research</li>
+            <li>Micro Animations</li>
+          </ul>
+          <button class="btn-text service-modal-btn" data-modal="ui-ux" data-i18n="btn_learn_more">상세보기 <i
+              class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <div class="service-item-card" data-service="consulting">
+          <div class="service-icon"><i class="fa-solid fa-user-shield"></i></div>
+          <h3 data-i18n="srv6_title">기술 컨설팅 & 유지보수</h3>
+          <p data-i18n="srv6_desc">기존 서비스 리팩토링, 성능 및 보안 진단, 24/7 장애 모니터링과 안정적운영 관리 체계 구축.</p>
+          <ul class="service-tags">
+            <li>24/7 SLA Support</li>
+            <li>Code Audit</li>
+            <li>Security Patch</li>
+          </ul>
+          <button class="btn-text service-modal-btn" data-modal="consulting" data-i18n="btn_learn_more">상세보기 <i
+              class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <div class="service-item-card" data-service="coding-edu">
+          <div class="service-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3 data-i18n="srv7_title">코딩 교육 & IT 인재 양성</h3>
+          <p data-i18n="srv7_desc">초·중·고 및 대학교, 기업 맞춤형 커리큘럼 기반의 파이썬, AI, 웹/앱 개발 실무 멘토링 프로그램 제공.</p>
+          <ul class="service-tags">
+            <li>AI / SW 커리큘럼</li>
+            <li>기업 맞춤 연수</li>
+            <li>실무 프로젝트 코칭</li>
+          </ul>
+          <button class="btn-text service-modal-btn" data-modal="coding-edu" data-i18n="btn_learn_more">상세보기 <i
+              class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section id="tech" class="section tech-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-subtitle" data-i18n="tech_subtitle">TECHNOLOGY STACK</span>
+        <h2 class="section-title" data-i18n="tech_title">최첨단 기술 생태계 및 노하우</h2>
+        <p class="section-desc" data-i18n="tech_desc">검증된 최신 프레임워크와 견고한 클라우드 아키텍처를 도입합니다.</p>
+      </div>
+
+      <div class="tech-tabs">
+        <button class="tech-tab-btn active" data-tech="all" data-i18n="tech_tab_all">전체</button>
+        <button class="tech-tab-btn" data-tech="frontend" data-i18n="tech_tab_fe">프론트엔드</button>
+        <button class="tech-tab-btn" data-tech="backend" data-i18n="tech_tab_be">백엔드</button>
+        <button class="tech-tab-btn" data-tech="ai" data-i18n="tech_tab_ai">AI & ML</button>
+        <button class="tech-tab-btn" data-tech="cloud" data-i18n="tech_tab_cloud">DevOps / Cloud</button>
+      </div>
+
+      <div class="tech-grid" id="techGrid">
+        <!-- JS Dyn Rendered Tech Items -->
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Interactive Estimate Calculator -->
+  <section id="calculator" class="section calc-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-subtitle" data-i18n="calc_subtitle">INSTANT ESTIMATE CALCULATOR</span>
+        <h2 class="section-title" data-i18n="calc_title">스마트 실시간 프로젝트 견적 계산기</h2>
+        <p class="section-desc" data-i18n="calc_desc">필요한 개발 항목과 기능을 선택하시면 예상 소요 기간과 대략적인 개발 비용을 즉시 산출합니다.</p>
+      </div>
+
+      <div class="calc-wrapper glow-border">
+        <div class="calc-steps-grid">
+          <!-- Step 1 -->
+          <div class="calc-step-box">
+            <div class="step-num">Step 01</div>
+            <h4 data-i18n="calc_step1_title">개발 프로젝트 유형</h4>
+            <div class="calc-options-list" id="projectTypeOptions">
+              <label class="calc-option active">
+                <input type="radio" name="projectType" value="web" checked>
+                <div class="option-content">
+                  <i class="fa-solid fa-globe"></i>
+                  <div>
+                    <strong>반응형 웹 / SaaS 플랫폼</strong>
+                    <span>맞춤형 브랜드 웹사이트, 플랫폼 개발</span>
+                  </div>
+                </div>
+              </label>
+
+              <label class="calc-option">
+                <input type="radio" name="projectType" value="app">
+                <div class="option-content">
+                  <i class="fa-solid fa-mobile-screen"></i>
+                  <div>
+                    <strong>모바일 앱 (iOS / Android)</strong>
+                    <span>하이브리드/네이티브 스마트폰 앱</span>
+                  </div>
+                </div>
+              </label>
+
+              <label class="calc-option">
+                <input type="radio" name="projectType" value="ai">
+                <div class="option-content">
+                  <i class="fa-solid fa-brain"></i>
+                  <div>
+                    <strong>AI & 데이터 솔루션</strong>
+                    <span>LLM 연동, RAG, 챗봇, 빅데이터 모델</span>
+                  </div>
+                </div>
+              </label>
+
+              <label class="calc-option">
+                <input type="radio" name="projectType" value="enterprise">
+                <div class="option-content">
+                  <i class="fa-solid fa-building"></i>
+                  <div>
+                    <strong>엔터프라이즈 SI / Cloud</strong>
+                    <span>대용량 인프라, ERP, 커스텀 시스템</span>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="calc-step-box">
+            <div class="step-num">Step 02</div>
+            <h4 data-i18n="calc_step2_title">필요 주요 기능 선택 (중복 가능)</h4>
+            <div class="calc-checkbox-grid" id="featureOptions">
+              <label class="checkbox-option active">
+                <input type="checkbox" value="auth" checked>
+                <span><i class="fa-solid fa-user-lock"></i> 회원가입 및 OAuth 소셜 로그인</span>
+              </label>
+              <label class="checkbox-option">
+                <input type="checkbox" value="payment">
+                <span><i class="fa-solid fa-credit-card"></i> 결제 PG 연동 및 구독 결제</span>
+              </label>
+              <label class="checkbox-option">
+                <input type="checkbox" value="admin" checked>
+                <span><i class="fa-solid fa-sliders"></i> 관리자 종합 대시보드</span>
+              </label>
+              <label class="checkbox-option">
+                <input type="checkbox" value="ai">
+                <span><i class="fa-solid fa-robot"></i> AI / Chatbot / RAG 엔진 연동</span>
+              </label>
+              <label class="checkbox-option">
+                <input type="checkbox" value="i18n">
+                <span><i class="fa-solid fa-language"></i> 다국어 및 글로벌 시공간 대응</span>
+              </label>
+              <label class="checkbox-option">
+                <input type="checkbox" value="push">
+                <span><i class="fa-solid fa-bell"></i> 실시간 알림 & Push Notification</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="calc-step-box">
+            <div class="step-num">Step 03</div>
+            <h4 data-i18n="calc_step3_title">목표 개발 기간 / 완성도</h4>
+            <div class="calc-options-list" id="timelineOptions">
+              <label class="calc-option">
+                <input type="radio" name="timeline" value="fast">
+                <div class="option-content">
+                  <i class="fa-solid fa-bolt"></i>
+                  <div>
+                    <strong>급속 런칭 (MVP 4~6주)</strong>
+                    <span>빠른 시장 검증용 핵심 기능 집중</span>
+                  </div>
+                </div>
+              </label>
+              <label class="calc-option active">
+                <input type="radio" name="timeline" value="standard" checked>
+                <div class="option-content">
+                  <i class="fa-solid fa-clock"></i>
+                  <div>
+                    <strong>표준 정교 개발 (2~3개월)</strong>
+                    <span>높은 완성도와 검증된 아키텍처</span>
+                  </div>
+                </div>
+              </label>
+              <label class="calc-option">
+                <input type="radio" name="timeline" value="deep">
+                <div class="option-content">
+                  <i class="fa-solid fa-cubes"></i>
+                  <div>
+                    <strong>대규모 프레임워크 (4개월 이상)</strong>
+                    <span>엔터프라이즈 고도화 및 커스텀</span>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Result Card -->
+        <div class="calc-result-card">
+          <div class="result-header">
+            <h4><i class="fa-solid fa-receipt"></i> 실시간 예상 견적 요약</h4>
+            <span class="calc-badge">AI 실시간 산출</span>
+          </div>
+
+          <div class="result-main">
+            <div class="result-price-box">
+              <span class="price-label">예상 개발 비용</span>
+              <div class="price-value" id="calcTotalPrice">₩15,000,000 ~ ₩22,000,000</div>
+            </div>
+
+            <div class="result-time-box">
+              <span class="time-label">예상 소요 기간</span>
+              <div class="time-value" id="calcTotalDuration">약 8주 ~ 10주</div>
+            </div>
+          </div>
+
+          <p class="result-note">※ 위 견적은 선택 항목 기준의 대략적인 추정치이며, 상세 요구사항 명세서 작성 후 정밀 견적이 확정됩니다.</p>
+
+          <button class="btn btn-gradient btn-block" id="applyCalcBtn">
+            <i class="fa-solid fa-paper-plane"></i> 이 견적으로 전문 상담 신청하기
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info-side">
+          <span class="section-subtitle" data-i18n="contact_subtitle">GET IN TOUCH</span>
+          <h2 class="section-title" data-i18n="contact_title">비즈니스의 혁신,<br>지금 바로 시작하세요</h2>
+          <p class="section-desc" data-i18n="contact_desc">
+            아이디어 단계의 구상부터 엔터프라이즈 시스템 구축까지 글로컬소프트의 기술 전문가들이 친절하게 안내해 드립니다.
+          </p>
+
+          <div class="info-items">
+            <div class="info-item">
+              <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <strong>오시는 길</strong>
+                <p>전남광주통합특별시 영광군 불갑면 방마로2길 84-5</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <strong>이메일 문의</strong>
+                <p>shokun2002@naver.com</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <strong>대표 전화</strong>
+                <p>010-9354-7929 (평일 09:00 ~ 18:00)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" aria-label="Blog"><i class="fa-solid fa-blog"></i></a>
+          </div>
+        </div>
+
+        <div class="contact-form-side glow-border">
+          <h3><i class="fa-regular fa-paper-plane"></i> 프로젝트 문의하기</h3>
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="clientName">담당자 성함 <span class="required">*</span></label>
+                <input type="text" id="clientName" required placeholder="홍길동">
+              </div>
+              <div class="form-group">
+                <label for="companyName">회사 / 기관명</label>
+                <input type="text" id="companyName" placeholder="(주) 글로컬소프트">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="clientEmail">이메일 주소 <span class="required">*</span></label>
+                <input type="email" id="clientEmail" required placeholder="example@glocalsoft.co.kr">
+              </div>
+              <div class="form-group">
+                <label for="clientPhone">연락처 <span class="required">*</span></label>
+                <input type="tel" id="clientPhone" required placeholder="010-1234-5678">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inquiryType">관심 서비스 분야</label>
+              <select id="inquiryType">
+                <option value="web-app">맞춤형 웹 & 앱 개발</option>
+                <option value="ai">AI & 데이터 솔루션</option>
+                <option value="cloud">클라우드 & DevOps</option>
+                <option value="enterprise">엔터프라이즈 SI / ERP</option>
+                <option value="consulting">기술 컨설팅 및 유지보수</option>
+                <option value="coding-edu">코딩 교육 및 IT 연수</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="projectScope">상세 문의 / 요구사항 내용 <span class="required">*</span></label>
+              <textarea id="projectScope" rows="5" required
+                placeholder="구상 중이신 서비스의 내용, 주요 기능, 원하는 착수 시기 등을 자유롭게 적어주세요."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-gradient btn-block" id="submitFormBtn">
+              <i class="fa-solid fa-check-circle"></i> 무료 상담 요청 제출하기
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="#hero" class="brand-logo">
+          <img src="assets/logo.png" alt="GLOCALSOFT 로고" class="logo-img">
+          <span class="logo-text">GLOCAL<span class="highlight">SOFT</span></span>
+        </a>
+        <p>글로벌 기술 표준과 로컬 맞춤 솔루션의 시너지,<br>글로컬소프트가 디지털 성공을 동행합니다.</p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <h4>바로가기</h4>
+          <ul>
+            <li><a href="#about">회사소개</a></li>
+            <li><a href="#services">서비스</a></li>
+            <li><a href="#tech">기술스택</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>솔루션</h4>
+          <ul>
+            <li><a href="#calculator">견적 계산기</a></li>
+            <li><a href="#contact">프로젝트 문의</a></li>
+            <li><a href="#" id="privacyModalBtn">개인정보 처리방침</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 GLOCALSOFT Co., Ltd. All rights reserved.</p>
+      <p class="company-legal">주식회사 글로컬소프트 | 대표자: 김종훈 | 사업자등록번호: 782-26-02191 | 전남광주통합특별시 영광군 불갑면 방마로2길 84-5</p>
+    </div>
+  </footer>
+
+  <!-- Detail Modal Dialog -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal-window">
+      <button class="modal-close-btn" id="modalCloseBtn">&times;</button>
+      <div class="modal-content-body" id="modalContentBody">
+        <!-- Dyn Content -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- JavaScript -->
+  <script src="main.js"></script>
+</body>
+
+</html>
