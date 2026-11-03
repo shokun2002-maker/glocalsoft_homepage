@@ -4,6 +4,30 @@
  * Tech stack filter, Portfolio modal detail, Service popup modals, Form validation & Toast.
  */
 
+/**
+ * ==========================================
+ * GLOCALSOFT CONTACT SYSTEM CONFIGURATION
+ * ==========================================
+ * [보안 원칙] 비밀키(Secret Key)는 절대로 프론트엔드 코드에 노출하지 않습니다.
+ * 
+ * [연동 가이드]
+ * 1) REST Endpoint 방식 (Formspree 활성화 완료: GlocalSoft Contact)
+ *    - mode: 'endpoint'
+ *    - endpointUrl: 'https://formspree.io/f/xwllaken'
+ * 2) EmailJS 방식
+ *    - mode: 'emailjs'
+ *    - emailjs: { publicKey: '...', serviceId: '...', templateId: '...' }
+ */
+const CONTACT_CONFIG = {
+  mode: 'endpoint', // 'endpoint' | 'emailjs' | 'none'
+  endpointUrl: 'https://formspree.io/f/xwllaken', // Formspree 공식 엔드포인트
+  emailjs: {
+    publicKey: '',
+    serviceId: '',
+    templateId: ''
+  }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initCounters();
@@ -472,13 +496,44 @@ function initModals() {
     });
   });
 
+  function openPrivacyModal() {
+    openModal(
+      '개인정보 수집 및 이용 안내',
+      `
+      <div class="privacy-modal-detail">
+        <p>주식회사 글로컬소프트(이하 '회사')는 고객님의 개인정보를 소중하게 생각하며 「개인정보 보호법」 및 관계 법령을 준수합니다.</p>
+        
+        <h4>1. 개인정보의 수집 및 이용 목적</h4>
+        <p>고객 문의 접수, 본인 확인, 서비스 견적 산출 및 맞춤 상담 서비스 제공, 상담 결과 회신</p>
+        
+        <h4>2. 수집하는 개인정보 항목</h4>
+        <ul>
+          <li>• 필수항목: 성함(담당자명), 이메일 주소, 연락처(휴대전화), 문의 내용</li>
+          <li>• 선택항목: 회사/기관명, 관심 서비스 분야</li>
+        </ul>
+
+        <h4>3. 개인정보의 보유 및 이용 기간</h4>
+        <p>문의 처리 및 상담 이력 관리를 위해 접수일로부터 <strong>1년간</strong> 보관 후 지체 없이 안전하게 파기합니다. (고객의 파기 요청 시 즉시 파기)</p>
+
+        <h4>4. 동의 거부 권리 및 불이익 안내</h4>
+        <p>귀하는 개인정보 수집 및 이용 동의를 거부할 권리가 있습니다. 단, 필수항목 수집에 동의하지 않으실 경우 무료 상담 및 견적 안내 접수가 제한될 수 있습니다.</p>
+      </div>
+      `
+    );
+  }
+
   if (privacyModalBtn) {
     privacyModalBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      openModal(
-        '개인정보 처리방침',
-        '<p>주식회사 글로컬소프트는 고객의 개인정보를 소중히 다루며 관련 법률을 철저히 준수합니다. 문의 접수를 위한 성함, 연락처, 이메일은 상담 목적 외 용도로 활용되지 않습니다.</p>'
-      );
+      openPrivacyModal();
+    });
+  }
+
+  const viewPrivacyInline = document.getElementById('viewPrivacyInline');
+  if (viewPrivacyInline) {
+    viewPrivacyInline.addEventListener('click', (e) => {
+      e.preventDefault();
+      openPrivacyModal();
     });
   }
 
@@ -491,7 +546,7 @@ function initModals() {
 }
 
 /* ==========================================
-   7. CONTACT FORM SUBMISSION
+   7. CONTACT FORM SUBMISSION (안전 접수 파이프라인)
    ========================================== */
 function initContactForm() {
   const contactForm = document.getElementById('contactForm');
@@ -499,34 +554,154 @@ function initContactForm() {
 
   if (!contactForm) return;
 
-  contactForm.addEventListener('submit', (e) => {
+  let isSubmitting = false;
+
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 전송 중...';
+    // 중복 제출 방지
+    if (isSubmitting) return;
+
+    const clientNameInput = document.getElementById('clientName');
+    const companyNameInput = document.getElementById('companyName');
+    const clientEmailInput = document.getElementById('clientEmail');
+    const clientPhoneInput = document.getElementById('clientPhone');
+    const inquiryTypeInput = document.getElementById('inquiryType');
+    const projectScopeInput = document.getElementById('projectScope');
+    const privacyAgreeInput = document.getElementById('privacyAgree');
+
+    const name = clientNameInput ? clientNameInput.value.trim() : '';
+    const company = companyNameInput ? companyNameInput.value.trim() : '';
+    const email = clientEmailInput ? clientEmailInput.value.trim() : '';
+    const phone = clientPhoneInput ? clientPhoneInput.value.trim() : '';
+    const inquiryType = inquiryTypeInput ? inquiryTypeInput.value : '';
+    const scope = projectScopeInput ? projectScopeInput.value.trim() : '';
+    const privacyAgreed = privacyAgreeInput ? privacyAgreeInput.checked : false;
+
+    // 1. 필수 입력값 검증 (Client-side Validation)
+    if (name.length < 2) {
+      showToast('담당자 성함을 2자 이상 입력해 주세요.', 'warning');
+      if (clientNameInput) clientNameInput.focus();
+      return;
     }
 
-    setTimeout(() => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      showToast('올바른 이메일 주소(example@domain.com)를 입력해 주세요.', 'warning');
+      if (clientEmailInput) clientEmailInput.focus();
+      return;
+    }
+
+    const phoneClean = phone.replace(/[^0-9]/g, '');
+    if (phoneClean.length < 9 || phoneClean.length > 12) {
+      showToast('연락처는 9~11자리의 올바른 번호를 입력해 주세요.', 'warning');
+      if (clientPhoneInput) clientPhoneInput.focus();
+      return;
+    }
+
+    if (scope.length < 5) {
+      showToast('문의 및 요구사항 내용을 최소 5자 이상 작성해 주세요.', 'warning');
+      if (projectScopeInput) projectScopeInput.focus();
+      return;
+    }
+
+    if (!privacyAgreed) {
+      showToast('개인정보 수집 및 이용에 동의하셔야 상담 신청이 가능합니다.', 'warning');
+      if (privacyAgreeInput) privacyAgreeInput.focus();
+      return;
+    }
+
+    // 제출 진행 상태 활성화
+    isSubmitting = true;
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 접수 처리 중...';
+    }
+
+    const inquiryTypeText = (inquiryTypeInput && inquiryTypeInput.selectedIndex >= 0)
+      ? inquiryTypeInput.options[inquiryTypeInput.selectedIndex].text
+      : inquiryType;
+
+    // Formspree 전송용 페이로드 (불필요한 민감정보나 비밀키 일체 미포함)
+    const payload = {
+      _subject: `[글로컬소프트 상담 신청] ${name} (${company || '개인/미기재'})`,
+      name: name,
+      company: company || '미기재',
+      email: email,
+      phone: phone,
+      inquiryType: inquiryTypeText,
+      message: scope,
+      submittedAt: new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' })
+    };
+
+    try {
+      // 2. 외부 서비스 연결 여부 확인 및 안전한 전송
+      if (CONTACT_CONFIG.mode === 'endpoint' && CONTACT_CONFIG.endpointUrl) {
+        const response = await fetch(CONTACT_CONFIG.endpointUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+          // 서버 정상 처리 확인 시에만 폼 리셋 및 성공 안내
+          contactForm.reset();
+          showToast('🎉 무료 상담 요청이 정상 접수되었습니다! 담당자가 신속히 확인 후 연락드리겠습니다.', 'success');
+        } else {
+          const errData = await response.json().catch(() => ({}));
+          const errMsg = (errData && errData.errors && errData.errors.map(e => e.message).join(', ')) || `상태코드: ${response.status}`;
+          throw new Error(errMsg);
+        }
+      } else if (CONTACT_CONFIG.mode === 'emailjs' && CONTACT_CONFIG.emailjs.publicKey) {
+        if (window.emailjs) {
+          await window.emailjs.send(
+            CONTACT_CONFIG.emailjs.serviceId,
+            CONTACT_CONFIG.emailjs.templateId,
+            payload,
+            CONTACT_CONFIG.emailjs.publicKey
+          );
+          contactForm.reset();
+          showToast('🎉 무료 상담 요청이 정상 접수되었습니다!', 'success');
+        } else {
+          throw new Error('EmailJS SDK가 로드되지 않았습니다.');
+        }
+      } else {
+        // [외부 서비스 미연동 안전 모드]
+        // 거짓 성공(Mock)을 표시하지 않고, 작성 내용을 보존한 상태로 유선/이메일 직통 접수를 정직하게 안내
+        await new Promise(resolve => setTimeout(resolve, 600));
+        showToast('⚠️ 온라인 접수 연동 준비 중입니다. 긴급 상담은 전화(010-9354-7929) 또는 이메일(shokun2002@naver.com)로 연락해 주세요. (작성 내용은 보존되었습니다)', 'warning');
+      }
+    } catch (error) {
+      console.error('Contact submission error:', error);
+      // 전송 실패 시: 오류 안내 및 입력 내용 보존 (contactForm.reset 미호출)
+      showToast('❌ 문의 전송 중 오류가 발생했습니다. 잠시 후 다시 시도하시거나 이메일(shokun2002@naver.com)로 문의 바랍니다. (작성 내용은 보존되었습니다)', 'error');
+    } finally {
+      isSubmitting = false;
       if (submitBtn) {
         submitBtn.disabled = false;
         submitBtn.innerHTML = '<i class="fa-solid fa-check-circle"></i> 무료 상담 요청 제출하기';
       }
-
-      contactForm.reset();
-      showToast('🎉 무료 상담 요청이 접수되었습니다! 담당 엔지니어가 24시간 이내 연락드립니다.');
-    }, 1200);
+    }
   });
 }
 
-/* Toast Message Utility */
-function showToast(message) {
+/* Toast Message Utility (다양한 타입 지원) */
+function showToast(message, type = 'info') {
   const toastContainer = document.getElementById('toastContainer');
   if (!toastContainer) return;
 
   const toast = document.createElement('div');
-  toast.className = 'toast';
-  toast.innerHTML = `<i class="fa-solid fa-bell icon-accent"></i> <span>${message}</span>`;
+  toast.className = 'toast toast-' + type;
+
+  let iconClass = 'fa-solid fa-bell icon-accent';
+  if (type === 'success') iconClass = 'fa-solid fa-circle-check';
+  else if (type === 'error') iconClass = 'fa-solid fa-triangle-exclamation';
+  else if (type === 'warning') iconClass = 'fa-solid fa-circle-exclamation';
+
+  toast.innerHTML = '<i class="' + iconClass + '"></i> <span>' + message + '</span>';
 
   toastContainer.appendChild(toast);
 
@@ -534,7 +709,7 @@ function showToast(message) {
     toast.style.opacity = '0';
     toast.style.transition = 'opacity 0.4s ease';
     setTimeout(() => toast.remove(), 400);
-  }, 4000);
+  }, 4500);
 }
 
 /* ==========================================
@@ -549,19 +724,22 @@ const dictionary = {
     nav_calculator: '견적계산기',
     nav_contact: '문의하기',
     nav_cta: '상담 신청',
-    hero_badge: '🌱 전남 영광에서 펼쳐지는 IT 혁신',
+    hero_badge: '🌱 전남에서 펼쳐지는 IT 혁신',
     hero_title: '농촌형 소도시에서도<br>세계적 수준의 기술이 꽃피웁니다<br><span class="gradient-text">글로컬소프트</span>',
-    hero_subtitle: '전라남도 영광군에서 출발한 글로컬소프트는 IT 불모지의 한계를 넘어, 지역 사회가 미래 AI·SW 산업에서 소외되지 않고 무한한 가능성을 열어갈 수 있도록 맞춤형 개발과 실무 코딩 교육을 주도합니다.',
+    hero_subtitle: '전라남도의 작은 소도시에서 시작된 글로컬소프트는 10여 년간 지역신문 현장을 지킨 기자의 실무 경험과 도메인 노하우를 바탕으로 설립된 기술 기업입니다. 인터넷신문사, 소규모 기업 및 사회단체가 미래 AI 기술에서 소외되지 않도록 맞춤형 B2B SaaS와 실무 솔루션을 개발합니다.',
     hero_btn_calc: '<i class="fa-solid fa-calculator"></i> 예상 견적 계산하기',
     hero_btn_services: '<i class="fa-solid fa-layer-group"></i> 서비스 둘러보기',
-    stat_projects: '완료된 프로젝트',
-    stat_satisfaction: '고객 만족도',
-    stat_experience: '누적 업력 & 노하우',
+    stat_experience: '지역언론 기자 실무 경력',
+    stat_experience_sub: '대표자 취재·보도 실무 노하우',
+    stat_domain: '미디어·신문사 도메인 전문성',
+    stat_domain_sub: '지역 언론 운영 프로세스 최적화',
+    stat_tech: '인터넷신문 & 단체 SaaS 혁신',
+    stat_tech_sub: 'AI 취재노트 & CMS 기술 연동',
     about_subtitle: 'OUR MISSION & VISION',
     about_title: '지방과 소도시도 미래 기술의 중심이 될 수 있습니다',
-    about_desc: '글로컬소프트는 IT 산업의 변방이라 여겨지던 전남 영광군에서 시작되었습니다. 공간적 한계에 갇히지 않고, 첨단 AI·SW 개발과 1:1 실무 교육으로 지역 비즈니스의 디지털 전환과 미래 인재 양성을 책임집니다.',
-    val1_title: 'Local Innovation',
-    val1_desc: 'IT 불모지 전남 영광에서 출발하여 지역 사회와 소상공인이 미래 디지털 혁신에서 소외되지 않도록 돕습니다.',
+    about_desc: '글로컬소프트는 10여 년간 지역신문 기자로 현장을 누빈 대표자의 언론·미디어 도메인 실무 노하우를 바탕으로 설립된 기술 혁신 기업입니다. 공간적 한계에 갇히지 않고, 인터넷신문사와 소규모 기업·사회단체가 미래 AI 기술을 손쉽게 활용할 수 있도록 맞춤형 B2B SaaS와 실무 솔루션을 제공합니다.',
+    val1_title: 'Local & Media Domain',
+    val1_desc: '10여 년 지역 언론 취재·보도 실무 경험을 바탕으로, 지역 사회와 중소 언론사 및 단체가 미래 디지털 혁신에서 소외되지 않도록 돕습니다.',
     val2_title: 'Global Standard',
     val2_desc: '수도권과의 격차를 없애는 차세대 웹, 앱, AI 기술력으로 세계적 기준에 부합하는 솔루션을 개발합니다.',
     val3_title: 'Edu & Talent Hub',
@@ -600,19 +778,22 @@ const dictionary = {
     nav_calculator: 'Calculator',
     nav_contact: 'Contact',
     nav_cta: 'Get Started',
-    hero_badge: '🌱 IT Innovation Blooming from Yeonggwang',
+    hero_badge: '🌱 Regional IT & AI Innovation',
     hero_title: 'Bridging Regions with World-Class Tech,<br><span class="gradient-text">GLOCALSOFT</span>',
-    hero_subtitle: 'Originating from Yeonggwang-gun, Jeollanam-do, Glocalsoft overcomes regional boundaries to empower local communities and youth with cutting-edge software development and coding education.',
+    hero_subtitle: 'Founded on over a decade of hands-on journalism and regional media experience, Glocalsoft develops tailored B2B SaaS and AI solutions to empower local newsrooms, small businesses, and community organizations.',
     hero_btn_calc: '<i class="fa-solid fa-calculator"></i> Calculate Estimate',
     hero_btn_services: '<i class="fa-solid fa-layer-group"></i> View Services',
-    stat_projects: 'Projects Delivered',
-    stat_satisfaction: 'Client Satisfaction',
-    stat_experience: 'Years of Expertise',
+    stat_experience: 'Local Journalism Experience',
+    stat_experience_sub: 'Founder Field Reporting & Media Know-how',
+    stat_domain: 'Media & Newsroom Expertise',
+    stat_domain_sub: 'Optimized Workflow for Local Press',
+    stat_tech: 'Newsroom & SaaS Innovation',
+    stat_tech_sub: 'AI Reporter Note & CMS Integration',
     about_subtitle: 'OUR MISSION & VISION',
     about_title: 'Even Rural Regions Can Become Centers of Future Tech',
-    about_desc: 'Founded in Yeonggwang, Jeollanam-do, Glocalsoft proves that location is no barrier to tech innovation. We bridge the digital divide through custom software engineering and hands-on coding education.',
-    val1_title: 'Local Innovation',
-    val1_desc: 'Starting from Yeonggwang, we ensure local businesses and communities are never left behind in the digital age.',
+    about_desc: 'Built upon our founder\'s 10+ years of investigative reporting and newspaper publishing expertise, Glocalsoft breaks regional boundaries with specialized B2B SaaS and AI platforms tailored for local media and community organizations.',
+    val1_title: 'Local & Media Domain',
+    val1_desc: 'Harnessing over 10 years of newsroom experience to ensure local press and community organizations thrive in the AI era.',
     val2_title: 'Global Standard',
     val2_desc: 'Delivering enterprise-grade web, app, and AI architectures equal to global top tier standards.',
     val3_title: 'Edu & Talent Hub',

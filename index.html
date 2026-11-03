@@ -80,8 +80,7 @@
           <span class="gradient-text">글로컬소프트</span>
         </h1>
         <p class="hero-subtitle" data-i18n="hero_subtitle">
-          전라남도의 작은 소도시에서 시작된 글로컬소프트는 IT 불모지의 한계를 넘어, 지역 사회가 미래 AI·SW 산업에서 소외되지 않고 무한한 가능성을 열어갈 수 있도록 맞춤형 개발과 실무 코딩 교육을
-          주도합니다.
+          전라남도의 작은 소도시에서 시작된 글로컬소프트는 10여 년간 지역신문 현장을 지킨 기자의 실무 경험과 도메인 노하우를 바탕으로 설립된 기술 기업입니다. 인터넷신문사, 소규모 기업 및 사회단체가 미래 AI 기술에서 소외되지 않도록 맞춤형 B2B SaaS와 실무 솔루션을 개발합니다.
         </p>
 
         <div class="hero-buttons">
@@ -95,18 +94,21 @@
 
         <div class="hero-stats">
           <div class="stat-card">
-            <h3 class="stat-number"><span class="counter" data-target="150">0</span>+</h3>
-            <p class="stat-label" data-i18n="stat_projects">완료된 프로젝트</p>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-card">
-            <h3 class="stat-number"><span class="counter" data-target="99">0</span>.8%</h3>
-            <p class="stat-label" data-i18n="stat_satisfaction">고객 만족도</p>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-card">
             <h3 class="stat-number"><span class="counter" data-target="10">0</span>년+</h3>
-            <p class="stat-label" data-i18n="stat_experience">누적 업력 & 노하우</p>
+            <p class="stat-label" data-i18n="stat_experience">지역언론 기자 실무 경력</p>
+            <span class="stat-subtext" data-i18n="stat_experience_sub">대표자 취재·보도 실무 노하우</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-card">
+            <h3 class="stat-number stat-badge-text"><i class="fa-solid fa-newspaper"></i> 현장 밀착</h3>
+            <p class="stat-label" data-i18n="stat_domain">미디어·신문사 도메인 전문성</p>
+            <span class="stat-subtext" data-i18n="stat_domain_sub">지역 언론 운영 프로세스 최적화</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-card">
+            <h3 class="stat-number stat-badge-text"><i class="fa-solid fa-brain"></i> AI 융합</h3>
+            <p class="stat-label" data-i18n="stat_tech">인터넷신문 & 단체 SaaS 혁신</p>
+            <span class="stat-subtext" data-i18n="stat_tech_sub">AI 취재노트 & CMS 기술 연동</span>
           </div>
         </div>
       </div>
@@ -140,17 +142,15 @@
         <span class="section-subtitle" data-i18n="about_subtitle">OUR MISSION & VISION</span>
         <h2 class="section-title" data-i18n="about_title">지방과 소도시도 미래 기술의 중심이 될 수 있습니다</h2>
         <p class="section-desc" data-i18n="about_desc">
-          글로컬소프트는 IT 산업의 변방이라 여겨지던 전남의 작은 소도시에서 시작되었습니다. 공간적 한계에 갇히지 않고, 첨단 AI·SW 개발과 1:1 실무 교육으로 지역 비즈니스의 디지털 전환과 미래 인재
-          양성을
-          책임집니다.
+          글로컬소프트는 10여 년간 지역신문 기자로 현장을 누빈 대표자의 언론·미디어 도메인 실무 노하우를 바탕으로 설립된 기술 혁신 기업입니다. 공간적 한계에 갇히지 않고, 인터넷신문사와 소규모 기업·사회단체가 미래 AI 기술을 손쉽게 활용할 수 있도록 맞춤형 B2B SaaS와 실무 솔루션을 제공합니다.
         </p>
       </div>
 
       <div class="about-grid">
         <div class="about-card highlight-card">
           <div class="card-icon"><i class="fa-solid fa-seedling"></i></div>
-          <h3 data-i18n="val1_title">Local Innovation</h3>
-          <p data-i18n="val1_desc">IT 불모지 전남의 작은 소도시에서 시작하여 지역 사회와 소상공인이 미래 디지털 혁신에서 소외되지 않도록 돕습니다.</p>
+          <h3 data-i18n="val1_title">Local & Media Domain</h3>
+          <p data-i18n="val1_desc">10여 년 지역 언론 취재·보도 실무 경험을 바탕으로, 지역 사회와 중소 언론사 및 단체가 미래 디지털 혁신에서 소외되지 않도록 돕습니다.</p>
         </div>
 
         <div class="about-card">
@@ -514,32 +514,35 @@
 
         <div class="contact-form-side glow-border">
           <h3><i class="fa-regular fa-paper-plane"></i> 프로젝트 문의하기</h3>
-          <form id="contactForm">
+          <form id="contactForm" action="https://formspree.io/f/xwllaken" method="POST">
             <div class="form-row">
               <div class="form-group">
                 <label for="clientName">담당자 성함 <span class="required">*</span></label>
-                <input type="text" id="clientName" required placeholder="홍길동">
+                <input type="text" id="clientName" name="name" required placeholder="홍길동">
               </div>
               <div class="form-group">
                 <label for="companyName">회사 / 기관명</label>
-                <input type="text" id="companyName" placeholder="(주) 글로컬소프트">
+                <input type="text" id="companyName" name="company" placeholder="(주) 글로컬소프트">
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group">
                 <label for="clientEmail">이메일 주소 <span class="required">*</span></label>
-                <input type="email" id="clientEmail" required placeholder="example@glocalsoft.co.kr">
+                <input type="email" id="clientEmail" name="email" required placeholder="example@glocalsoft.co.kr">
               </div>
               <div class="form-group">
                 <label for="clientPhone">연락처 <span class="required">*</span></label>
-                <input type="tel" id="clientPhone" required placeholder="010-1234-5678">
+                <input type="tel" id="clientPhone" name="phone" required placeholder="010-1234-5678">
               </div>
             </div>
 
             <div class="form-group">
               <label for="inquiryType">관심 서비스 분야</label>
-              <select id="inquiryType">
+              <select id="inquiryType" name="inquiryType">
+                <option value="saas-newspaper">AI 인터넷신문사 통합 운영 SaaS</option>
+                <option value="ai-reporter-note">AI 취재노트 솔루션</option>
+                <option value="saas-org">기업·사회단체 운영 관리 SaaS</option>
                 <option value="web-app">맞춤형 웹 & 앱 개발</option>
                 <option value="ai">AI & 데이터 솔루션</option>
                 <option value="cloud">클라우드 & DevOps</option>
@@ -551,8 +554,16 @@
 
             <div class="form-group">
               <label for="projectScope">상세 문의 / 요구사항 내용 <span class="required">*</span></label>
-              <textarea id="projectScope" rows="5" required
-                placeholder="구상 중이신 서비스의 내용, 주요 기능, 원하는 착수 시기 등을 자유롭게 적어주세요."></textarea>
+              <textarea id="projectScope" name="message" rows="5" required minlength="5"
+                placeholder="도입을 구상 중이신 서비스나 솔루션 내용, 주요 기능, 원하는 착수 시기 등을 자유롭게 적어주세요."></textarea>
+            </div>
+
+            <div class="form-group privacy-group">
+              <label class="privacy-agreement-label" for="privacyAgree">
+                <input type="checkbox" id="privacyAgree" name="privacyAgreed" required>
+                <span>[필수] 개인정보 수집 및 이용에 동의합니다.</span>
+              </label>
+              <button type="button" class="btn-text-privacy" id="viewPrivacyInline">약관보기</button>
             </div>
 
             <button type="submit" class="btn btn-gradient btn-block" id="submitFormBtn">
