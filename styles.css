@@ -693,8 +693,64 @@ img {
 }
 
 .flagship-link {
-  margin-top: 1.2rem;
+  margin-top: 0;
   text-align: center;
+}
+
+.flagship-pricing-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(0, 242, 254, 0.08);
+  border: 1px solid rgba(0, 242, 254, 0.3);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  color: #e2e8f0;
+  margin-bottom: 1.2rem;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  width: fit-content;
+}
+
+.flagship-pricing-tag:hover {
+  background: rgba(0, 242, 254, 0.16);
+  border-color: var(--accent-cyan);
+  color: #ffffff;
+}
+
+.flagship-pricing-tag i {
+  color: var(--accent-cyan);
+  font-size: 0.85rem;
+}
+
+.flagship-pricing-tag strong {
+  color: var(--accent-cyan);
+  font-weight: 700;
+}
+
+.flagship-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.flagship-price-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+  text-decoration: none;
+  padding: 0.3rem 0;
+  transition: opacity var(--transition-fast);
+}
+
+.flagship-price-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
 }
 
 .service-icon {

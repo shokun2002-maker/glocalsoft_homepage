@@ -9,6 +9,7 @@ const CONTACT_CONFIG = {
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
+  initPricingSelection();
   initContactForm();
   initModals();
   initLightbox();
@@ -54,6 +55,31 @@ function initNavbar() {
   }
 }
 
+/* 2. Pricing Plan Selection & Form Auto-fill */
+function initPricingSelection() {
+  const planButtons = document.querySelectorAll('.select-plan-btn');
+  const selectedPlanInput = document.getElementById('selectedPlan');
+
+  planButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetPlan = btn.getAttribute('data-plan');
+      if (selectedPlanInput && targetPlan) {
+        for (let i = 0; i < selectedPlanInput.options.length; i++) {
+          if (selectedPlanInput.options[i].value.includes(targetPlan)) {
+            selectedPlanInput.selectedIndex = i;
+            break;
+          }
+        }
+        // 시각적 피드백 효과 부여
+        selectedPlanInput.classList.add('input-highlight-pulse');
+        setTimeout(() => {
+          selectedPlanInput.classList.remove('input-highlight-pulse');
+        }, 1600);
+      }
+    });
+  });
+}
+
 /* 2. Modal Dialogs */
 function initModals() {
   const modalBackdrop = document.getElementById('modalBackdrop');
@@ -67,15 +93,15 @@ function initModals() {
     modalContentBody.innerHTML = `
       <h2>개인정보 수집 및 이용 안내</h2>
       <div class="privacy-modal-detail">
-        <p>주식회사 글로컬소프트(이하 '회사')는 고객님의 개인정보를 소중하게 생각하며 「개인정보 보호법」 및 관계 법령을 준수합니다.</p>
+        <p>글로컬소프트(이하 '회사')는 고객님의 개인정보를 소중하게 생각하며 「개인정보 보호법」 및 관계 법령을 준수합니다.</p>
         
         <h4>1. 개인정보의 수집 및 이용 목적</h4>
         <p>신문사 솔루션 도입 문의 접수, 본인 확인, 서비스 견적 산출 및 맞춤 데모 상담 제공, 상담 결과 회신</p>
         
         <h4>2. 수집하는 개인정보 항목</h4>
         <ul>
-          <li>• 필수항목: 성함(담당자명), 신문사/언론사명, 이메일 주소, 연락처(휴대전화), 문의 내용</li>
-          <li>• 선택항목: 도입 희망 유형</li>
+          <li>• 필수항목: 담당자 성함, 신문사 / 기관명, 이메일 주소, 연락처, 현재 운영 상황 및 문의 내용</li>
+          <li>• 선택항목: 도입 희망 요금제, 상담 희망 유형</li>
         </ul>
 
         <h4>3. 개인정보의 보유 및 이용 기간</h4>
@@ -83,6 +109,10 @@ function initModals() {
 
         <h4>4. 동의 거부 권리 및 불이익 안내</h4>
         <p>귀하는 개인정보 수집 및 이용 동의를 거부할 권리가 있습니다. 단, 필수항목 수집에 동의하지 않으실 경우 무료 상담 및 데모 시연 신청이 제한될 수 있습니다.</p>
+
+        <p style="margin-top: 1rem; font-size: 0.82rem; color: var(--color-text-muted);">
+          ※ 개인정보 처리위탁, 국외 이전 및 권리 행사 등 상세 내용은 <a href="/privacy/" target="_blank" style="color: var(--accent-cyan); text-decoration: underline;">개인정보처리방침 전문</a>에서 확인하실 수 있습니다.
+        </p>
       </div>
     `;
     modalBackdrop.classList.add('active');
@@ -132,6 +162,7 @@ function initContactForm() {
     const companyNameInput = document.getElementById('companyName');
     const clientEmailInput = document.getElementById('clientEmail');
     const clientPhoneInput = document.getElementById('clientPhone');
+    const selectedPlanInput = document.getElementById('selectedPlan');
     const inquiryTypeInput = document.getElementById('inquiryType');
     const projectScopeInput = document.getElementById('projectScope');
     const privacyAgreeInput = document.getElementById('privacyAgree');
@@ -140,6 +171,7 @@ function initContactForm() {
     const company = companyNameInput ? companyNameInput.value.trim() : '';
     const email = clientEmailInput ? clientEmailInput.value.trim() : '';
     const phone = clientPhoneInput ? clientPhoneInput.value.trim() : '';
+    const selectedPlan = selectedPlanInput ? selectedPlanInput.value : '상담 후 결정';
     const inquiryType = inquiryTypeInput ? inquiryTypeInput.value : '';
     const scope = projectScopeInput ? projectScopeInput.value.trim() : '';
     const privacyAgreed = privacyAgreeInput ? privacyAgreeInput.checked : false;
@@ -194,8 +226,12 @@ function initContactForm() {
       ? inquiryTypeInput.options[inquiryTypeInput.selectedIndex].text
       : inquiryType;
 
+    // 요금제 약칭 추출 (예: "STARTER", "AI PRO", "ENTERPRISE", "상담 후 결정")
+    const planShort = selectedPlan.split(' ')[0] || '기본상담';
+
     const payload = {
-      _subject: `[신문사 SaaS - ${inquiryTypeText}] ${company} (${name}님)`,
+      _subject: `[신문사 SaaS - ${planShort} / ${inquiryTypeText}] ${company} (${name}님)`,
+      selectedPlan: selectedPlan,
       inquiryType: inquiryTypeText,
       name: name,
       company: company,
