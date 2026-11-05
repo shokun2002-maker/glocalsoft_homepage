@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>신문사를 아는 사람이 만듭니다 | 인터넷신문사 통합 운영 SaaS - 글로컬소프트</title>
+  <meta name="description" content="10여 년의 지역신문 기자 경험을 바탕으로, 홈페이지 구축부터 취재·기사 작성·발행·광고·SNS 운영까지 고민했습니다. 소규모 지역신문 및 인터넷신문 창간을 위한 올인원 SaaS 솔루션.">
+  <meta name="keywords" content="인터넷신문 솔루션, 신문사 CMS, 지역신문 홈페이지, 인터넷신문 창간, 언론사 솔루션, AI 취재노트, 글로컬소프트">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="신문사를 아는 사람이 만듭니다 — 인터넷신문사 통합 운영 SaaS | 글로컬소프트">
+  <meta property="og:description" content="10여 년의 지역신문 기자 경험을 바탕으로 만든 올인원 신문사 운영 플랫폼. 취재 보조부터 모바일 기사 관리, 지역 광고 배너 운영까지.">
+  <meta property="og:image" content="../assets/hero-bg.png">
+  <meta property="og:url" content="https://glocalsoft.kr/newspaper/">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="newspaper.css">
+</head>
+
+<body class="dark-theme">
+  <!-- Ambient Glow Background -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- Header / Navigation -->
+  <header id="header" class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="brand-logo" id="brandLogo">
+        <img src="../assets/logo.png" alt="GLOCALSOFT 로고" class="logo-img">
+        <span class="logo-text">GLOCAL<span class="highlight">SOFT</span> <span class="badge-sub">신문사 솔루션</span></span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i> 메인 홈</a></li>
+          <li><a href="#painpoints" class="nav-link">신문사의 고민</a></li>
+          <li><a href="#features" class="nav-link">주요 기능</a></li>
+          <li><a href="#showcase" class="nav-link">관리 화면</a></li>
+          <li><a href="#adoption" class="nav-link">도입 가이드</a></li>
+          <li><a href="#contact" class="nav-link">상담·시연 신청</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="tel:010-9354-7929" class="nav-phone-btn">
+          <i class="fa-solid fa-phone"></i> <span>010-9354-7929</span>
+        </a>
+        <a href="#contact" class="btn btn-primary nav-cta">시연 신청</a>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="메뉴 열기">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 1. Hero Section & Background -->
+  <section class="newspaper-hero" id="hero">
+    <div class="container np-hero-container">
+      <div class="np-category-tag">
+        <i class="fa-solid fa-newspaper"></i> 지역 언론 & 인터넷신문 전문 통합 솔루션
+      </div>
+      <h1 class="np-hero-title">
+        신문사를 아는 사람이<br>
+        <span class="gradient-text">만듭니다.</span>
+      </h1>
+      <p class="np-hero-subtitle">
+        10여 년의 지역신문 기자 경험을 바탕으로,<br>
+        홈페이지 구축부터 취재·기사 작성·발행·광고·SNS 운영까지 고민했습니다.
+      </p>
+      <p class="np-hero-desc">
+        취재 가기도 바쁜데 홈페이지 관리와 광고 배너까지 혼자 다 챙겨야 하는 지역 언론의 현실,<br>
+        신문을 직접 만들어보지 않은 외주 개발사는 알 수 없습니다.<br>
+        기자의 눈높이에서 가장 단순하고 편리하게 설계한 올인원 SaaS를 만나보세요.
+      </p>
+
+      <div class="np-hero-buttons">
+        <a href="#contact" class="btn btn-gradient btn-lg">
+          <i class="fa-regular fa-paper-plane"></i> 1:1 시연 & 무료 상담 신청
+        </a>
+        <a href="#features" class="btn btn-outline btn-lg">
+          <i class="fa-solid fa-layer-group"></i> 주요 기능 살펴보기
+        </a>
+      </div>
+
+      <div class="np-trust-bar">
+        <div class="trust-item">
+          <i class="fa-solid fa-pen-nib trust-icon"></i>
+          <div>
+            <strong>10여 년 기자 실무 노하우</strong>
+            <span>현장 취재와 기사 마감의 고충을 누구보다 잘 압니다.</span>
+          </div>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-mobile-screen-button trust-icon"></i>
+          <div>
+            <strong>모바일 기사 관리 환경</strong>
+            <span>외근 중에도 모바일 환경에서 기사 등록과 출고를 간편하게 지원합니다.</span>
+          </div>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-robot trust-icon"></i>
+          <div>
+            <strong>AI 업무 보조 융합 연구</strong>
+            <span>보도자료 정리와 초안 구성 등 반복 업무 경감을 지원합니다.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Pain Points Section -->
+  <section class="section" id="painpoints">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-subtitle">REALITY & CHALLENGES</span>
+        <h2 class="section-title">지역신문 운영, 왜 늘 시간이 부족하고 막막할까요?</h2>
+        <p class="section-desc">
+          현장을 뛰며 직접 겪었던 소규모 언론사의 4대 고질적 고민, 글로컬소프트가 정확히 짚고 해결합니다.
+        </p>
+      </div>
+
+      <div class="pain-grid">
+        <div class="pain-card">
+          <span class="pain-tag">현실 고민 01</span>
+          <h3>1인 다역, 만성적인 인력 부족</h3>
+          <p>
+            취재원 인터뷰하기도 바쁜 하루, 기관 보도자료를 옮겨 적고 오탈자를 고치며 사진 크기를 조절하는 등 단순 편집 작업에 아까운 취재 시간이 지나치게 소모됩니다.
+          </p>
+        </div>
+
+        <div class="pain-card">
+          <span class="pain-tag">현실 고민 02</span>
+          <h3>복잡하고 노후화된 구형 CMS</h3>
+          <p>
+            오래전 제작된 복잡한 관리자 시스템은 스마트폰에서 글자 하나 고치기도 어렵습니다. 긴급 속보나 사건 현장을 전하려 해도 사무실 컴퓨터 앞까지 돌아와야만 합니다.
+          </p>
+        </div>
+
+        <div class="pain-card">
+          <span class="pain-tag">현실 고민 03</span>
+          <h3>답답한 외주 업체와 높은 유지보수비</h3>
+          <p>
+            메뉴 하나 바꾸거나 광고 배너 하나 올리는 데도 외주 개발사 연락을 기다려야 합니다. 매달 나가는 유지보수 비용에 비해 실질적인 지원은 느리고 답답합니다.
+          </p>
+        </div>
+
+        <div class="pain-card">
+          <span class="pain-tag">현실 고민 04</span>
+          <h3>기사 유통과 광고 수익화의 한계</h3>
+          <p>
+            정성스레 쓴 기사를 페이스북, 밴드, 카카오톡으로 일일이 링크를 복사해 퍼뜨려야 합니다. 지역 소상공인 광고 배너를 관리하고 정산하는 체계도 미흡합니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Key Features Section -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-subtitle">CORE CAPABILITIES</span>
+        <h2 class="section-title">취재부터 발행·광고까지, 신문사 운영의 모든 것</h2>
+        <p class="section-desc">
+          기자의 소중한 시간을 아껴주고, 신문사 본연의 가치인 깊이 있는 취재와 보도에 집중할 수 있도록 돕습니다.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1: 영광소리 CMS 검증 -->
+        <div class="feature-card">
+          <div class="feature-header">
+            <div class="feature-icon-box"><i class="fa-solid fa-pen-to-square"></i></div>
+            <span class="status-badge verified"><i class="fa-solid fa-award"></i> 영광소리 CMS 검증</span>
+          </div>
+          <h3>기사 작성 및 카테고리 관리 에디터</h3>
+          <p>
+            자사 미디어(영광소리) 실무 현장에서 매일 사용하며 검증된 직관적인 기사 작성기와 섹션 분류 체계입니다.
+          </p>
+          <ul class="feature-check-list">
+            <li><i class="fa-solid fa-check"></i> 직관적인 위지윅(WYSIWYG) 본문 서식 에디터</li>
+            <li><i class="fa-solid fa-check"></i> 기사 사진 업로드 및 캡션 자동 정렬</li>
+            <li><i class="fa-solid fa-check"></i> 정치·경제·사회·문화 등 다단 카테고리 분류 관리</li>
+          </ul>
+        </div>
+
+        <!-- Feature 2: 영광소리 CMS 검증 -->
+        <div class="feature-card">
+          <div class="feature-header">
+            <div class="feature-icon-box"><i class="fa-solid fa-rectangle-ad"></i></div>
+            <span class="status-badge verified"><i class="fa-solid fa-award"></i> 영광소리 CMS 검증</span>
+          </div>
+          <h3>지역 맞춤형 간편 광고 배너 관리</h3>
+          <p>
+            코딩 지식이 없어도 지역 상가와 관공서 배너 이미지를 원하는 위치에 손쉽게 올리고 게시 기간을 관리할 수 있습니다.
+          </p>
+          <ul class="feature-check-list">
+            <li><i class="fa-solid fa-check"></i> 지면/섹션별 광고 배너 등록 및 링크 연동</li>
+            <li><i class="fa-solid fa-check"></i> 광고 게시 시작일·종료일 자동 노출 제어</li>
+            <li><i class="fa-solid fa-check"></i> 모바일 및 PC 반응형 배너 자동 리사이징</li>
+          </ul>
+        </div>
+
+        <!-- Feature 3: 외부 고객 제공 준비 -->
+        <div class="feature-card">
+          <div class="feature-header">
+            <div class="feature-icon-box"><i class="fa-solid fa-mobile-screen"></i></div>
+            <span class="status-badge ready"><i class="fa-solid fa-circle-check"></i> 외부 고객 제공 준비</span>
+          </div>
+          <h3>모바일 환경 기사 관리 및 출고 지원</h3>
+          <p>
+            사무실 컴퓨터 앞이 아니어도 현장에서 스마트폰으로 사진을 첨부하고, 기사 등록 및 출고 승인 상태를 신속하게 관리합니다.
+          </p>
+          <ul class="feature-check-list">
+            <li><i class="fa-solid fa-check"></i> 모바일 브라우저 최적화 관리자 화면</li>
+            <li><i class="fa-solid fa-check"></i> 현장 사진 첨부 및 이미지 자동 최적화</li>
+            <li><i class="fa-solid fa-check"></i> 기사 승인 대기 / 출고 완료 상태 변경 관리</li>
+          </ul>
+        </div>
+
+        <!-- Feature 4: 개발 및 고도화 중 -->
+        <div class="feature-card">
+          <div class="feature-header">
+            <div class="feature-icon-box"><i class="fa-solid fa-file-lines"></i></div>
+            <span class="status-badge developing"><i class="fa-solid fa-flask"></i> 개발 및 고도화 중</span>
+          </div>
+          <h3>보도자료 요약 & 기사 초안 변환</h3>
+          <p>
+            지자체·공공기관에서 전달되는 긴 분량의 보도자료를 분석하여 핵심 위주로 초안을 정리하는 보조 기능입니다.
+          </p>
+          <ul class="feature-check-list">
+            <li><i class="fa-solid fa-check"></i> 관공서·기업 보도자료 텍스트 구조화 연구</li>
+            <li><i class="fa-solid fa-check"></i> 헤드라인 및 리드문 구성 보조 제안</li>
+            <li><i class="fa-solid fa-check"></i> 단순 반복적인 텍스트 정리 작업 최소화</li>
+          </ul>
+        </div>
+
+        <!-- Feature 5: 개발 및 고도화 중 -->
+        <div class="feature-card">
+          <div class="feature-header">
+            <div class="feature-icon-box"><i class="fa-solid fa-brain"></i></div>
+            <span class="status-badge developing"><i class="fa-solid fa-flask"></i> 개발 및 고도화 중</span>
+          </div>
+          <h3>AI 취재 메모 & 문맥 보조 도구</h3>
+          <p>
+            취재 현장의 메모나 인터뷰 녹음 요약을 돕고, 기사 작성 시 문단 흐름과 맞춤법 점검을 지원하는 보조 시스템입니다.
+          </p>
+          <ul class="feature-check-list">
+            <li><i class="fa-solid fa-check"></i> 취재 메모 및 음성 텍스트화 보조 연구</li>
+            <li><i class="fa-solid fa-check"></i> 맞춤법·외래어 표기법 점검 보조</li>
+            <li><i class="fa-solid fa-check"></i> 기사 작성 시 추가 확인이 필요한 취재 포인트 제안</li>
+          </ul>
+          <div class="feature-note">
+            <i class="fa-solid fa-shield-halved"></i> <strong>원칙 준수 안내</strong>: AI는 기자의 기사 작성을 돕는 보조 도구이며, 사실 확인(Fact Check)과 최종 보도·편집 책임은 전적으로 언론인에게 있습니다.
+          </div>
+        </div>
+
+        <!-- Feature 6: 개발 및 고도화 중 -->
+        <div class="feature-card">
+          <div class="feature-header">
+            <div class="feature-icon-box"><i class="fa-solid fa-share-nodes"></i></div>
+            <span class="status-badge developing"><i class="fa-solid fa-flask"></i> 개발 및 고도화 중</span>
+          </div>
+          <h3>SNS 자동 배포 & 지면 PDF 아카이브</h3>
+          <p>
+            소셜 미디어(SNS) 기사 유통을 지원하는 자동 공유 기능과 종이신문 호수별 지면 PDF 웹 뷰어 구축 기능입니다.
+          </p>
+          <ul class="feature-check-list">
+            <li><i class="fa-solid fa-check"></i> 주요 SNS 맞춤형 링크 및 미리보기 연동 개발 중</li>
+            <li><i class="fa-solid fa-check"></i> 종이신문 호수별 PDF 웹 뷰어 아카이빙 지원 개발 중</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. UI Showcase Section -->
+  <section class="section" id="showcase">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-subtitle">REAL SERVICE & CMS SHOWCASE</span>
+        <h2 class="section-title">독자 서비스부터 AI 관리자까지, 실제 운영 화면</h2>
+        <p class="section-desc">
+          10여 년의 현장 기자 경험을 바탕으로 설계하고 영광소리(ygsori.com)에서 실무 검증한 통합 운영 시스템입니다.
+        </p>
+      </div>
+
+      <!-- Area A: 독자에게 보이는 신문사 홈페이지 -->
+      <div class="showcase-area">
+        <div class="showcase-area-header">
+          <div class="showcase-area-tag">
+            <i class="fa-solid fa-globe"></i> AREA A · 독자 서비스
+          </div>
+          <h3 class="showcase-area-title">독자에게 보이는 신문사 홈페이지</h3>
+          <p class="showcase-area-desc">
+            가독성을 극대화한 정통 정론지 표준 레이아웃과 반응형 모바일 뷰, 기사 상세 및 광고 배치 실무입니다.
+          </p>
+        </div>
+
+        <div class="showcase-grid">
+          <!-- Showcase 1: 독자용 메인 포털 PC -->
+          <div class="mockup-window">
+            <div class="mockup-top-bar">
+              <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+              <span class="mockup-title">ygsori.com / news-home (PC)</span>
+            </div>
+            <div class="mockup-body">
+              <div class="mockup-screen-container" data-src="assets/ygsori-pc-homepage.png" data-title="영광소리 인터넷신문 공식 포털 (PC 뷰)">
+                <span class="mockup-live-badge"><i class="fa-solid fa-circle-check"></i> 실제 운영 서비스</span>
+                <img src="assets/ygsori-pc-homepage.png" alt="영광소리 공식 포털 PC 메인 화면" class="mockup-screen-img" loading="lazy">
+                <div class="mockup-zoom-overlay">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i>
+                  <span>클릭하여 고화질 원본 확대</span>
+                </div>
+              </div>
+              <h4>정통 언론사 표준 독자 포털 (PC)</h4>
+              <p>자사 미디어 영광소리(ygsori.com)의 실제 독자 서비스 화면으로, 지역 정론지 표준에 맞춘 헤드라인·주요 기사·카테고리 다단 배치를 지원합니다.</p>
+            </div>
+          </div>
+
+          <!-- Showcase 2: 모바일 반응형 독자 뷰 -->
+          <div class="mockup-window">
+            <div class="mockup-top-bar">
+              <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+              <span class="mockup-title">ygsori.com / mobile-view (390px)</span>
+            </div>
+            <div class="mockup-body">
+              <div class="mockup-screen-container" data-src="assets/ygsori-mobile-homepage.png" data-title="영광소리 모바일 반응형 독자 뷰 (스마트폰 최적화)">
+                <span class="mockup-live-badge"><i class="fa-solid fa-circle-check"></i> 실제 운영 서비스</span>
+                <img src="assets/ygsori-mobile-homepage.png" alt="영광소리 모바일 홈 화면" class="mockup-screen-img" loading="lazy">
+                <div class="mockup-zoom-overlay">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i>
+                  <span>클릭하여 고화질 원본 확대</span>
+                </div>
+              </div>
+              <h4>모바일 환경 반응형 독자 뷰</h4>
+              <p>스마트폰 화면에서도 기사 가독성을 극대화한 모바일 레이아웃으로, 긴급 뉴스 속보와 상단 메인 광고 배너가 깔끔하게 반응합니다.</p>
+            </div>
+          </div>
+
+          <!-- Showcase 3: 기사 상세 & 표준 타이포그래피 -->
+          <div class="mockup-window">
+            <div class="mockup-top-bar">
+              <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+              <span class="mockup-title">ygsori.com / article-detail (Justify)</span>
+            </div>
+            <div class="mockup-body">
+              <div class="mockup-screen-container" data-src="assets/ygsori-article-detail.png" data-title="신문사 표준 기사 상세 뷰어 (양쪽 정렬 & 기자 프로필)">
+                <span class="mockup-live-badge"><i class="fa-solid fa-circle-check"></i> 실제 운영 서비스</span>
+                <img src="assets/ygsori-article-detail.png" alt="영광소리 기사 상세 화면" class="mockup-screen-img" loading="lazy">
+                <div class="mockup-zoom-overlay">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i>
+                  <span>클릭하여 고화질 원본 확대</span>
+                </div>
+              </div>
+              <h4>정론지 표준 기사 상세 & 바이라인</h4>
+              <p>신문사 표준인 본문 양쪽 정렬(Justify) 규칙과 기자 실명 바이라인 프로필, 본문 맞춤 광고가 유기적으로 연동된 실제 기사 뷰어입니다.</p>
+            </div>
+          </div>
+
+          <!-- Showcase 4: 광고 배너 게재 실무 -->
+          <div class="mockup-window">
+            <div class="mockup-top-bar">
+              <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+              <span class="mockup-title">ygsori.com / live-ads (1200x200 & 4:3)</span>
+            </div>
+            <div class="mockup-body">
+              <div class="mockup-screen-container" data-src="assets/ygsori-live-ads-pc.png" data-title="지역 맞춤형 광고 배너 게재 실무 (와이드 헤더 & 사이드 배너)">
+                <span class="mockup-live-badge"><i class="fa-solid fa-circle-check"></i> 실제 운영 서비스</span>
+                <img src="assets/ygsori-live-ads-pc.png" alt="영광소리 실제 광고 배너 게재 화면" class="mockup-screen-img" loading="lazy">
+                <div class="mockup-zoom-overlay">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i>
+                  <span>클릭하여 고화질 원본 확대</span>
+                </div>
+              </div>
+              <h4>지역 광고 배너 실무 운영 & 수익화</h4>
+              <p>1200x200 와이드 헤더 배너와 4:3 지면 배너를 코딩 없이 등록하고, 시작일과 마감일을 지정해 지역 광고 수익화를 실현한 실제 사례입니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Area B: 신문사를 운영하는 AI 통합 관리자 -->
+      <div class="showcase-area showcase-area-admin">
+        <div class="showcase-area-header">
+          <div class="showcase-area-tag tag-admin">
+            <i class="fa-solid fa-screwdriver-wrench"></i> AREA B · AI 통합 관리 시스템
+          </div>
+          <h3 class="showcase-area-title">신문사 운영, 이제 하나의 시스템으로.</h3>
+          <p class="showcase-area-desc">
+            기사 작성부터 보도자료 처리, 발행과 광고 관리까지. 지역신문의 실제 업무를 이해하고 설계한 AI 통합 운영 시스템을 만나보세요.
+          </p>
+        </div>
+
+        <div class="showcase-admin-grid">
+          <!-- Admin Showcase 1: AI 기사 작성실 -->
+          <div class="mockup-window">
+            <div class="mockup-top-bar">
+              <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+              <span class="mockup-title">admin/ai-writer (기자와 AI의 협업)</span>
+            </div>
+            <div class="mockup-body">
+              <div class="mockup-screen-container" data-src="assets/public-admin-ai-writer.png" data-title="AI 기사 작성실">
+                <span class="mockup-live-badge"><i class="fa-solid fa-circle-check"></i> 실제 서비스 화면</span>
+                <img src="assets/public-admin-ai-writer.png" alt="AI 기사 작성실 화면" class="mockup-screen-img"
+                  onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='flex';" loading="lazy">
+                <div class="mockup-screen-placeholder">
+                  <i class="fa-solid fa-brain"></i>
+                  <strong>AI 기사 작성실</strong>
+                  <span>보안 인증 지침 준수 · 1:1 온라인 데모 제공</span>
+                </div>
+                <div class="mockup-zoom-overlay">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i>
+                  <span>클릭하여 고화질 원본 확대</span>
+                </div>
+              </div>
+              <h4>AI 기사 작성실</h4>
+              <p>취재 내용을 AI와 대화하며 정리하고 기사 초안을 작성합니다.</p>
+            </div>
+          </div>
+
+          <!-- Admin Showcase 2: AI 보도자료 자동화 -->
+          <div class="mockup-window">
+            <div class="mockup-top-bar">
+              <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+              <span class="mockup-title">admin/inbox (보도자료 수신 및 변환)</span>
+            </div>
+            <div class="mockup-body">
+              <div class="mockup-screen-container" data-src="assets/public-admin-inbox.png" data-title="AI 보도자료 자동화">
+                <span class="mockup-live-badge"><i class="fa-solid fa-circle-check"></i> 실제 서비스 화면</span>
+                <img src="assets/public-admin-inbox.png" alt="AI 보도자료 자동화 화면" class="mockup-screen-img"
+                  onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='flex';" loading="lazy">
+                <div class="mockup-screen-placeholder">
+                  <i class="fa-solid fa-envelope-open-text"></i>
+                  <strong>AI 보도자료 자동화</strong>
+                  <span>보안 인증 지침 준수 · 1:1 온라인 데모 제공</span>
+                </div>
+                <div class="mockup-zoom-overlay">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i>
+                  <span>클릭하여 고화질 원본 확대</span>
+                </div>
+              </div>
+              <h4>AI 보도자료 자동화</h4>
+              <p>이메일로 수신한 보도자료와 사진을 분석하고 기사 작성부터 일괄발행까지 지원합니다.</p>
+            </div>
+          </div>
+
+          <!-- Admin Showcase 3: SNS 통합배포센터 -->
+          <div class="mockup-window">
+            <div class="mockup-top-bar">
+              <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+              <span class="mockup-title">admin/social (소셜 채널 원클릭 배포)</span>
+            </div>
+            <div class="mockup-body">
+              <div class="mockup-screen-container" data-src="assets/public-admin-social.png" data-title="SNS 통합배포센터">
+                <span class="mockup-live-badge"><i class="fa-solid fa-circle-check"></i> 실제 서비스 화면</span>
+                <img src="assets/public-admin-social.png" alt="SNS 통합배포센터 화면" class="mockup-screen-img"
+                  onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='flex';" loading="lazy">
+                <div class="mockup-screen-placeholder">
+                  <i class="fa-solid fa-share-nodes"></i>
+                  <strong>SNS 통합배포센터</strong>
+                  <span>보안 인증 지침 준수 · 1:1 온라인 데모 제공</span>
+                </div>
+                <div class="mockup-zoom-overlay">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i>
+                  <span>클릭하여 고화질 원본 확대</span>
+                </div>
+              </div>
+              <h4>SNS 통합배포센터</h4>
+              <p>발행 기사를 SNS 채널별로 편집하고 배포 작업을 관리합니다.</p>
+            </div>
+          </div>
+
+          <!-- Admin Showcase 4: 통합 관리자 대시보드 -->
+          <div class="mockup-window">
+            <div class="mockup-top-bar">
+              <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+              <span class="mockup-title">admin/dashboard (CMS 올인원 관제)</span>
+            </div>
+            <div class="mockup-body">
+              <div class="mockup-screen-container" data-src="assets/public-admin-dashboard.png" data-title="통합 관리자 대시보드">
+                <span class="mockup-live-badge"><i class="fa-solid fa-circle-check"></i> 실제 서비스 화면</span>
+                <img src="assets/public-admin-dashboard.png" alt="통합 관리자 대시보드 화면" class="mockup-screen-img"
+                  onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='flex';" loading="lazy">
+                <div class="mockup-screen-placeholder">
+                  <i class="fa-solid fa-chart-pie"></i>
+                  <strong>통합 관리자 대시보드</strong>
+                  <span>보안 인증 지침 준수 · 1:1 온라인 데모 제공</span>
+                </div>
+                <div class="mockup-zoom-overlay">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i>
+                  <span>클릭하여 고화질 원본 확대</span>
+                </div>
+              </div>
+              <h4>통합 관리자</h4>
+              <p>기사와 광고, 발행 및 운영 업무를 하나의 시스템에서 관리합니다.</p>
+            </div>
+          </div>
+
+          <!-- Admin Showcase 5: 카카오톡 뉴스 공유 -->
+          <div class="mockup-window">
+            <div class="mockup-top-bar">
+              <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+              <span class="mockup-title">admin/kakao-share (독자 유입 카드 연동)</span>
+            </div>
+            <div class="mockup-body">
+              <div class="mockup-screen-container" data-src="assets/public-admin-kakao-share.png" data-title="카카오톡 뉴스 공유">
+                <span class="mockup-live-badge"><i class="fa-solid fa-circle-check"></i> 실제 서비스 화면</span>
+                <img src="assets/public-admin-kakao-share.png" alt="카카오톡 뉴스 공유 화면" class="mockup-screen-img"
+                  onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='flex';" loading="lazy">
+                <div class="mockup-screen-placeholder">
+                  <i class="fa-solid fa-comment-dots"></i>
+                  <strong>카카오톡 뉴스 공유</strong>
+                  <span>보안 인증 지침 준수 · 1:1 온라인 데모 제공</span>
+                </div>
+                <div class="mockup-zoom-overlay">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i>
+                  <span>클릭하여 고화질 원본 확대</span>
+                </div>
+              </div>
+              <h4>카카오톡 뉴스 공유</h4>
+              <p>기사별 카카오톡 공유 카드와 공유 작업을 지원합니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 관리자 화면 보안 안내 및 1:1 온라인 데모 신청 배너 -->
+        <div class="showcase-demo-banner">
+          <div class="demo-banner-content">
+            <i class="fa-solid fa-shield-halved demo-banner-icon"></i>
+            <div class="demo-banner-text">
+              <h3>영광소리 CMS 관리자 대시보드 & AI 기사 에디터는 1:1 온라인 데모로 시연해 드립니다</h3>
+              <p>
+                기사 작성 에디터, AI 보도자료 자동 요약, 지면 배포 제어 시스템 등 관리자 전용 화면의 실제 조작과 AI 기사 생성 기능은 원격 화면 공유(Zoom/Google Meet)를 통해 대표자가 직접 1:1 맞춤형으로 시연해 드립니다.
+              </p>
+            </div>
+          </div>
+          <div class="demo-banner-action">
+            <a href="#contact" class="btn btn-gradient btn-lg">
+              <i class="fa-solid fa-desktop"></i> 온라인 데모 신청하기
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <p class="showcase-disclaimer">
+        ※ 위 독자 화면 및 관리자 화면은 주식회사 글로컬소프트가 자체 개발하여 정식 서비스 중인 영광소리(ygsori.com)의 실제 운영 화면입니다. 각 이미지를 클릭하시면 고화질 원본으로 확대하여 확인하실 수 있습니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- 5. Adoption Tracks Section -->
+  <section class="section" id="adoption">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-subtitle">ADOPTION GUIDE</span>
+        <h2 class="section-title">우리 신문사에 맞는 도입 방식을 선택하세요</h2>
+        <p class="section-desc">
+          새롭게 출발하는 창간 언론사부터 기존 기사를 안전하게 보존해야 하는 노후 신문사까지 맞춤형으로 지원합니다.
+        </p>
+      </div>
+
+      <div class="adoption-grid">
+        <!-- Track 1 -->
+        <div class="adoption-card">
+          <div class="adoption-type">Track 01</div>
+          <h3>신규 인터넷신문 창간</h3>
+          <p>등록 요건 검토부터 도메인 설정, 반응형 웹사이트 구축까지 처음 시작하는 언론사를 위해 올인원으로 셋업합니다.</p>
+          <ul class="adoption-benefits">
+            <li><i class="fa-solid fa-check-circle"></i> 신문법상 필수 게재사항(발행인·편집인, 등록번호 등) 반영 지원</li>
+            <li><i class="fa-solid fa-check-circle"></i> 네이버·다음·구글 검색엔진 색인 초기 최적화</li>
+            <li><i class="fa-solid fa-check-circle"></i> 모바일/태블릿/PC 반응형 신문 템플릿</li>
+            <li><i class="fa-solid fa-check-circle"></i> 초기 1:1 관리자 사용법 실무 교육</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline btn-block">창간 상담 신청하기</a>
+        </div>
+
+        <!-- Track 2 -->
+        <div class="adoption-card featured">
+          <div class="adoption-type">Track 02</div>
+          <h3>기존 신문사 홈페이지 개편</h3>
+          <p>수년간 축적된 소중한 기사 데이터를 사전 분석하여 안전하게 이전하고 최신 모바일 환경으로 전면 리뉴얼합니다.</p>
+          <ul class="adoption-benefits">
+            <li><i class="fa-solid fa-check-circle"></i> 사전 분석을 통한 기존 기사 데이터 안전 이전 지원</li>
+            <li><i class="fa-solid fa-check-circle"></i> 검색엔진 기존 기사 링크 보존(URL 리다이렉트 연동)</li>
+            <li><i class="fa-solid fa-check-circle"></i> 느리고 답답하던 웹사이트 로딩 환경 개선</li>
+            <li><i class="fa-solid fa-check-circle"></i> 기존 외주 유지보수비 대비 합리적 운영 전환</li>
+          </ul>
+          <a href="#contact" class="btn btn-gradient btn-block">개편 상담 신청하기</a>
+        </div>
+
+        <!-- Track 3 -->
+        <div class="adoption-card">
+          <div class="adoption-type">Track 03</div>
+          <h3>기업·협회·사회단체 전문 매체</h3>
+          <p>지역 소식지, 동문회보, 협회 정기간행물, 전문 분야 웹진을 깔끔하고 지속 가능하게 발행할 수 있도록 구축합니다.</p>
+          <ul class="adoption-benefits">
+            <li><i class="fa-solid fa-check-circle"></i> 회원 및 단체 특성에 맞춘 카테고리 구성</li>
+            <li><i class="fa-solid fa-check-circle"></i> 뉴스레터 및 정기 소식지 연계 레이아웃</li>
+            <li><i class="fa-solid fa-check-circle"></i> 누구나 쉽게 운영 가능한 경량 관리자 시스템</li>
+            <li><i class="fa-solid fa-check-circle"></i> 단체 규모에 맞춘 맞춤형 운영 플랜 제공</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline btn-block">단체 매체 상담 신청하기</a>
+        </div>
+      </div>
+
+      <div class="pricing-notice-box">
+        <i class="fa-solid fa-hand-holding-dollar"></i>
+        <div>
+          <strong>투명하고 합리적인 맞춤형 견적 안내</strong>
+          <p>글로컬소프트는 천편일률적인 비싼 외주 비용을 요구하지 않습니다. 신문사 규모, 동시 기자 계정 수, 기존 기사 데이터 이전 규모를 정직하게 진단하여 가장 합리적인 도입 플랜을 무료로 제안해 드립니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Formspree Contact & Demo Request Section -->
+  <section class="section np-contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info-side">
+          <span class="section-subtitle">GET IN TOUCH & DEMO</span>
+          <h2 class="section-title">신문사 운영의 디지털 전환,<br>기자 출신 전문가와 상의하세요</h2>
+          <p class="section-desc np-contact-desc">
+            복잡한 기술 용어 대신 언론 현장의 언어로 소통합니다.<br>
+            신문사 창간, 노후 시스템 개편, 데이터 이전 고충 등 어떤 내용이든 편하게 남겨주시면 대표자가 직접 친절하게 상담해 드립니다.
+          </p>
+
+          <div class="info-items">
+            <div class="info-item">
+              <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <strong>직통 전화 문의</strong>
+                <p>010-9354-7929 (평일 09:00 ~ 18:00)</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <strong>이메일 문의</strong>
+                <p>shokun2002@naver.com</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="icon-box"><i class="fa-solid fa-desktop"></i></div>
+              <div>
+                <strong>무료 시연 안내</strong>
+                <p>원격 화면 공유(Zoom/Google Meet)를 통한 맞춤형 실시간 데모 제공</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-side glow-border">
+          <h3><i class="fa-regular fa-paper-plane"></i> 신문사 솔루션 무료 상담 및 시연 신청</h3>
+          <form id="contactForm" action="https://formspree.io/f/xwllaken" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="clientName">담당자 성함 <span class="required">*</span></label>
+                <input type="text" id="clientName" name="name" required placeholder="예: 김기자">
+              </div>
+              <div class="form-group">
+                <label for="companyName">신문사 / 기관명 <span class="required">*</span></label>
+                <input type="text" id="companyName" name="company" required placeholder="예: OO일보 / OO뉴스">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="clientEmail">이메일 주소 <span class="required">*</span></label>
+                <input type="email" id="clientEmail" name="email" required placeholder="example@newspaper.com">
+              </div>
+              <div class="form-group">
+                <label for="clientPhone">연락처 <span class="required">*</span></label>
+                <input type="tel" id="clientPhone" name="phone" required placeholder="010-1234-5678">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inquiryType">상담 희망 유형</label>
+              <select id="inquiryType" name="inquiryType">
+                <option value="신문사 신규 창간 상담">신문사 신규 창간 상담</option>
+                <option value="기존 신문사 홈페이지 개편 상담">기존 신문사 홈페이지 개편 상담</option>
+                <option value="AI 운영 시스템 도입 상담">AI 운영 시스템 도입 상담</option>
+                <option value="온라인 데모 신청">온라인 데모 신청</option>
+                <option value="기타 문의">기타 문의</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="projectScope">현재 운영 상황 및 문의 내용 <span class="required">*</span></label>
+              <textarea id="projectScope" name="message" rows="5" required minlength="5"
+                placeholder="예: 현재 주간 지면 신문과 오래된 웹사이트를 운영 중인데 모바일 개편과 데이터 이전 상담을 받고 싶습니다. 온라인 데모 시연도 함께 신청합니다."></textarea>
+            </div>
+
+            <div class="form-group privacy-group">
+              <label class="privacy-agreement-label" for="privacyAgree">
+                <input type="checkbox" id="privacyAgree" name="privacyAgreed" required>
+                <span>[필수] 개인정보 수집 및 이용에 동의합니다.</span>
+              </label>
+              <button type="button" class="btn-text-privacy" id="viewPrivacyInline">약관보기</button>
+            </div>
+
+            <button type="submit" class="btn btn-gradient btn-block" id="submitFormBtn">
+              <i class="fa-solid fa-check-circle"></i> 무료 상담 & 시연 요청 제출하기
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand-logo">
+          <img src="../assets/logo.png" alt="GLOCALSOFT 로고" class="logo-img">
+          <span class="logo-text">GLOCAL<span class="highlight">SOFT</span></span>
+        </a>
+        <p>10여 년의 현장 기자 경험과 최신 웹·AI 기술의 결합,<br>글로컬소프트가 지역 언론의 지속 가능한 디지털 혁신을 동행합니다.</p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <h4>신문사 솔루션</h4>
+          <ul>
+            <li><a href="#painpoints">신문사의 현실과 고민</a></li>
+            <li><a href="#features">주요 기능 안내</a></li>
+            <li><a href="#showcase">관리 화면 미리보기</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>바로가기</h4>
+          <ul>
+            <li><a href="../index.html">글로컬소프트 메인 홈</a></li>
+            <li><a href="#contact">상담 및 시연 신청</a></li>
+            <li><a href="#" id="privacyModalBtn">개인정보 처리방침</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 GLOCALSOFT Co., Ltd. All rights reserved.</p>
+      <p class="company-legal">주식회사 글로컬소프트 | 대표자: 김종훈 | 사업자등록번호: 782-26-02191 | 전남광주통합특별시 영광군 불갑면 방마로2길 84-5</p>
+    </div>
+  </footer>
+
+  <!-- Detail Modal Dialog -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal-window">
+      <button class="modal-close-btn" id="modalCloseBtn">&times;</button>
+      <div class="modal-content-body" id="modalContentBody">
+        <!-- Dyn Content -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Image Lightbox Modal for Screenshots -->
+  <div class="image-lightbox" id="imageLightbox" aria-hidden="true" role="dialog">
+    <div class="lightbox-content-box">
+      <div class="lightbox-header">
+        <span class="lightbox-title" id="lightboxTitle"><i class="fa-solid fa-image"></i> 실제 화면 확대 보기</span>
+        <button class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="닫기">&times;</button>
+      </div>
+      <div class="lightbox-body">
+        <img src="" alt="" class="lightbox-img" id="lightboxImg">
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- JavaScript -->
+  <script src="newspaper.js"></script>
+</body>
+
+</html>
+

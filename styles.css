@@ -672,6 +672,31 @@ img {
   border-color: var(--border-glass-hover);
 }
 
+.flagship-card {
+  border: 1px solid rgba(0, 242, 254, 0.45) !important;
+  background: linear-gradient(145deg, rgba(14, 28, 52, 0.85) 0%, rgba(18, 26, 43, 0.9) 100%) !important;
+  box-shadow: 0 15px 35px rgba(0, 242, 254, 0.12);
+}
+
+.flagship-badge {
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  background: var(--gradient-primary);
+  color: #090d16;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.28rem 0.85rem;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.35);
+}
+
+.flagship-link {
+  margin-top: 1.2rem;
+  text-align: center;
+}
+
 .service-icon {
   width: 60px;
   height: 60px;

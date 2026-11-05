@@ -1,2 +1,7 @@
 .DS_Store
 *.log
+
+# Security: Exclude unmasked raw admin screenshots
+newspaper/assets/admin-*.png
+newspaper/assets/raw/
+**/raw-admin/
