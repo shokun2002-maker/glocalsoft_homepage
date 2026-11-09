@@ -722,6 +722,7 @@ function showToast(message, type = 'info') {
 const dictionary = {
   ko: {
     nav_home: '홈',
+    nav_newspaper: '인터넷신문사',
     nav_about: '회사소개',
     nav_services: '서비스',
     nav_tech: '기술스택',
@@ -776,6 +777,7 @@ const dictionary = {
   },
   en: {
     nav_home: 'Home',
+    nav_newspaper: 'Newspaper SaaS',
     nav_about: 'About',
     nav_services: 'Services',
     nav_tech: 'Tech Stack',
