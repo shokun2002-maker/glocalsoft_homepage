@@ -55,9 +55,9 @@ function initNavbar() {
   }
 }
 
-/* 2. Service & Pricing Plan Auto-fill Mapping (Phase 3-4) */
+/* 2. Service & Pricing Plan Auto-fill Mapping (Phase 4-1 최종 수정) */
 function initServiceButtons() {
-  const allTriggerButtons = document.querySelectorAll('.select-service-btn, .select-plan-btn');
+  const allTriggerButtons = document.querySelectorAll('.select-service-btn, .select-plan-btn, .addon-link');
   const neededServiceSelect = document.getElementById('neededService');
   const newspaperStatusSelect = document.getElementById('newspaperStatus');
   const inquiryTypeHidden = document.getElementById('inquiryTypeHidden');
@@ -68,11 +68,24 @@ function initServiceButtons() {
       const inquiryType = btn.getAttribute('data-inquiry-type') || '';
       const plan = btn.getAttribute('data-plan') || '';
 
-      // 서비스 매핑 기준 도출
       let targetNeededService = '';
       let targetNewspaperStatus = '';
 
-      if (inquiryType.includes('신규 창간') || plan.includes('신규 구축')) {
+      if (plan.toUpperCase() === 'STANDARD') {
+        // STANDARD 선택 시: selectedPlan=STANDARD, inquiryType=신문사 솔루션 상담, neededService는 고객 선택값 유지
+        if (inquiryTypeHidden) inquiryTypeHidden.value = '신문사 솔루션 상담';
+        if (selectedPlanHidden) selectedPlanHidden.value = 'STANDARD';
+        // 만약 고객이 아직 서비스를 선택하지 않았다면 선택 유도 펄스 효과
+        if (neededServiceSelect && neededServiceSelect.selectedIndex <= 0) {
+          highlightInput(neededServiceSelect);
+        }
+        return;
+      } else if (plan.toUpperCase() === 'AI PRO') {
+        // AI PRO 선택 시: selectedPlan=AI PRO, inquiryType=AI 운영 시스템 도입 상담, neededService=AI 통합 CMS
+        targetNeededService = 'AI 통합 CMS';
+        if (inquiryTypeHidden) inquiryTypeHidden.value = 'AI 운영 시스템 도입 상담';
+        if (selectedPlanHidden) selectedPlanHidden.value = 'AI PRO';
+      } else if (inquiryType.includes('신규 창간') || plan.includes('신규 구축')) {
         targetNeededService = '홈페이지 신규 구축';
         targetNewspaperStatus = '신규 창간 준비';
       } else if (inquiryType.includes('개편') || plan.includes('개편')) {
@@ -80,10 +93,11 @@ function initServiceButtons() {
         targetNewspaperStatus = '운영 중';
       } else if (inquiryType.includes('AI') || plan.includes('AI') || inquiryType.includes('온라인 데모')) {
         targetNeededService = 'AI 통합 CMS';
-        // 운영 상태는 비워두거나 기존 선택 유지
       } else if (plan.includes('데이터 이전') || inquiryType.includes('데이터 이전')) {
         targetNeededService = '기사·데이터 이전';
         targetNewspaperStatus = '운영 중';
+      } else if (plan.includes('디자인') || plan.includes('개발')) {
+        targetNeededService = '기타';
       }
 
       // 1. 필요한 서비스(neededService) 자동 선택
