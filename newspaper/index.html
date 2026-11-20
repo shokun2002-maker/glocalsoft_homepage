@@ -14,9 +14,12 @@
   <meta property="og:title" content="신문사를 아는 사람이 만듭니다 — 인터넷신문사 통합 운영 SaaS | 글로컬소프트">
   <meta property="og:description"
     content="10여 년의 지역신문 기자 경험을 바탕으로 만든 올인원 신문사 운영 플랫폼. 취재 보조부터 모바일 기사 관리, 지역 광고 배너 운영까지.">
-  <meta property="og:image" content="../assets/hero-bg.png">
+  <meta property="og:image" content="https://glocalsoft.kr/newspaper/assets/public-admin-dashboard.png">
   <meta property="og:url" content="https://glocalsoft.kr/newspaper/">
   <link rel="canonical" href="https://glocalsoft.kr/newspaper/">
+  <meta property="og:locale" content="ko_KR">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/assets/logo.png">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,106 +28,61 @@
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
 
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   <!-- Stylesheets -->
   <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="/site.css">
   <link rel="stylesheet" href="newspaper.css">
+  <script type="module" src="/site.js"></script>
 </head>
 
-<body class="dark-theme">
-  <!-- Ambient Glow Background -->
-  <div class="ambient-glow glow-1"></div>
-  <div class="ambient-glow glow-2"></div>
-
-  <!-- Header / Navigation -->
-  <header id="header" class="navbar">
-    <div class="container nav-container">
-      <a href="../index.html" class="brand-logo" id="brandLogo">
-        <img src="../assets/logo.png" alt="GLOCALSOFT 로고" class="logo-img">
-        <span class="logo-text">GLOCAL<span class="highlight">SOFT</span> <span class="badge-sub">신문사 솔루션</span></span>
-      </a>
-
-      <nav class="nav-menu" id="navMenu">
-        <ul class="nav-list">
-          <li><a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i> 홈</a></li>
-          <li><a href="/newspaper/" class="nav-link active">인터넷신문사</a></li>
-          <li><a href="../index.html#about" class="nav-link">회사소개</a></li>
-          <li><a href="../index.html#services" class="nav-link">서비스</a></li>
-          <li><a href="../index.html#tech" class="nav-link">기술스택</a></li>
-          <li><a href="../index.html#calculator" class="nav-link">견적계산기</a></li>
-          <li><a href="#contact" class="nav-link">문의하기</a></li>
-        </ul>
+<body class="newspaper-page">
+  <a class="skip" href="#main">본문 바로가기</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/" aria-label="글로컬소프트 홈">
+      <img src="/assets/logo.png" alt=""><strong>GLOCAL<span>SOFT</span></strong></a>
+      <button class="menu-button" type="button" aria-controls="site-nav" aria-expanded="false">메뉴 <span aria-hidden="true">☰</span></button>
+      <nav id="site-nav" aria-label="주 메뉴">
+        <a href="/">홈</a>
+        <a href="/newspaper/" aria-current="page">인터넷신문 솔루션</a>
+        <a href="/organization/">단체·협회 SaaS</a>
+        <a href="/public-service/">공공서비스 개발</a>
+        <a href="/#work">개발 사례</a>
+        <a href="/#about">회사 소개</a>
+        <a class="nav-contact" href="#contact">문의하기</a>
       </nav>
-
-      <div class="nav-actions">
-        <a href="tel:010-9354-7929" class="nav-phone-btn">
-          <i class="fa-solid fa-phone"></i> <span>010-9354-7929</span>
-        </a>
-        <a href="#contact" class="btn btn-primary nav-cta">시연 신청</a>
-        <button class="hamburger-btn" id="hamburgerBtn" aria-label="메뉴 열기">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
     </div>
   </header>
-
-  <!-- 1. Hero Section & Background -->
-  <section class="newspaper-hero" id="hero">
-    <div class="container np-hero-container">
-      <div class="np-category-tag">
-        <i class="fa-solid fa-newspaper"></i> 지역 언론 & 인터넷신문 전문 통합 솔루션
-      </div>
-      <h1 class="np-hero-title">
-        신문사를 아는 사람이 만든<br>
-        <span class="gradient-text">AI 통합 운영 솔루션</span>
-      </h1>
-      <p class="np-hero-subtitle">
-        신규 인터넷신문 창간부터 기존 홈페이지 개편, AI 기사 작성과 보도자료 처리, SNS 배포까지.<br>
-        지역신문 현장의 경험을 바탕으로 실제 운영에 필요한 기능을 제공합니다.
-      </p>
-      <p class="np-hero-desc">
-        취재 가기도 바쁜데 홈페이지 관리와 광고 배너까지 혼자 다 챙겨야 하는 지역 언론의 현실,<br>
-        신문을 직접 만들어보지 않은 외주 개발사는 알 수 없습니다.<br>
-        기자의 눈높이에서 가장 단순하고 편리하게 설계한 올인원 SaaS를 만나보세요.
-      </p>
-
-      <div class="np-hero-buttons">
-        <a href="#contact" class="btn btn-gradient btn-lg">
-          <i class="fa-regular fa-paper-plane"></i> 도입 상담 신청
-        </a>
-        <a href="#features" class="btn btn-outline btn-lg">
-          <i class="fa-solid fa-layer-group"></i> 주요 기능 살펴보기
-        </a>
-        <a href="#showcase" class="btn btn-outline btn-lg">
-          <i class="fa-solid fa-desktop"></i> 실제 운영 화면 보기
-        </a>
-      </div>
-
-      <div class="np-trust-bar">
-        <div class="trust-item">
-          <i class="fa-solid fa-pen-nib trust-icon"></i>
-          <div>
-            <strong>10여 년 기자 실무 노하우</strong>
-            <span>현장 취재와 기사 마감의 고충을 누구보다 잘 압니다.</span>
-          </div>
-        </div>
-        <div class="trust-item">
-          <i class="fa-solid fa-mobile-screen-button trust-icon"></i>
-          <div>
-            <strong>모바일 기사 관리 환경</strong>
-            <span>외근 중에도 모바일 환경에서 기사 등록과 출고를 간편하게 지원합니다.</span>
-          </div>
-        </div>
-        <div class="trust-item">
-          <i class="fa-solid fa-robot trust-icon"></i>
-          <div>
-            <strong>AI 업무 보조 융합 연구</strong>
-            <span>보도자료 정리와 초안 구성 등 반복 업무 경감을 지원합니다.</span>
-          </div>
+  <main id="main">
+  <section class="section detail-intro" id="hero">
+    <div class="wrap category-inner">
+      <div>
+        <p class="eyebrow">AI INTERNET NEWS CMS</p>
+        <h1 class="category-title">신문사를 아는 사람이 만든 <em>AI 통합 운영 솔루션</em></h1>
+        <p class="lead">10년 이상의 지역신문 기자 경험을 바탕으로 만들었습니다. 기사 작성과 승인·발행, 보도자료 처리, SNS 배포, 광고와 독자 홈페이지 운영을 하나의 CMS로 연결합니다.</p>
+        <div class="actions">
+          <a href="#trial" class="button primary">무료 체험 안내</a>
+          <a href="#cms-dashboard" class="button secondary">실제 운영 화면 보기</a>
         </div>
       </div>
+      <figure class="category-visual news-visual">
+        <a class="screen cms-screen" href="#cms-dashboard" aria-label="영광소리 CMS 실제 운영 화면 보기">
+          <div class="screen-bar">영광소리 CMS 관리자</div>
+          <img src="/newspaper/assets/public-admin-dashboard-detail.png" width="1160" height="752" fetchpriority="high" alt="영광소리 CMS 관리자 대시보드의 방문자 통계와 추이">
+        </a>
+        <figcaption>영광소리 운영 화면</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="np-trial" id="trial" aria-labelledby="trial-title">
+    <div class="container">
+      <div>
+        <p class="np-kicker">CMS TRIAL</p>
+        <h2 id="trial-title">무료 체험은 체험번호 발급 후 이용할 수 있습니다.</h2>
+        <p>체험을 신청하면 담당자가 확인 후 8자리 체험번호와 접속 방법을 안내합니다. 발급 전에는 <a href="#showcase">공개된 CMS 운영 화면</a>을 확인할 수 있습니다.</p>
+      </div>
+      <a href="#contact" class="btn btn-primary select-service-btn" data-inquiry-type="AI CMS 무료 체험번호 신청">체험번호 신청하기</a>
     </div>
   </section>
 
@@ -144,58 +102,55 @@
         <!-- Card A: 신규 창간 -->
         <div class="service-type-card" data-service-type="신규 창간">
           <div class="service-type-badge">Track 01</div>
-          <div class="service-type-icon"><i class="fa-solid fa-seedling"></i></div>
           <h3 class="service-type-title">인터넷신문 신규 창간</h3>
           <p class="service-type-target">신규 창간 준비자를 위한 홈페이지 구축</p>
           <ul class="service-type-features">
-            <li><i class="fa-solid fa-check"></i> 신문법상 필수 게재사항(발행인·편집인 등) 반영 지원</li>
-            <li><i class="fa-solid fa-check"></i> 기사 발행 및 운영 환경 원스톱 구성</li>
-            <li><i class="fa-solid fa-check"></i> 검색엔진(네이버·다음·구글) 초기 색인 최적화</li>
-            <li><i class="fa-solid fa-check"></i> 직관적인 기자/관리자 사용법 실무 안내 지원</li>
+            <li>신문법상 필수 게재사항(발행인·편집인 등) 반영 지원</li>
+            <li>기사 발행 및 운영 환경 원스톱 구성</li>
+            <li>검색엔진(네이버·다음·구글) 초기 색인 최적화</li>
+            <li>직관적인 기자/관리자 사용법 실무 안내 지원</li>
           </ul>
           <div class="service-type-action">
             <a href="#contact" class="btn btn-outline btn-block select-service-btn" data-inquiry-type="신문사 신규 창간 상담">
-              신규 창간 상담 <i class="fa-solid fa-arrow-right"></i>
-            </a>
+              신규 창간 상담
+</a>
           </div>
         </div>
 
         <!-- Card B: 홈페이지 개편 (Featured) -->
         <div class="service-type-card featured" data-service-type="홈페이지 개편">
-          <div class="service-type-popular-badge"><i class="fa-solid fa-check"></i> 기존 운영 신문사 대상</div>
+          <div class="service-type-popular-badge">기존 운영 신문사 대상</div>
           <div class="service-type-badge accent">Track 02</div>
-          <div class="service-type-icon accent"><i class="fa-solid fa-arrows-rotate"></i></div>
           <h3 class="service-type-title">기존 신문사 홈페이지 개편</h3>
           <p class="service-type-target">노후 홈페이지 개선 & 모바일 반응형 개편</p>
           <ul class="service-type-features">
-            <li><i class="fa-solid fa-check"></i> 느리고 답답한 노후 웹사이트 환경 전면 개선</li>
-            <li><i class="fa-solid fa-check"></i> 최신 모바일·태블릿 최적화 반응형 UI 개편</li>
-            <li><i class="fa-solid fa-check"></i> <strong>기존 기사·사진 데이터 이전 가능 여부 사전 정밀 분석</strong></li>
-            <li><i class="fa-solid fa-check"></i> 기존 독자 검색 링크 보존(URL 리다이렉트 지원)</li>
+            <li>느리고 답답한 노후 웹사이트 환경 전면 개선</li>
+            <li>최신 모바일·태블릿 최적화 반응형 UI 개편</li>
+            <li><strong>기존 기사·사진 데이터 이전 가능 여부 사전 정밀 분석</strong></li>
+            <li>기존 독자 검색 링크 보존(URL 리다이렉트 지원)</li>
           </ul>
           <div class="service-type-action">
             <a href="#contact" class="btn btn-gradient btn-block select-service-btn" data-inquiry-type="기존 신문사 홈페이지 개편 상담">
-              홈페이지 개편 상담 <i class="fa-solid fa-arrow-right"></i>
-            </a>
+              홈페이지 개편 상담
+</a>
           </div>
         </div>
 
         <!-- Card C: AI 통합 CMS 도입 -->
         <div class="service-type-card" data-service-type="AI CMS 도입">
           <div class="service-type-badge">Track 03</div>
-          <div class="service-type-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
           <h3 class="service-type-title">AI 통합 CMS 도입</h3>
           <p class="service-type-target">취재·편집 효율화를 위한 AI 시스템 도입</p>
           <ul class="service-type-features">
-            <li><i class="fa-solid fa-check"></i> AI 대화형 기사 초안 작성 및 취재노트 지원</li>
-            <li><i class="fa-solid fa-check"></i> 보도자료(이메일·HWP) 신속 처리 및 기사화 지원</li>
-            <li><i class="fa-solid fa-check"></i> 기자 기사 작성부터 데스크 승인·발행 관리</li>
-            <li><i class="fa-solid fa-check"></i> SNS 배포 작업 관리 및 광고 배너 운영 지원</li>
+            <li>AI 대화형 기사 초안 작성 및 취재노트 지원</li>
+            <li>보도자료(이메일·HWP) 신속 처리 및 기사화 지원</li>
+            <li>기자 기사 작성부터 데스크 승인·발행 관리</li>
+            <li>SNS 배포 작업 관리 및 광고 배너 운영 지원</li>
           </ul>
           <div class="service-type-action">
             <a href="#contact" class="btn btn-outline btn-block select-service-btn" data-inquiry-type="AI 운영 시스템 도입 상담">
-              AI CMS 도입 상담 <i class="fa-solid fa-arrow-right"></i>
-            </a>
+              AI CMS 도입 상담
+</a>
           </div>
         </div>
       </div>
@@ -208,80 +163,26 @@
     <div class="container">
       <div class="section-header text-center">
         <span class="section-subtitle">WHY GLOCALSOFT</span>
-        <h2 class="section-title">신문사 홈페이지는 구축보다 운영이 중요합니다.</h2>
-        <p class="section-desc">
-          글로컬소프트는 지역신문 운영 경험을 바탕으로 기사를 작성하고, 편집하고, 발행하고, 독자에게 전달하는 실제 업무 흐름까지 고려한 시스템을 제공합니다.
-        </p>
+        <h2 class="section-title">지역신문의 운영 흐름에 맞춘 CMS</h2>
       </div>
 
       <div class="advantages-grid">
-        <!-- Advantage A -->
-        <div class="advantage-card">
-          <div class="advantage-header">
-            <span class="advantage-tag">차별점 01</span>
-            <div class="advantage-icon"><i class="fa-solid fa-user-pen"></i></div>
-          </div>
+        <article class="advantage-card">
           <h3>지역신문 실무 경험 기반</h3>
-          <p>
-            10여 년간 지역신문 현장을 직접 취재하며 겪은 고충을 바탕으로, 취재부터 마감까지 불필요한 단계를 과감히 줄였습니다. 1인 및 소규모 편집국의 운영 환경에 최적화되어 있습니다.
-          </p>
-          <ul class="advantage-points">
-            <li><i class="fa-solid fa-check"></i> 지역신문 현장의 실제 업무 구조 이해</li>
-            <li><i class="fa-solid fa-check"></i> 1인 및 소규모 편집국 운영 환경 고려</li>
-            <li><i class="fa-solid fa-check"></i> 외주사 의존 없는 자체 관리자 중심 설계</li>
-          </ul>
-        </div>
-
-        <!-- Advantage B -->
-        <div class="advantage-card">
-          <div class="advantage-header">
-            <span class="advantage-tag">차별점 02</span>
-            <div class="advantage-icon"><i class="fa-solid fa-brain"></i></div>
-          </div>
-          <h3>AI를 활용한 업무 효율화</h3>
-          <p>
-            쏟아지는 지자체·기관 보도자료 정리와 취재 메모 바탕의 기사 초안 작성 등 반복적인 콘텐츠 관리 업무를 AI가 보조하여 기자의 시간을 본연의 심층 취재에 집중할 수 있도록 돕습니다.
-          </p>
-          <ul class="advantage-points">
-            <li><i class="fa-solid fa-check"></i> 대화형 기사 초안 작성 지원</li>
-            <li><i class="fa-solid fa-check"></i> 이메일 보도자료 수신 및 신속 정리 지원</li>
-            <li><i class="fa-solid fa-check"></i> 오탈자 점검 및 문맥 흐름 보조</li>
-          </ul>
-        </div>
-
-        <!-- Advantage C -->
-        <div class="advantage-card">
-          <div class="advantage-header">
-            <span class="advantage-tag">차별점 03</span>
-            <div class="advantage-icon"><i class="fa-solid fa-diagram-project"></i></div>
-          </div>
-          <h3>기사 작성부터 발행까지 통합</h3>
-          <p>
-            기자·편집자·관리자 권한 체계를 분리하여 현장 취재 기자의 기사 입력부터 데스크 승인, 긴급 속보 발행, 카카오톡 및 SNS 배포 연계까지 한곳에서 원스톱으로 관리합니다.
-          </p>
-          <ul class="advantage-points">
-            <li><i class="fa-solid fa-check"></i> 기자·편집자·관리자 다중 권한 관리</li>
-            <li><i class="fa-solid fa-check"></i> 기사 검토·승인·예약 발행 흐름</li>
-            <li><i class="fa-solid fa-check"></i> 카카오톡 및 SNS 채널 배포 연계</li>
-          </ul>
-        </div>
-
-        <!-- Advantage D -->
-        <div class="advantage-card">
-          <div class="advantage-header">
-            <span class="advantage-tag">차별점 04</span>
-            <div class="advantage-icon"><i class="fa-solid fa-chart-line"></i></div>
-          </div>
-          <h3>운영과 수익 모델까지 고려</h3>
-          <p>
-            신문사의 지속 가능한 경영을 위해 코딩 없이도 메인 헤더와 기사 지면별 광고 배너를 직접 등록하고, 지역 밀착형 생활광고(부음·알림 등)를 손쉽게 운영할 수 있도록 지원합니다.
-          </p>
-          <ul class="advantage-points">
-            <li><i class="fa-solid fa-check"></i> 와이드 배너·팝업 광고 직접 운영</li>
-            <li><i class="fa-solid fa-check"></i> 지역 소상공인 광고 및 생활광고 관리</li>
-            <li><i class="fa-solid fa-check"></i> 실제 제공 범위에 맞춘 정직한 기능 안내</li>
-          </ul>
-        </div>
+          <p>10년 이상의 기자 경험을 바탕으로 1인·소규모 편집국이 직접 운영할 수 있게 설계했습니다.</p>
+        </article>
+        <article class="advantage-card">
+          <h3>AI 기사 작성과 보도자료 처리</h3>
+          <p>취재 메모로 기사 초안을 작성하고 기관 보도자료를 정리하는 반복 업무를 줄입니다.</p>
+        </article>
+        <article class="advantage-card">
+          <h3>기사 작성·승인·발행·배포 통합</h3>
+          <p>기자와 데스크가 역할에 따라 기사를 검토하고, 예약 발행과 SNS 배포를 한곳에서 관리합니다.</p>
+        </article>
+        <article class="advantage-card">
+          <h3>배너와 생활광고 직접 운영</h3>
+          <p>지면·팝업 배너의 노출 일정을 지정하고 지역 생활광고를 관리자 화면에서 관리합니다.</p>
+        </article>
       </div>
 
       <div class="advantages-cta-banner">
@@ -291,11 +192,11 @@
         </div>
         <div class="advantages-cta-buttons">
           <a href="#contact" class="btn btn-gradient select-service-btn" data-inquiry-type="신문사 신규 창간 상담">
-            도입 상담 신청하기 <i class="fa-solid fa-arrow-right"></i>
-          </a>
+            도입 상담 신청하기
+</a>
           <a href="#showcase" class="btn btn-outline">
-            실제 운영 화면 보기 <i class="fa-solid fa-desktop"></i>
-          </a>
+            실제 운영 화면 보기
+</a>
         </div>
       </div>
     </div>
@@ -306,135 +207,74 @@
     <div class="container">
       <div class="section-header text-center">
         <span class="section-subtitle">CORE CAPABILITIES</span>
-        <h2 class="section-title">신문사 운영을 혁신하는 6대 핵심 기능</h2>
-        <p class="section-desc">
-          현장의 기자가 겪는 실제 문제를 해결하고, 신문사 운영 효율을 극대화하는 실용적 기능을 확인하세요.
-        </p>
+        <h2 class="section-title">신문사 운영을 돕는 핵심 기능</h2>
       </div>
 
       <div class="features-grid">
-        <!-- Feature 1: AI 대화형 기사 작성 -->
-        <div class="feature-card">
-          <div class="feature-header">
-            <div class="feature-icon-box"><i class="fa-solid fa-brain"></i></div>
-            <span class="status-badge developing"><i class="fa-solid fa-flask"></i> 실서버 적용 및 고도화 중</span>
-          </div>
-          <h3>1. AI 대화형 기사 작성</h3>
-          <div class="feature-problem">
-            <strong><i class="fa-solid fa-triangle-exclamation"></i> 현장의 문제</strong>
-            <p>취재 후 백지 상태에서 기사를 구성하고 마감 시간에 쫓기며 문맥을 다듬는 데 많은 시간이 소모됩니다.</p>
-          </div>
-          <div class="feature-solution">
-            <strong><i class="fa-solid fa-circle-check"></i> 해결 방식</strong>
-            <p>취재 메모와 인터뷰 요점을 AI와 대화하듯 입력하면 표준 기사 양식의 초안을 신속히 생성하고 오탈자 교정을 보조합니다.</p>
-          </div>
+        <article class="feature-card">
+          <h3>AI 대화형 기사 작성</h3>
+          <p class="feature-effect">취재 메모와 인터뷰 요점으로 기사 초안을 작성합니다.</p>
+          <div class="feature-header"><span class="status-badge developing">실서버 적용 및 고도화 중</span></div>
+          <details class="feature-details">
+            <summary>작성 지원 범위</summary>
+            <p>표준 기사 양식으로 초안을 구성하며 오탈자 교정을 보조합니다.</p>
+          </details>
           <div class="feature-card-footer">
-            <a href="#showcase" class="feature-link"><i class="fa-solid fa-desktop"></i> 실제 관리 화면 보기</a>
+            <a href="#showcase" class="feature-link">실제 관리 화면 보기</a>
           </div>
-        </div>
-
-        <!-- Feature 2: 이메일 보도자료 수신 및 AI 처리 -->
-        <div class="feature-card">
-          <div class="feature-header">
-            <div class="feature-icon-box"><i class="fa-solid fa-envelope-open-text"></i></div>
-            <span class="status-badge developing"><i class="fa-solid fa-flask"></i> 실서버 적용 및 고도화 중</span>
-          </div>
-          <h3>2. 이메일 보도자료 수신 및 AI 처리</h3>
-          <div class="feature-problem">
-            <strong><i class="fa-solid fa-triangle-exclamation"></i> 현장의 문제</strong>
-            <p>매일 쏟아지는 지자체·기관 보도자료(HWP)를 일일이 열고 복사하느라 정작 중요한 현장 취재 시간이 부족합니다.</p>
-          </div>
-          <div class="feature-solution">
-            <strong><i class="fa-solid fa-circle-check"></i> 해결 방식</strong>
-            <p>전용 수신함으로 들어온 보도자료의 핵심 팩트를 추출하여 기사체로 빠르게 정리하고 사진과 함께 편집창으로 연결합니다.</p>
-          </div>
+        </article>
+        <article class="feature-card">
+          <h3>이메일 보도자료 수신·정리</h3>
+          <p class="feature-effect">전용 수신함에서 보도자료를 기사 초안으로 바꿉니다.</p>
+          <div class="feature-header"><span class="status-badge developing">실서버 적용 및 고도화 중</span></div>
+          <details class="feature-details">
+            <summary>처리 방식</summary>
+            <p>기관 보도자료의 핵심 정보를 추출하고 사진과 함께 기사 편집 화면으로 연결합니다.</p>
+          </details>
           <div class="feature-card-footer">
-            <a href="#showcase" class="feature-link"><i class="fa-solid fa-desktop"></i> 실제 관리 화면 보기</a>
+            <a href="#showcase" class="feature-link">실제 관리 화면 보기</a>
           </div>
-        </div>
-
-        <!-- Feature 3: 기사 편집·승인·발행 관리 -->
-        <div class="feature-card">
-          <div class="feature-header">
-            <div class="feature-icon-box"><i class="fa-solid fa-pen-to-square"></i></div>
-            <span class="status-badge verified"><i class="fa-solid fa-award"></i> 영광소리 실서버 검증 완료</span>
-          </div>
-          <h3>3. 기사 편집·승인·발행 관리</h3>
-          <div class="feature-problem">
-            <strong><i class="fa-solid fa-triangle-exclamation"></i> 현장의 문제</strong>
-            <p>구형 CMS는 사용법이 복잡하고 모바일 환경에서 긴급 수정이나 출고 승인을 하려면 사무실 컴퓨터로 돌아와야 합니다.</p>
-          </div>
-          <div class="feature-solution">
-            <strong><i class="fa-solid fa-circle-check"></i> 해결 방식</strong>
-            <p>직관적인 웹 에디터와 모바일 반응형 관리 환경, 기자-데스크 간 승인 및 예약 발행 워크플로우를 완벽 지원합니다.</p>
-          </div>
+        </article>
+        <article class="feature-card">
+          <h3>기사 편집·승인·발행</h3>
+          <p class="feature-effect">모바일에서도 기사를 편집하고 승인하거나 예약 발행할 수 있습니다.</p>
+          <div class="feature-header"><span class="status-badge verified">영광소리 실서버 검증 완료</span></div>
           <div class="feature-card-footer">
-            <a href="#showcase" class="feature-link"><i class="fa-solid fa-desktop"></i> 실제 기사 편집 화면 보기</a>
+            <a href="#showcase" class="feature-link">실제 기사 편집 화면 보기</a>
           </div>
-        </div>
-
-        <!-- Feature 4: SNS 콘텐츠 작성 및 배포 -->
-        <div class="feature-card">
-          <div class="feature-header">
-            <div class="feature-icon-box"><i class="fa-solid fa-share-nodes"></i></div>
-            <span class="status-badge ready"><i class="fa-solid fa-circle-check"></i> 외부 고객 제공 준비</span>
-          </div>
-          <h3>4. SNS 콘텐츠 작성 및 배포</h3>
-          <div class="feature-problem">
-            <strong><i class="fa-solid fa-triangle-exclamation"></i> 현장의 문제</strong>
-            <p>기사를 발행한 후 카카오톡, 페이스북, 밴드 등에 일일이 링크를 복사하고 설명글을 작성하는 작업이 번거롭습니다.</p>
-          </div>
-          <div class="feature-solution">
-            <strong><i class="fa-solid fa-circle-check"></i> 해결 방식</strong>
-            <p>기사별 카카오톡 공유 미리보기와 소셜 채널용 요약 문구를 생성하고 배포 작업을 관리자 화면에서 체계적으로 관리합니다.</p>
-          </div>
+        </article>
+        <article class="feature-card">
+          <h3>SNS 문구 작성·배포</h3>
+          <p class="feature-effect">발행 기사에 맞춰 채널별 문구와 카카오톡 공유 미리보기를 만듭니다.</p>
+          <div class="feature-header"><span class="status-badge ready">외부 고객 제공 준비</span></div>
           <div class="feature-card-footer">
-            <a href="#showcase" class="feature-link"><i class="fa-solid fa-desktop"></i> SNS 배포 화면 보기</a>
+            <a href="#showcase" class="feature-link">SNS 배포 화면 보기</a>
           </div>
-        </div>
-
-        <!-- Feature 5: 광고·생활광고 운영 관리 -->
-        <div class="feature-card">
-          <div class="feature-header">
-            <div class="feature-icon-box"><i class="fa-solid fa-rectangle-ad"></i></div>
-            <span class="status-badge verified"><i class="fa-solid fa-award"></i> 영광소리 실서버 검증 완료</span>
-          </div>
-          <h3>5. 광고·생활광고 운영 관리</h3>
-          <div class="feature-problem">
-            <strong><i class="fa-solid fa-triangle-exclamation"></i> 현장의 문제</strong>
-            <p>배너 하나 올릴 때마다 외주 개발사에 요청해야 하고, 기간이 지난 광고를 내리거나 생활광고를 관리하기 어렵습니다.</p>
-          </div>
-          <div class="feature-solution">
-            <strong><i class="fa-solid fa-circle-check"></i> 해결 방식</strong>
-            <p>코딩 없이 메인 와이드 배너와 지면별 배너 등록, 노출 기간 자동 제어, 지역 생활광고(부음·알림)를 직접 관리합니다.</p>
-          </div>
+        </article>
+        <article class="feature-card">
+          <h3>배너·생활광고 운영</h3>
+          <p class="feature-effect">배너 위치와 노출 일정을 지정하고 생활광고를 직접 관리합니다.</p>
+          <div class="feature-header"><span class="status-badge verified">영광소리 실서버 검증 완료</span></div>
+          <details class="feature-details">
+            <summary>시연 범위</summary>
+            <p>AI 광고제작실에서 만든 시안을 광고 관리로 보내 검토하고 게시 일정을 지정하는 흐름을 확인할 수 있습니다.</p>
+          </details>
           <div class="feature-card-footer">
-            <a href="#showcase" class="feature-link"><i class="fa-solid fa-desktop"></i> 광고 배너 게재 화면 보기</a>
+            <a href="#showcase" class="feature-link">광고 배너 게재 화면 보기</a>
           </div>
-        </div>
-
-        <!-- Feature 6: 기존 홈페이지 및 기사 데이터 이전 지원 -->
-        <div class="feature-card">
-          <div class="feature-header">
-            <div class="feature-icon-box"><i class="fa-solid fa-database"></i></div>
-            <span class="status-badge notice"><i class="fa-solid fa-magnifying-glass"></i> 사전 기술 분석 후 맞춤 지원</span>
-          </div>
-          <h3>6. 기존 홈페이지 및 기사 데이터 이전 지원</h3>
-          <div class="feature-problem">
-            <strong><i class="fa-solid fa-triangle-exclamation"></i> 현장의 문제</strong>
-            <p>수년간 축적된 수천·수만 건의 소중한 기사와 사진이 유실될까 두려워 노후된 홈페이지를 교체하지 못하고 있습니다.</p>
-          </div>
-          <div class="feature-solution">
-            <strong><i class="fa-solid fa-circle-check"></i> 해결 방식</strong>
-            <p>기존 DB 구조와 첨부파일을 사전에 정밀 분석하여 원본 데이터 보존과 검증을 우선하는 안전한 이전 방안과 기존 검색 링크 보존(리다이렉트)을 설계합니다.</p>
-          </div>
-          <div class="feature-sub-notice">
-            ※ 모든 시스템의 데이터를 무조건 이전할 수 있는 것은 아니며, 기존 업체의 DB 접근 권한 부여 여부, 데이터 포맷 및 파일 구조에 따라 사전 기술 검토 후 지원 범위가 확정됩니다.
-          </div>
+        </article>
+        <article class="feature-card">
+          <h3>홈페이지·기사 데이터 이전</h3>
+          <p class="feature-effect">기존 기사와 사진을 분석해 데이터 이전과 검색 링크 유지 방안을 설계합니다.</p>
+          <div class="feature-header"><span class="status-badge notice">사전 기술 분석 후 맞춤 지원</span></div>
+          <details class="feature-details">
+            <summary>이전 지원 범위</summary>
+            <p>기존 DB 접근 권한, 데이터 형식과 파일 구조를 검토한 뒤 지원 범위를 확정합니다.</p>
+          </details>
           <div class="feature-card-footer">
-            <a href="#contact" class="feature-link select-service-btn" data-inquiry-type="기존 신문사 홈페이지 개편 상담"><i class="fa-solid fa-comments"></i> 데이터 이전 상담 신청</a>
+            <a href="#contact" class="feature-link select-service-btn" data-inquiry-type="기존 신문사 홈페이지 개편 상담">데이터 이전 상담 신청</a>
           </div>
-        </div>
+        </article>
       </div>
 
       <!-- 신문사 광고 수익 지원 서비스 (Phase 4-1 추가 지시) -->
@@ -451,34 +291,32 @@
           <!-- Card A: 구글 애드센스 연동 지원 -->
           <div class="revenue-card">
             <div class="revenue-card-header">
-              <div class="revenue-icon-box google"><i class="fa-brands fa-google"></i></div>
-              <span class="status-badge ready"><i class="fa-solid fa-circle-check"></i> 신문사 자체 계정 연동 지원</span>
+              <span class="status-badge ready">신문사 자체 계정 연동 지원</span>
             </div>
             <h4>구글 애드센스 연동 지원</h4>
             <p class="revenue-card-desc">
               신문사 자체 Google AdSense 계정을 활용할 수 있도록 광고 배치와 연동 설정을 지원합니다.
             </p>
             <ul class="revenue-points">
-              <li><i class="fa-solid fa-check"></i> 메인 포털 및 기사 지면별 최적 광고 영역 구성 (PC/모바일 반응형)</li>
-              <li><i class="fa-solid fa-check"></i> 사이트별 게시자 ID 및 ads.txt 설정 기술 지원</li>
-              <li><i class="fa-solid fa-check"></i> 일반 스폰서 배너와 구글 자동 광고의 노출 지면 분리 관리</li>
-              <li><i class="fa-solid fa-check"></i> <strong>광고 수익은 각 신문사의 애드센스 계정에 100% 직접 귀속</strong></li>
+              <li>메인 포털 및 기사 지면별 최적 광고 영역 구성 (PC/모바일 반응형)</li>
+              <li>사이트별 게시자 ID 및 ads.txt 설정 기술 지원</li>
+              <li>일반 스폰서 배너와 구글 자동 광고의 노출 지면 분리 관리</li>
+              <li><strong>광고 수익은 각 신문사의 애드센스 계정에 100% 직접 귀속</strong></li>
             </ul>
             <div class="revenue-disclaimer">
               ※ 애드센스 계정은 각 신문사가 직접 소유하고 관리합니다. 구글의 사이트 심사 및 정책 준수는 별도 절차이며, 글로컬소프트가 애드센스 승인이나 특정 광고 수익을 보장하지 않습니다.
             </div>
             <div class="feature-card-footer">
               <a href="#contact" class="feature-link select-service-btn" data-inquiry-type="신문사 솔루션 상담">
-                <i class="fa-solid fa-comments"></i> 애드센스 연동 상담하기
-              </a>
+                애드센스 연동 상담하기
+</a>
             </div>
           </div>
 
           <!-- Card B: 지역 생활광고 전용 페이지 -->
           <div class="revenue-card">
             <div class="revenue-card-header">
-              <div class="revenue-icon-box local"><i class="fa-solid fa-rectangle-list"></i></div>
-              <span class="status-badge developing"><i class="fa-solid fa-flask"></i> 고도화 중 · 맞춤 도입 상담</span>
+              <span class="status-badge developing">고도화 중 · 맞춤 도입 상담</span>
             </div>
             <h4>지역 생활광고 전용 페이지</h4>
             <p class="revenue-card-desc">
@@ -495,18 +333,18 @@
               <span class="ad-tag">생활서비스</span>
             </div>
             <ul class="revenue-points">
-              <li><i class="fa-solid fa-check"></i> 생활광고 전용 목록 및 모바일 최적화 상세 뷰어 구성</li>
-              <li><i class="fa-solid fa-check"></i> 광고주 접수 및 관리자 검토·승인 워크플로우</li>
-              <li><i class="fa-solid fa-check"></i> 광고별 게시 시작일 및 마감일 자동 상태 관리</li>
-              <li><i class="fa-solid fa-check"></i> <strong>생활광고 광고료는 신문사가 직접 결정하고 전액 수취</strong></li>
+              <li>생활광고 전용 목록 및 모바일 최적화 상세 뷰어 구성</li>
+              <li>광고주 접수 및 관리자 검토·승인 워크플로우</li>
+              <li>광고별 게시 시작일 및 마감일 자동 상태 관리</li>
+              <li><strong>생활광고 광고료는 신문사가 직접 결정하고 전액 수취</strong></li>
             </ul>
             <div class="revenue-disclaimer">
               ※ 영광소리 CMS에서 개발 중인 AI 통합 광고관리 시스템과 연계할 수 있는 구조로 현재 고도화 중이며, 신문사 도입 희망 시 세부 기능과 도입 범위를 맞춤 상담으로 안내해 드립니다.
             </div>
             <div class="feature-card-footer">
               <a href="#contact" class="feature-link select-service-btn" data-inquiry-type="신문사 솔루션 상담">
-                <i class="fa-solid fa-comments"></i> 생활광고 도입 상담하기
-              </a>
+                생활광고 도입 상담하기
+</a>
             </div>
           </div>
         </div>
@@ -514,7 +352,7 @@
 
       <div class="features-cta-banner">
         <div class="features-cta-content">
-          <i class="fa-solid fa-handshake-angle features-cta-icon"></i>
+
           <div>
             <strong>필요한 기능만 골라 우리 신문사에 딱 맞게 구성하세요</strong>
             <p>기존 기사 데이터 보존 여부부터 AI 기능 도입까지, 대표자가 직접 실무 환경에 맞춰 친절하게 상담해 드립니다.</p>
@@ -522,8 +360,8 @@
         </div>
         <div class="features-cta-action">
           <a href="#contact" class="btn btn-gradient select-service-btn" data-inquiry-type="기존 신문사 홈페이지 개편 상담">
-            기능 도입 상담 신청하기 <i class="fa-solid fa-arrow-right"></i>
-          </a>
+            기능 도입 상담 신청하기
+</a>
         </div>
       </div>
     </div>
@@ -534,120 +372,17 @@
     <div class="container">
       <div class="section-header text-center">
         <span class="section-subtitle">REAL SERVICE & CMS SHOWCASE</span>
-        <h2 class="section-title">독자 서비스부터 AI 관리자까지, 실제 운영 화면</h2>
+        <h2 class="section-title">AI CMS 실제 운영 화면</h2>
         <p class="section-desc">
           10여 년의 현장 기자 경험을 바탕으로 설계하고 영광소리(ygsori.com)에서 실무 검증한 통합 운영 시스템입니다.
         </p>
-      </div>
-
-      <!-- Area A: 독자에게 보이는 신문사 홈페이지 -->
-      <div class="showcase-area">
-        <div class="showcase-area-header">
-          <div class="showcase-area-tag">
-            <i class="fa-solid fa-globe"></i> AREA A · 독자 서비스
-          </div>
-          <h3 class="showcase-area-title">독자에게 보이는 신문사 홈페이지</h3>
-          <p class="showcase-area-desc">
-            가독성을 극대화한 정통 정론지 표준 레이아웃과 반응형 모바일 뷰, 기사 상세 및 광고 배치 실무입니다.
-          </p>
-        </div>
-
-        <div class="showcase-grid">
-          <!-- Showcase 1: 독자용 메인 포털 PC -->
-          <div class="mockup-window">
-            <div class="mockup-top-bar">
-              <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
-              <span class="mockup-title">ygsori.com / news-home (PC)</span>
-            </div>
-            <div class="mockup-body">
-              <div class="mockup-screen-container" data-src="assets/ygsori-pc-homepage.png"
-                data-title="영광소리 인터넷신문 공식 포털 (PC 뷰)">
-                <span class="mockup-live-badge"><i class="fa-solid fa-circle-check"></i> 실제 운영 서비스</span>
-                <img src="assets/ygsori-pc-homepage.png" alt="영광소리 공식 포털 PC 메인 화면" class="mockup-screen-img"
-                  loading="lazy">
-                <div class="mockup-zoom-overlay">
-                  <i class="fa-solid fa-magnifying-glass-plus"></i>
-                  <span>클릭하여 고화질 원본 확대</span>
-                </div>
-              </div>
-              <h4>정통 언론사 표준 독자 포털 (PC)</h4>
-              <p>자사 미디어 영광소리(ygsori.com)의 실제 독자 서비스 화면으로, 지역 정론지 표준에 맞춘 헤드라인·주요 기사·카테고리 다단 배치를 지원합니다.</p>
-            </div>
-          </div>
-
-          <!-- Showcase 2: 모바일 반응형 독자 뷰 -->
-          <div class="mockup-window">
-            <div class="mockup-top-bar">
-              <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
-              <span class="mockup-title">ygsori.com / mobile-view (390px)</span>
-            </div>
-            <div class="mockup-body">
-              <div class="mockup-screen-container" data-src="assets/ygsori-mobile-homepage.png"
-                data-title="영광소리 모바일 반응형 독자 뷰 (스마트폰 최적화)">
-                <span class="mockup-live-badge"><i class="fa-solid fa-circle-check"></i> 실제 운영 서비스</span>
-                <img src="assets/ygsori-mobile-homepage.png" alt="영광소리 모바일 홈 화면" class="mockup-screen-img"
-                  loading="lazy">
-                <div class="mockup-zoom-overlay">
-                  <i class="fa-solid fa-magnifying-glass-plus"></i>
-                  <span>클릭하여 고화질 원본 확대</span>
-                </div>
-              </div>
-              <h4>모바일 환경 반응형 독자 뷰</h4>
-              <p>스마트폰 화면에서도 기사 가독성을 극대화한 모바일 레이아웃으로, 긴급 뉴스 속보와 상단 메인 광고 배너가 깔끔하게 반응합니다.</p>
-            </div>
-          </div>
-
-          <!-- Showcase 3: 기사 상세 & 표준 타이포그래피 -->
-          <div class="mockup-window">
-            <div class="mockup-top-bar">
-              <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
-              <span class="mockup-title">ygsori.com / article-detail (Justify)</span>
-            </div>
-            <div class="mockup-body">
-              <div class="mockup-screen-container" data-src="assets/ygsori-article-detail.png"
-                data-title="신문사 표준 기사 상세 뷰어 (양쪽 정렬 & 기자 프로필)">
-                <span class="mockup-live-badge"><i class="fa-solid fa-circle-check"></i> 실제 운영 서비스</span>
-                <img src="assets/ygsori-article-detail.png" alt="영광소리 기사 상세 화면" class="mockup-screen-img"
-                  loading="lazy">
-                <div class="mockup-zoom-overlay">
-                  <i class="fa-solid fa-magnifying-glass-plus"></i>
-                  <span>클릭하여 고화질 원본 확대</span>
-                </div>
-              </div>
-              <h4>정론지 표준 기사 상세 & 바이라인</h4>
-              <p>신문사 표준인 본문 양쪽 정렬(Justify) 규칙과 기자 실명 바이라인 프로필, 본문 맞춤 광고가 유기적으로 연동된 실제 기사 뷰어입니다.</p>
-            </div>
-          </div>
-
-          <!-- Showcase 4: 광고 배너 게재 실무 -->
-          <div class="mockup-window">
-            <div class="mockup-top-bar">
-              <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
-              <span class="mockup-title">ygsori.com / live-ads (1200x200 & 4:3)</span>
-            </div>
-            <div class="mockup-body">
-              <div class="mockup-screen-container" data-src="assets/ygsori-live-ads-pc.png"
-                data-title="지역 맞춤형 광고 배너 게재 실무 (와이드 헤더 & 사이드 배너)">
-                <span class="mockup-live-badge"><i class="fa-solid fa-circle-check"></i> 실제 운영 서비스</span>
-                <img src="assets/ygsori-live-ads-pc.png" alt="영광소리 실제 광고 배너 게재 화면" class="mockup-screen-img"
-                  loading="lazy">
-                <div class="mockup-zoom-overlay">
-                  <i class="fa-solid fa-magnifying-glass-plus"></i>
-                  <span>클릭하여 고화질 원본 확대</span>
-                </div>
-              </div>
-              <h4>지역 광고 배너 실무 운영 & 수익화</h4>
-              <p>1200x200 와이드 헤더 배너와 4:3 지면 배너를 코딩 없이 등록하고, 시작일과 마감일을 지정해 지역 광고 수익화를 실현한 실제 사례입니다.</p>
-            </div>
-          </div>
-        </div>
       </div>
 
       <!-- Area B: 신문사를 운영하는 AI 통합 관리자 -->
       <div class="showcase-area showcase-area-admin">
         <div class="showcase-area-header">
           <div class="showcase-area-tag tag-admin">
-            <i class="fa-solid fa-screwdriver-wrench"></i> AREA B · AI 통합 관리 시스템
+            AI 통합 관리 시스템
           </div>
           <h3 class="showcase-area-title">신문사 운영, 이제 하나의 시스템으로.</h3>
           <p class="showcase-area-desc">
@@ -659,22 +394,19 @@
           <!-- Admin Showcase 1: AI 기사 작성실 -->
           <div class="mockup-window">
             <div class="mockup-top-bar">
-              <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
               <span class="mockup-title">admin/ai-writer (기자와 AI의 협업)</span>
             </div>
             <div class="mockup-body">
               <div class="mockup-screen-container" data-src="assets/public-admin-ai-writer.png" data-title="AI 기사 작성실">
-                <span class="mockup-live-badge"><i class="fa-solid fa-circle-check"></i> 실제 서비스 화면</span>
+                <span class="mockup-live-badge">실제 서비스 화면</span>
                 <img src="assets/public-admin-ai-writer.png" alt="AI 기사 작성실 화면" class="mockup-screen-img"
                   onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='flex';"
                   loading="lazy">
                 <div class="mockup-screen-placeholder">
-                  <i class="fa-solid fa-brain"></i>
                   <strong>AI 기사 작성실</strong>
                   <span>보안 인증 지침 준수 · 1:1 온라인 데모 제공</span>
                 </div>
                 <div class="mockup-zoom-overlay">
-                  <i class="fa-solid fa-magnifying-glass-plus"></i>
                   <span>클릭하여 고화질 원본 확대</span>
                 </div>
               </div>
@@ -683,80 +415,23 @@
             </div>
           </div>
 
-          <!-- Admin Showcase 2: AI 보도자료 자동화 -->
-          <div class="mockup-window">
-            <div class="mockup-top-bar">
-              <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
-              <span class="mockup-title">admin/inbox (보도자료 수신 및 변환)</span>
-            </div>
-            <div class="mockup-body">
-              <div class="mockup-screen-container" data-src="assets/public-admin-inbox.png" data-title="AI 보도자료 수신 및 재구성">
-                <span class="mockup-live-badge"><i class="fa-solid fa-circle-check"></i> 실제 서비스 화면</span>
-                <img src="assets/public-admin-inbox.png" alt="AI 보도자료 자동화 화면" class="mockup-screen-img"
-                  onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='flex';"
-                  loading="lazy">
-                <div class="mockup-screen-placeholder">
-                  <i class="fa-solid fa-envelope-open-text"></i>
-                  <strong>AI 보도자료 자동화</strong>
-                  <span>보안 인증 지침 준수 · 1:1 온라인 데모 제공</span>
-                </div>
-                <div class="mockup-zoom-overlay">
-                  <i class="fa-solid fa-magnifying-glass-plus"></i>
-                  <span>클릭하여 고화질 원본 확대</span>
-                </div>
-              </div>
-              <h4>AI 보도자료 수신 및 재구성</h4>
-              <p>이메일로 수신된 기관·지자체 보도자료를 분석하여 신문사 문체로 요약·재구성하고 기사화를 지원합니다.</p>
-            </div>
-          </div>
-
-          <!-- Admin Showcase 3: SNS 통합배포센터 -->
-          <div class="mockup-window">
-            <div class="mockup-top-bar">
-              <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
-              <span class="mockup-title">admin/social (소셜 채널 원클릭 배포)</span>
-            </div>
-            <div class="mockup-body">
-              <div class="mockup-screen-container" data-src="assets/public-admin-social.png" data-title="SNS 배포 및 메타데이터 설정">
-                <span class="mockup-live-badge"><i class="fa-solid fa-circle-check"></i> 실제 서비스 화면</span>
-                <img src="assets/public-admin-social.png" alt="SNS 통합배포센터 화면" class="mockup-screen-img"
-                  onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='flex';"
-                  loading="lazy">
-                <div class="mockup-screen-placeholder">
-                  <i class="fa-solid fa-share-nodes"></i>
-                  <strong>SNS 통합배포센터</strong>
-                  <span>보안 인증 지침 준수 · 1:1 온라인 데모 제공</span>
-                </div>
-                <div class="mockup-zoom-overlay">
-                  <i class="fa-solid fa-magnifying-glass-plus"></i>
-                  <span>클릭하여 고화질 원본 확대</span>
-                </div>
-              </div>
-              <h4>SNS 배포 및 메타데이터 설정</h4>
-              <p>발행 기사의 소셜 채널용 카드 및 요약 문구를 구성하고, 채널별 배포 작업을 체계적으로 관리합니다.</p>
-            </div>
-          </div>
-
           <!-- Admin Showcase 4: 통합 관리자 대시보드 -->
-          <div class="mockup-window">
+          <div class="mockup-window" id="cms-dashboard">
             <div class="mockup-top-bar">
-              <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
               <span class="mockup-title">admin/dashboard (CMS 올인원 관제)</span>
             </div>
             <div class="mockup-body">
               <div class="mockup-screen-container" data-src="assets/public-admin-dashboard.png"
                 data-title="통합 기사 관리 및 데스킹 대시보드">
-                <span class="mockup-live-badge"><i class="fa-solid fa-circle-check"></i> 실제 서비스 화면</span>
+                <span class="mockup-live-badge">실제 서비스 화면</span>
                 <img src="assets/public-admin-dashboard.png" alt="통합 관리자 대시보드 화면" class="mockup-screen-img"
                   onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='flex';"
                   loading="lazy">
                 <div class="mockup-screen-placeholder">
-                  <i class="fa-solid fa-chart-pie"></i>
                   <strong>통합 관리자 대시보드</strong>
                   <span>보안 인증 지침 준수 · 1:1 온라인 데모 제공</span>
                 </div>
                 <div class="mockup-zoom-overlay">
-                  <i class="fa-solid fa-magnifying-glass-plus"></i>
                   <span>클릭하여 고화질 원본 확대</span>
                 </div>
               </div>
@@ -765,39 +440,11 @@
             </div>
           </div>
 
-          <!-- Admin Showcase 5: 카카오톡 뉴스 공유 -->
-          <div class="mockup-window">
-            <div class="mockup-top-bar">
-              <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
-              <span class="mockup-title">admin/kakao-share (독자 유입 카드 연동)</span>
-            </div>
-            <div class="mockup-body">
-              <div class="mockup-screen-container" data-src="assets/public-admin-kakao-share.png"
-                data-title="카카오톡 뉴스 전송 및 독자 공유">
-                <span class="mockup-live-badge"><i class="fa-solid fa-circle-check"></i> 실제 서비스 화면</span>
-                <img src="assets/public-admin-kakao-share.png" alt="카카오톡 뉴스 공유 화면" class="mockup-screen-img"
-                  onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='flex';"
-                  loading="lazy">
-                <div class="mockup-screen-placeholder">
-                  <i class="fa-solid fa-comment-dots"></i>
-                  <strong>카카오톡 뉴스 공유</strong>
-                  <span>보안 인증 지침 준수 · 1:1 온라인 데모 제공</span>
-                </div>
-                <div class="mockup-zoom-overlay">
-                  <i class="fa-solid fa-magnifying-glass-plus"></i>
-                  <span>클릭하여 고화질 원본 확대</span>
-                </div>
-              </div>
-              <h4>카카오톡 뉴스 전송 및 독자 공유</h4>
-              <p>기사별 카카오톡 공유 카드 미리보기와 모바일 전송을 통해 지역 주민과 독자 유입을 확대합니다.</p>
-            </div>
-          </div>
-        </div>
+                  </div>
 
         <!-- 관리자 화면 보안 안내 및 1:1 온라인 데모 신청 배너 -->
         <div class="showcase-demo-banner">
           <div class="demo-banner-content">
-            <i class="fa-solid fa-shield-halved demo-banner-icon"></i>
             <div class="demo-banner-text">
               <h3>영광소리 CMS 관리자 대시보드 & AI 기사 에디터는 1:1 온라인 데모로 시연해 드립니다</h3>
               <p>
@@ -808,14 +455,14 @@
           </div>
           <div class="demo-banner-action">
             <a href="#contact" class="btn btn-gradient btn-lg select-service-btn" data-inquiry-type="AI 운영 시스템 도입 상담">
-              <i class="fa-solid fa-desktop"></i> 온라인 데모 신청하기
-            </a>
+              온라인 데모 신청하기
+</a>
           </div>
         </div>
       </div>
 
       <p class="showcase-disclaimer">
-        ※ 위 독자 화면 및 관리자 화면은 주식회사 글로컬소프트가 자체 개발하여 정식 서비스 중인 영광소리(ygsori.com)의 실제 운영 화면입니다. 각 이미지를 클릭하시면 고화질 원본으로 확대하여
+        ※ 위 관리자 화면은 주식회사 글로컬소프트가 자체 개발하여 정식 서비스 중인 영광소리(ygsori.com)의 실제 운영 화면입니다. 각 이미지를 클릭하시면 고화질 원본으로 확대하여
         확인하실 수 있습니다.
       </p>
     </div>
@@ -836,7 +483,6 @@
         <!-- Step 1 -->
         <div class="adoption-step-card">
           <div class="step-num-badge">STEP 01</div>
-          <div class="step-icon"><i class="fa-solid fa-comments"></i></div>
           <h3 class="step-title">상담 신청</h3>
           <p class="step-desc">현재 신문사 운영 상태와 희망 서비스(창간·개편·AI 도입)를 접수합니다.</p>
         </div>
@@ -844,7 +490,6 @@
         <!-- Step 2 -->
         <div class="adoption-step-card">
           <div class="step-num-badge">STEP 02</div>
-          <div class="step-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
           <h3 class="step-title">현황 분석</h3>
           <p class="step-desc">신규 창간 요건 검토, 기존 사이트 및 기사 데이터 상태, 필요 기능을 정밀 진단합니다.</p>
         </div>
@@ -852,7 +497,6 @@
         <!-- Step 3 -->
         <div class="adoption-step-card">
           <div class="step-num-badge">STEP 03</div>
-          <div class="step-icon"><i class="fa-solid fa-desktop"></i></div>
           <h3 class="step-title">온라인 시연</h3>
           <p class="step-desc">원격 화면 공유를 통해 영광소리 CMS 실제 관리자 화면과 AI 기사 작성 기능을 1:1로 시연합니다.</p>
         </div>
@@ -860,7 +504,6 @@
         <!-- Step 4 -->
         <div class="adoption-step-card">
           <div class="step-num-badge">STEP 04</div>
-          <div class="step-icon"><i class="fa-solid fa-file-signature"></i></div>
           <h3 class="step-title">구성 및 견적 제안</h3>
           <p class="step-desc">필요한 기능과 구축·운영 범위를 신문사 여건에 맞게 조율하고 투명한 견적을 제안합니다.</p>
         </div>
@@ -868,7 +511,6 @@
         <!-- Step 5 -->
         <div class="adoption-step-card">
           <div class="step-num-badge">STEP 05</div>
-          <div class="step-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
           <h3 class="step-title">구축 및 이전</h3>
           <p class="step-desc">반응형 신문 사이트 구축, 도메인 연결, 가능한 범위 내 기사 데이터 이전을 안전하게 수행합니다.</p>
         </div>
@@ -876,7 +518,6 @@
         <!-- Step 6 -->
         <div class="adoption-step-card">
           <div class="step-num-badge">STEP 06</div>
-          <div class="step-icon"><i class="fa-solid fa-rocket"></i></div>
           <h3 class="step-title">오픈 및 운영 지원</h3>
           <p class="step-desc">발행인 및 기자단 사용법 교육을 진행하고 약정된 기술 지원 및 유지관리 서비스를 제공합니다.</p>
         </div>
@@ -885,7 +526,6 @@
       <!-- Adoption Bottom CTA -->
       <div class="adoption-bottom-cta">
         <div class="adoption-cta-content">
-          <i class="fa-solid fa-clipboard-check adoption-cta-icon"></i>
           <div>
             <strong>우리 신문사에 필요한 구성부터 상담해 보세요.</strong>
             <p>신문사 현장 경험을 바탕으로 가장 적합한 도입 방식과 예상 범위를 친절하게 안내해 드립니다.</p>
@@ -893,8 +533,8 @@
         </div>
         <div class="adoption-cta-action">
           <a href="#contact" class="btn btn-gradient btn-lg select-service-btn" data-inquiry-type="신문사 신규 창간 상담">
-            <i class="fa-regular fa-paper-plane"></i> 무료 도입 상담 신청
-          </a>
+            무료 도입 상담 신청
+</a>
           <span class="cta-free-notice">※ '무료'는 도입 전 사전 상담 및 견적 안내에 한정되며, 솔루션 구축 및 운영 시에는 협의된 비용이 발생합니다.</span>
         </div>
       </div>
@@ -915,7 +555,7 @@
       <!-- 프로모션 배너: 첫 5개 신문사 한정 초기 구축비 0원 -->
       <div class="pricing-promo-banner">
         <div class="promo-badge-wrap">
-          <span class="promo-badge"><i class="fa-solid fa-gift"></i> 특별 프로모션</span>
+          <span class="promo-badge">특별 프로모션</span>
         </div>
         <div class="promo-content">
           <h3 class="promo-title">출시 기념 프로모션 — 첫 5개 신문사 표준형 초기 구축비 0원</h3>
@@ -923,10 +563,10 @@
             지역 언론의 디지털 전환을 응원하며, 선착순 계약 확정 5개사에 한해 표준형 홈페이지 초기 구축비를 전액 면제해 드립니다.
           </p>
           <ul class="promo-conditions">
-            <li><i class="fa-solid fa-check"></i> 선착순 계약 확정 5개 신문사 한정 (실제 계약 확정 기록 기준)</li>
-            <li><i class="fa-solid fa-check"></i> 최소 12개월 이용 계약 시 적용</li>
-            <li><i class="fa-solid fa-check"></i> 글로컬소프트 표준 디자인 및 기본 카테고리/관리자 설정 포함</li>
-            <li><i class="fa-solid fa-info-circle"></i> 맞춤 디자인, 추가 기능 개발, 기존 기사 데이터 이전은 별도 견적</li>
+            <li>선착순 계약 확정 5개 신문사 한정 (실제 계약 확정 기록 기준)</li>
+            <li>최소 12개월 이용 계약 시 적용</li>
+            <li>글로컬소프트 표준 디자인 및 기본 카테고리/관리자 설정 포함</li>
+            <li>맞춤 디자인, 추가 기능 개발, 기존 기사 데이터 이전은 별도 견적</li>
           </ul>
         </div>
       </div>
@@ -952,26 +592,26 @@
             </div>
           </div>
           <ul class="pricing-feature-list">
-            <li><i class="fa-solid fa-check"></i> 반응형 인터넷신문 홈페이지 구축 (PC/모바일)</li>
-            <li><i class="fa-solid fa-check"></i> 기사 작성·편집·예약 발행 관리</li>
-            <li><i class="fa-solid fa-check"></i> 카테고리 구성 및 기자·관리자 권한 체계</li>
-            <li><i class="fa-solid fa-check"></i> 기본 광고 관리 (메인 헤더·사이드 배너, 팝업)</li>
-            <li><i class="fa-solid fa-check"></i> 구글 애드센스 연동 기술 지원 (자체 계정 연동)</li>
-            <li><i class="fa-solid fa-check"></i> 지역 생활광고 전용 페이지 (선택형 추가 서비스)</li>
-            <li><i class="fa-solid fa-check"></i> 약정된 범위의 안정적인 호스팅 및 유지관리</li>
+            <li>반응형 인터넷신문 홈페이지 구축 (PC/모바일)</li>
+            <li>기사 작성·편집·예약 발행 관리</li>
+            <li>카테고리 구성 및 기자·관리자 권한 체계</li>
+            <li>기본 광고 관리 (메인 헤더·사이드 배너, 팝업)</li>
+            <li>구글 애드센스 연동 기술 지원 (자체 계정 연동)</li>
+            <li>지역 생활광고 전용 페이지 (선택형 추가 서비스)</li>
+            <li>약정된 범위의 안정적인 호스팅 및 유지관리</li>
           </ul>
           <div class="pricing-cta-wrap">
             <a href="#contact" class="btn btn-outline btn-block select-plan-btn" data-plan="STANDARD"
               data-inquiry-type="신문사 솔루션 상담">
-              STANDARD 도입 상담 <i class="fa-solid fa-arrow-right"></i>
-            </a>
+              STANDARD 도입 상담
+</a>
           </div>
         </div>
 
         <!-- Plan 2: AI PRO (Featured) -->
         <div class="pricing-card featured ai-pro" data-plan-card="AI PRO">
           <div class="pricing-popular-badge">
-            <i class="fa-solid fa-wand-magic-sparkles"></i> 추천 플랜 · AI 융합
+            추천 플랜 · AI 융합
           </div>
           <div class="pricing-card-header">
             <span class="pricing-plan-badge accent-badge">AI 혁신형</span>
@@ -990,23 +630,23 @@
             </div>
           </div>
           <ul class="pricing-feature-list">
-            <li class="feature-inherit"><i class="fa-solid fa-check-double"></i> <strong>STANDARD 기본 기능 전체 포함</strong></li>
-            <li class="feature-highlight"><i class="fa-solid fa-wand-magic-sparkles"></i> <strong>AI 대화형 기사 초안 작성 지원</strong></li>
-            <li class="feature-highlight"><i class="fa-solid fa-bolt"></i> <strong>AI 보도자료 요약 및 기사체 변환 지원</strong></li>
-            <li class="feature-highlight"><i class="fa-solid fa-share-nodes"></i> <strong>AI 기반 SNS 콘텐츠 작성 및 배포 관리</strong></li>
-            <li><i class="fa-solid fa-check"></i> 구글 애드센스 연동 기술 지원 (자체 계정 연동)</li>
-            <li><i class="fa-solid fa-check"></i> 지역 생활광고 전용 페이지 (선택형 추가 서비스)</li>
-            <li><i class="fa-solid fa-check"></i> 기자단 협업·데스킹 및 고급 실무 운영 지원</li>
+            <li class="feature-inherit"><strong>STANDARD 기본 기능 전체 포함</strong></li>
+            <li class="feature-highlight"><strong>AI 대화형 기사 초안 작성 지원</strong></li>
+            <li class="feature-highlight"><strong>AI 보도자료 요약 및 기사체 변환 지원</strong></li>
+            <li class="feature-highlight"><strong>AI 기반 SNS 콘텐츠 작성 및 배포 관리</strong></li>
+            <li>구글 애드센스 연동 기술 지원 (자체 계정 연동)</li>
+            <li>지역 생활광고 전용 페이지 (선택형 추가 서비스)</li>
+            <li>기자단 협업·데스킹 및 고급 실무 운영 지원</li>
           </ul>
           <div class="pricing-api-notice">
-            <i class="fa-solid fa-circle-exclamation"></i>
+
             <span><strong>AI API 사용료 별도 안내:</strong> AI PRO의 AI API(OpenAI/Claude 등) 사용료는 월 이용료에 포함되지 않으며, 각 신문사가 자체 API 계정을 개설하여 실사용량만큼 직접 부담합니다. API 키 연동은 상담을 통해 설정 지원 방식으로 안전하게 안내해 드립니다.</span>
           </div>
           <div class="pricing-cta-wrap">
             <a href="#contact" class="btn btn-gradient btn-block select-plan-btn" data-plan="AI PRO"
               data-inquiry-type="AI 운영 시스템 도입 상담">
-              AI PRO 도입 상담 <i class="fa-solid fa-arrow-right"></i>
-            </a>
+              AI PRO 도입 상담
+</a>
           </div>
         </div>
       </div>
@@ -1024,54 +664,50 @@
         <div class="addons-grid">
           <!-- Addon 1: 맞춤형 메인 디자인 -->
           <div class="addon-card">
-            <div class="addon-icon"><i class="fa-solid fa-palette"></i></div>
             <div class="addon-meta">
               <h4>맞춤형 메인 디자인</h4>
               <span class="addon-price">50만 ~ 100만원</span>
             </div>
             <p>신문사 고유의 정체성을 살린 전용 메인 지면 레이아웃, 브랜드 컬러 및 맞춤형 위젯 디자인</p>
             <a href="#contact" class="addon-link select-plan-btn" data-plan="맞춤형 메인 디자인" data-inquiry-type="신문사 솔루션 상담">
-              디자인 상담 <i class="fa-solid fa-chevron-right"></i>
-            </a>
+              디자인 상담
+</a>
           </div>
 
           <!-- Addon 2: 기존 신문사 홈페이지 개편 -->
           <div class="addon-card">
-            <div class="addon-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
             <div class="addon-meta">
               <h4>기존 홈페이지 전면 개편</h4>
               <span class="addon-price">50만 ~ 150만원</span>
             </div>
             <p>노후된 기존 웹사이트 구조 분석, 최신 모바일 반응형 UI/UX 리뉴얼, 검색엔진 기존 링크 보존(리다이렉트)</p>
             <a href="#contact" class="addon-link select-plan-btn" data-plan="기존 신문사 홈페이지 개편" data-inquiry-type="기존 신문사 홈페이지 개편 상담">
-              개편 상담 <i class="fa-solid fa-chevron-right"></i>
-            </a>
+              개편 상담
+</a>
           </div>
 
           <!-- Addon 3: 기사·사진 데이터 이전 -->
           <div class="addon-card">
-            <div class="addon-icon"><i class="fa-solid fa-database"></i></div>
             <div class="addon-meta">
               <h4>기사·사진 데이터 이전</h4>
               <span class="addon-price">30만원부터</span>
             </div>
             <p>기존 기사·사진 데이터의 구조와 접근 권한을 검토하고, 원본 데이터 보존과 이전 결과 검증을 우선하여 작업합니다. (사전 기술 검토 필수)</p>
             <a href="#contact" class="addon-link select-plan-btn" data-plan="기사·데이터 이전" data-inquiry-type="기존 신문사 홈페이지 개편 상담">
-              데이터 이전 상담 <i class="fa-solid fa-chevron-right"></i>
-            </a>
+              데이터 이전 상담
+</a>
           </div>
 
           <!-- Addon 4: 별도 기능 개발 & 외부 연동 -->
           <div class="addon-card">
-            <div class="addon-icon"><i class="fa-solid fa-code"></i></div>
             <div class="addon-meta">
               <h4>별도 기능 개발 & 외부 연동</h4>
               <span class="addon-price">상담 후 맞춤 견적</span>
             </div>
             <p>지자체 연계 위젯, 신문사 전용 특수 광고 관리, 외부 데이터 연동 등 고유 기능 맞춤 개발</p>
             <a href="#contact" class="addon-link select-plan-btn" data-plan="별도 기능 개발 & 외부 연동" data-inquiry-type="신문사 솔루션 상담">
-              개발 상담 <i class="fa-solid fa-chevron-right"></i>
-            </a>
+              개발 상담
+</a>
           </div>
         </div>
       </div>
@@ -1079,7 +715,7 @@
       <!-- Price Policy & Transparency Disclaimer -->
       <div class="pricing-disclaimer-box">
         <div class="disclaimer-header">
-          <i class="fa-solid fa-circle-info"></i>
+
           <strong>비용 산정 기준 및 투명 안내 원칙</strong>
         </div>
         <ul class="disclaimer-list">
@@ -1110,7 +746,7 @@
           <summary class="faq-question">
             <span class="faq-q-badge">Q1</span>
             <span class="faq-q-text">인터넷신문을 새로 창간하려는데 홈페이지 제작부터 가능한가요?</span>
-            <i class="fa-solid fa-chevron-down faq-arrow"></i>
+            <span class="faq-arrow" aria-hidden="true"></span>
           </summary>
           <div class="faq-answer">
             <p>
@@ -1127,7 +763,7 @@
           <summary class="faq-question">
             <span class="faq-q-badge">Q2</span>
             <span class="faq-q-text">현재 사용 중인 신문사 홈페이지를 이전할 수 있나요?</span>
-            <i class="fa-solid fa-chevron-down faq-arrow"></i>
+            <span class="faq-arrow" aria-hidden="true"></span>
           </summary>
           <div class="faq-answer">
             <p>
@@ -1144,7 +780,7 @@
           <summary class="faq-question">
             <span class="faq-q-badge">Q3</span>
             <span class="faq-q-text">예전 기사와 사진도 함께 이전할 수 있나요?</span>
-            <i class="fa-solid fa-chevron-down faq-arrow"></i>
+            <span class="faq-arrow" aria-hidden="true"></span>
           </summary>
           <div class="faq-answer">
             <p>
@@ -1161,7 +797,7 @@
           <summary class="faq-question">
             <span class="faq-q-badge">Q4</span>
             <span class="faq-q-text">AI가 기사를 자동으로 작성하고 발행하나요?</span>
-            <i class="fa-solid fa-chevron-down faq-arrow"></i>
+            <span class="faq-arrow" aria-hidden="true"></span>
           </summary>
           <div class="faq-answer">
             <p>
@@ -1178,7 +814,7 @@
           <summary class="faq-question">
             <span class="faq-q-badge">Q5</span>
             <span class="faq-q-text">스마트폰에서도 기사 작성과 관리가 가능한가요?</span>
-            <i class="fa-solid fa-chevron-down faq-arrow"></i>
+            <span class="faq-arrow" aria-hidden="true"></span>
           </summary>
           <div class="faq-answer">
             <p>
@@ -1192,7 +828,7 @@
           <summary class="faq-question">
             <span class="faq-q-badge">Q6</span>
             <span class="faq-q-text">초기 구축비와 월 이용료는 어떻게 되나요?</span>
-            <i class="fa-solid fa-chevron-down faq-arrow"></i>
+            <span class="faq-arrow" aria-hidden="true"></span>
           </summary>
           <div class="faq-answer">
             <p>
@@ -1212,7 +848,7 @@
           <summary class="faq-question">
             <span class="faq-q-badge">Q7</span>
             <span class="faq-q-text">기자가 여러 명인 신문사도 사용할 수 있나요?</span>
-            <i class="fa-solid fa-chevron-down faq-arrow"></i>
+            <span class="faq-arrow" aria-hidden="true"></span>
           </summary>
           <div class="faq-answer">
             <p>
@@ -1226,7 +862,7 @@
           <summary class="faq-question">
             <span class="faq-q-badge">Q8</span>
             <span class="faq-q-text">광고 수익과 지역 생활광고는 어떻게 운영하나요?</span>
-            <i class="fa-solid fa-chevron-down faq-arrow"></i>
+            <span class="faq-arrow" aria-hidden="true"></span>
           </summary>
           <div class="faq-answer">
             <p>
@@ -1258,7 +894,6 @@
 
           <div class="info-items">
             <div class="info-item">
-              <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
               <div>
                 <strong>직통 전화 문의</strong>
                 <p>010-9354-7929 (평일 09:00 ~ 18:00)</p>
@@ -1266,7 +901,6 @@
             </div>
 
             <div class="info-item">
-              <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
               <div>
                 <strong>이메일 문의</strong>
                 <p>shokun2002@naver.com</p>
@@ -1274,7 +908,6 @@
             </div>
 
             <div class="info-item">
-              <div class="icon-box"><i class="fa-solid fa-desktop"></i></div>
               <div>
                 <strong>무료 시연 안내</strong>
                 <p>원격 화면 공유(Zoom/Google Meet)를 통한 맞춤형 실시간 데모 제공</p>
@@ -1284,7 +917,7 @@
         </div>
 
         <div class="contact-form-side glow-border">
-          <h3><i class="fa-regular fa-paper-plane"></i> 신문사 솔루션 무료 도입 상담 신청</h3>
+          <h3>신문사 솔루션 무료 도입 상담 신청</h3>
           <form id="contactForm" action="https://formspree.io/f/xwllaken" method="POST" novalidate>
             <!-- 숨김 필드: Formspree 전송용 메타 데이터 및 호환성 보조 필드 -->
             <input type="hidden" id="inquiryTypeHidden" name="inquiryType" value="신문사 신규 창간 상담">
@@ -1370,20 +1003,19 @@
             <div class="form-status-alert" id="formStatusAlert" style="display: none;" role="alert"></div>
 
             <button type="submit" class="btn btn-gradient btn-block" id="submitFormBtn">
-              <span class="btn-text"><i class="fa-solid fa-paper-plane"></i> 무료 도입 상담 신청하기</span>
-              <span class="btn-loading" style="display: none;"><i class="fa-solid fa-circle-notch fa-spin"></i> 접수 중입니다...</span>
-            </button>
+              <span class="btn-text">무료 도입 상담 신청하기</span>
+              <span class="btn-loading" style="display: none;">접수 중입니다...</span>
+</button>
           </form>
 
           <!-- 제출 완료 안내 카드 (성공 시 표시) -->
           <div class="form-success-card" id="formSuccessCard" style="display: none;">
-            <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
             <h4>상담 신청이 정상적으로 접수되었습니다.</h4>
             <p>내용을 확인한 후 남겨주신 연락처로 정성껏 안내해 드리겠습니다.</p>
             <div class="success-action">
               <button type="button" class="btn btn-outline" id="resetFormBtn">
-                <i class="fa-solid fa-rotate-left"></i> 추가 문의 작성하기
-              </button>
+                추가 문의 작성하기
+</button>
             </div>
           </div>
         </div>
@@ -1391,14 +1023,16 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer-content">
       <div class="footer-brand">
-        <a href="../index.html" class="brand-logo">
+        <a href="/" class="brand-logo">
           <img src="../assets/logo.png" alt="GLOCALSOFT 로고" class="logo-img">
           <span class="logo-text">GLOCAL<span class="highlight">SOFT</span></span>
-        </a>
+</a>
         <p>10여 년의 현장 기자 경험과 최신 웹·AI 기술의 결합,<br>글로컬소프트가 지역 언론의 지속 가능한 디지털 혁신을 동행합니다.</p>
       </div>
 
@@ -1415,7 +1049,7 @@
         <div>
           <h4>바로가기</h4>
           <ul>
-            <li><a href="../index.html">글로컬소프트 메인 홈</a></li>
+            <li><a href="/">글로컬소프트 메인 홈</a></li>
             <li><a href="#contact">상담 및 시연 신청</a></li>
             <li><a href="/privacy/">개인정보처리방침</a></li>
           </ul>
@@ -1432,7 +1066,7 @@
   <!-- Detail Modal Dialog -->
   <div class="modal-backdrop" id="modalBackdrop">
     <div class="modal-window">
-      <button class="modal-close-btn" id="modalCloseBtn">&times;</button>
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="닫기">&times;</button>
       <div class="modal-content-body" id="modalContentBody">
         <!-- Dyn Content -->
       </div>
@@ -1440,10 +1074,10 @@
   </div>
 
   <!-- Image Lightbox Modal for Screenshots -->
-  <div class="image-lightbox" id="imageLightbox" aria-hidden="true" role="dialog">
+  <div class="image-lightbox" id="imageLightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
     <div class="lightbox-content-box">
       <div class="lightbox-header">
-        <span class="lightbox-title" id="lightboxTitle"><i class="fa-solid fa-image"></i> 실제 화면 확대 보기</span>
+        <span class="lightbox-title" id="lightboxTitle">실제 화면 확대 보기</span>
         <button class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="닫기">&times;</button>
       </div>
       <div class="lightbox-body">

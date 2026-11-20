@@ -141,18 +141,18 @@ function initCounters() {
    3. TECH STACK SHOWCASE
    ========================================== */
 const techData = [
-  { name: 'React / Next.js', category: 'frontend', icon: 'fa-brands fa-react', desc: 'SSR & 최신 프론트엔드 아키텍처' },
-  { name: 'TypeScript', category: 'frontend', icon: 'fa-solid fa-code', desc: '타입 안정성 보장 컴포넌트 개발' },
-  { name: 'Tailwind / CSS3', category: 'frontend', icon: 'fa-brands fa-css3-alt', desc: '반응형 고성능 UI 시스템 디자인' },
-  { name: 'Node.js / Express', category: 'backend', icon: 'fa-brands fa-node-js', desc: '비동기 대용량 이벤트 처리 서버' },
-  { name: 'Java / Spring Boot', category: 'backend', icon: 'fa-brands fa-java', desc: '엔터프라이즈 레벨 표준 프레임워크' },
-  { name: 'Python / Fast API', category: 'backend', icon: 'fa-brands fa-python', desc: 'AI 모델 연동 고성능 REST API' },
-  { name: 'OpenAI / Claude API', category: 'ai', icon: 'fa-solid fa-microchip', desc: 'LLM 튜닝 & 프롬프트 엔지니어링' },
-  { name: 'PyTorch / TensorFlow', category: 'ai', icon: 'fa-solid fa-brain', desc: '딥러닝 머신러닝 맞춤 모델 구축' },
-  { name: 'Pinecone / Milvus', category: 'ai', icon: 'fa-solid fa-database', desc: 'RAG 기반 벡터 데이터베이스 인덱싱' },
-  { name: 'AWS / GCP / Azure', category: 'cloud', icon: 'fa-brands fa-aws', desc: '클라우드 인프라 아키텍처 인프라 구축' },
-  { name: 'Docker / Kubernetes', category: 'cloud', icon: 'fa-brands fa-docker', desc: '컨테이너 오케스트레이션 무장애 환경' },
-  { name: 'PostgreSQL / Redis', category: 'cloud', icon: 'fa-solid fa-server', desc: '고성능 관계형 & 캐싱 메모리 DB' }
+  { name: 'React / Next.js', category: 'frontend', desc: 'SSR & 최신 프론트엔드 아키텍처' },
+  { name: 'TypeScript', category: 'frontend', desc: '타입 안정성 보장 컴포넌트 개발' },
+  { name: 'Tailwind / CSS3', category: 'frontend', desc: '반응형 고성능 UI 시스템 디자인' },
+  { name: 'Node.js / Express', category: 'backend', desc: '비동기 대용량 이벤트 처리 서버' },
+  { name: 'Java / Spring Boot', category: 'backend', desc: '엔터프라이즈 레벨 표준 프레임워크' },
+  { name: 'Python / Fast API', category: 'backend', desc: 'AI 모델 연동 고성능 REST API' },
+  { name: 'OpenAI / Claude API', category: 'ai', desc: 'LLM 튜닝 & 프롬프트 엔지니어링' },
+  { name: 'PyTorch / TensorFlow', category: 'ai', desc: '딥러닝 머신러닝 맞춤 모델 구축' },
+  { name: 'Pinecone / Milvus', category: 'ai', desc: 'RAG 기반 벡터 데이터베이스 인덱싱' },
+  { name: 'AWS / GCP / Azure', category: 'cloud', desc: '클라우드 인프라 아키텍처 인프라 구축' },
+  { name: 'Docker / Kubernetes', category: 'cloud', desc: '컨테이너 오케스트레이션 무장애 환경' },
+  { name: 'PostgreSQL / Redis', category: 'cloud', desc: '고성능 관계형 & 캐싱 메모리 DB' }
 ];
 
 function initTechStack() {
@@ -171,7 +171,6 @@ function initTechStack() {
       const card = document.createElement('div');
       card.className = 'tech-card';
       card.innerHTML = `
-        <div class="tech-icon"><i class="${item.icon}"></i></div>
         <div class="tech-info">
           <h4>${item.name}</h4>
           <span>${item.desc}</span>
@@ -619,7 +618,7 @@ function initContactForm() {
     isSubmitting = true;
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 접수 처리 중...';
+      submitBtn.textContent = '접수 처리 중...';
     }
 
     const inquiryTypeText = (inquiryTypeInput && inquiryTypeInput.selectedIndex >= 0)
@@ -653,7 +652,7 @@ function initContactForm() {
         if (response.ok) {
           // 서버 정상 처리 확인 시에만 폼 리셋 및 성공 안내
           contactForm.reset();
-          showToast('🎉 무료 상담 요청이 정상 접수되었습니다! 담당자가 신속히 확인 후 연락드리겠습니다.', 'success');
+          showToast('무료 상담 요청이 정상 접수되었습니다! 담당자가 신속히 확인 후 연락드리겠습니다.', 'success');
         } else {
           const errData = await response.json().catch(() => ({}));
           const errMsg = (errData && errData.errors && errData.errors.map(e => e.message).join(', ')) || `상태코드: ${response.status}`;
@@ -668,7 +667,7 @@ function initContactForm() {
             CONTACT_CONFIG.emailjs.publicKey
           );
           contactForm.reset();
-          showToast('🎉 무료 상담 요청이 정상 접수되었습니다!', 'success');
+          showToast('무료 상담 요청이 정상 접수되었습니다!', 'success');
         } else {
           throw new Error('EmailJS SDK가 로드되지 않았습니다.');
         }
@@ -676,17 +675,17 @@ function initContactForm() {
         // [외부 서비스 미연동 안전 모드]
         // 거짓 성공(Mock)을 표시하지 않고, 작성 내용을 보존한 상태로 유선/이메일 직통 접수를 정직하게 안내
         await new Promise(resolve => setTimeout(resolve, 600));
-        showToast('⚠️ 온라인 접수 연동 준비 중입니다. 긴급 상담은 전화(010-9354-7929) 또는 이메일(shokun2002@naver.com)로 연락해 주세요. (작성 내용은 보존되었습니다)', 'warning');
+        showToast('온라인 접수 연동 준비 중입니다. 긴급 상담은 전화(010-9354-7929) 또는 이메일(shokun2002@naver.com)로 연락해 주세요. (작성 내용은 보존되었습니다)', 'warning');
       }
     } catch (error) {
       console.error('Contact submission error:', error);
       // 전송 실패 시: 오류 안내 및 입력 내용 보존 (contactForm.reset 미호출)
-      showToast('❌ 문의 전송 중 오류가 발생했습니다. 잠시 후 다시 시도하시거나 이메일(shokun2002@naver.com)로 문의 바랍니다. (작성 내용은 보존되었습니다)', 'error');
+      showToast('문의 전송 중 오류가 발생했습니다. 잠시 후 다시 시도하시거나 이메일(shokun2002@naver.com)로 문의 바랍니다. (작성 내용은 보존되었습니다)', 'error');
     } finally {
       isSubmitting = false;
       if (submitBtn) {
         submitBtn.disabled = false;
-        submitBtn.innerHTML = '<i class="fa-solid fa-check-circle"></i> 무료 상담 요청 제출하기';
+        submitBtn.textContent = '무료 상담 요청 제출하기';
       }
     }
   });
@@ -700,12 +699,7 @@ function showToast(message, type = 'info') {
   const toast = document.createElement('div');
   toast.className = 'toast toast-' + type;
 
-  let iconClass = 'fa-solid fa-bell icon-accent';
-  if (type === 'success') iconClass = 'fa-solid fa-circle-check';
-  else if (type === 'error') iconClass = 'fa-solid fa-triangle-exclamation';
-  else if (type === 'warning') iconClass = 'fa-solid fa-circle-exclamation';
-
-  toast.innerHTML = '<i class="' + iconClass + '"></i> <span>' + message + '</span>';
+  toast.textContent = message;
 
   toastContainer.appendChild(toast);
 
@@ -732,8 +726,8 @@ const dictionary = {
     hero_badge: '전남에서 펼쳐지는 IT 혁신',
     hero_title: '농촌형 소도시에서도<br><span class="gradient-text">IT 기술은 꽃필 수 있습니다</span>',
     hero_subtitle: '여러분의 아이디어를 현실로 구현해 드립니다',
-    hero_btn_services: '<i class="fa-solid fa-layer-group"></i> 서비스 둘러보기',
-    hero_btn_contact: '<i class="fa-regular fa-paper-plane"></i> 상담 신청',
+    hero_btn_services: '서비스 둘러보기',
+    hero_btn_contact: '상담 신청',
     stat_experience: '지역언론 기자 실무 경력',
     stat_experience_sub: '대표자 취재·보도 실무 노하우',
     stat_domain: '미디어·신문사 도메인 전문성',
@@ -756,7 +750,7 @@ const dictionary = {
     services_desc: '실무 코딩 교육부터 맞춤형 웹/앱 개발, AI 솔루션, 지역 산업 스마트 연동까지 전담 엔지니어가 밀착 지원합니다.',
     srv7_title: '코딩 교육 & IT 인재 양성',
     srv7_desc: '초·중·고 및 대학교, 기업 맞춤형 커리큘럼 기반의 파이썬, AI, 웹/앱 개발 실무 멘토링 프로그램 제공.',
-    btn_learn_more: '상세보기 <i class="fa-solid fa-arrow-right"></i>',
+    btn_learn_more: '상세보기',
     tech_subtitle: 'TECHNOLOGY STACK',
     tech_title: '최첨단 기술 생태계 및 노하우',
     tech_desc: '검증된 최신 프레임워크와 견고한 클라우드 아키텍처를 도입합니다.',
@@ -787,8 +781,8 @@ const dictionary = {
     hero_badge: 'Regional IT & AI Innovation',
     hero_title: 'Even in Rural Small Cities,<br><span class="gradient-text">IT Innovation Can Blossom</span>',
     hero_subtitle: 'Turning Your Ideas into Reality',
-    hero_btn_services: '<i class="fa-solid fa-layer-group"></i> View Services',
-    hero_btn_contact: '<i class="fa-regular fa-paper-plane"></i> Get in Touch',
+    hero_btn_services: 'View Services',
+    hero_btn_contact: 'Get in Touch',
     stat_experience: 'Local Journalism Experience',
     stat_experience_sub: 'Founder Field Reporting & Media Know-how',
     stat_domain: 'Media & Newsroom Expertise',
@@ -811,7 +805,7 @@ const dictionary = {
     services_desc: 'From coding bootcamps to custom web/app development, AI integration, and smart regional systems.',
     srv7_title: 'Coding Education & IT Training',
     srv7_desc: 'Custom coding bootcamps and IT training programs tailored for schools, universities, and enterprise teams.',
-    btn_learn_more: 'Learn More <i class="fa-solid fa-arrow-right"></i>',
+    btn_learn_more: 'Learn More',
     tech_subtitle: 'TECHNOLOGY STACK',
     tech_title: 'Our Modern Technology Ecosystem',
     tech_desc: 'Leveraging battle-tested frameworks and robust cloud native infrastructures.',
@@ -835,12 +829,12 @@ const dictionary = {
 function initI18n() {
   const langBtn = document.getElementById('langToggleBtn');
   const currentLangLabel = document.getElementById('currentLangLabel');
-  let currentLang = 'ko';
+  let currentLang = new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'ko';
 
   if (!langBtn) return;
 
-  langBtn.addEventListener('click', () => {
-    currentLang = currentLang === 'ko' ? 'en' : 'ko';
+  function renderLanguage() {
+    document.documentElement.lang = currentLang;
     if (currentLangLabel) currentLangLabel.innerText = currentLang === 'ko' ? 'EN' : 'KR';
 
     const transables = document.querySelectorAll('[data-i18n]');
@@ -850,7 +844,12 @@ function initI18n() {
         el.innerHTML = dictionary[currentLang][key];
       }
     });
+  }
 
+  if (currentLang === 'en') renderLanguage();
+  langBtn.addEventListener('click', () => {
+    currentLang = currentLang === 'ko' ? 'en' : 'ko';
+    renderLanguage();
     showToast(`언어가 ${currentLang === 'ko' ? '한국어' : 'English'}로 변경되었습니다.`);
   });
 }

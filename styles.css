@@ -1262,15 +1262,15 @@ img {
 .info-items {
   margin-top: 2rem;
   margin-bottom: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  border-block: 1px solid #34435b;
 }
 
 .info-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.2rem;
+  padding-block: 0.85rem;
+}
+
+.info-item + .info-item {
+  border-top: 1px solid #34435b;
 }
 
 .icon-box {
@@ -1433,9 +1433,9 @@ img {
 
 /* Footer */
 .footer {
-  background: #05080f;
-  border-top: 1px solid var(--border-glass);
-  padding-top: 4rem;
+  background: #12213a;
+  border-top: 1px solid #48566e;
+  padding-top: 3rem;
   padding-bottom: 2rem;
 }
 
@@ -1478,17 +1478,19 @@ img {
 }
 
 .footer-links a:hover {
-  color: var(--accent-cyan);
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: .2em;
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid #48566e;
   padding-top: 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.82rem;
-  color: var(--color-text-dim);
+  font-size: 0.875rem;
+  color: #becbde;
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -1845,5 +1847,5 @@ img {
 
   .footer-content { flex-direction: column; gap: 1.8rem; }
   .footer-links { flex-direction: column; gap: 1.5rem; }
-  .footer-bottom { flex-direction: column; text-align: center; gap: 0.5rem; font-size: 0.75rem; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
 }

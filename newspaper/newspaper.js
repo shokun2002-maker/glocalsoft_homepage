@@ -8,52 +8,11 @@ const CONTACT_CONFIG = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  initNavbar();
   initServiceButtons();
   initContactForm();
   initModals();
   initLightbox();
 });
-
-/* 1. Header & Mobile Navigation */
-function initNavbar() {
-  const navbar = document.getElementById('header');
-  const hamburgerBtn = document.getElementById('hamburgerBtn');
-  const navMenu = document.getElementById('navMenu');
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
-
-  if (hamburgerBtn && navMenu) {
-    let backdrop = document.querySelector('.mobile-nav-backdrop');
-    if (!backdrop) {
-      backdrop = document.createElement('div');
-      backdrop.className = 'mobile-nav-backdrop';
-      document.body.appendChild(backdrop);
-    }
-
-    function toggleMenu(show) {
-      const isOpen = typeof show === 'boolean' ? show : !navMenu.classList.contains('open');
-      navMenu.classList.toggle('open', isOpen);
-      hamburgerBtn.classList.toggle('active', isOpen);
-      backdrop.classList.toggle('active', isOpen);
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    }
-
-    hamburgerBtn.addEventListener('click', () => toggleMenu());
-    backdrop.addEventListener('click', () => toggleMenu(false));
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => toggleMenu(false));
-    });
-  }
-}
 
 /* 2. Service & Pricing Plan Auto-fill Mapping (Phase 4-1 최종 수정) */
 function initServiceButtons() {
@@ -91,6 +50,9 @@ function initServiceButtons() {
       } else if (inquiryType.includes('개편') || plan.includes('개편')) {
         targetNeededService = '기존 홈페이지 개편';
         targetNewspaperStatus = '운영 중';
+      } else if (inquiryType === 'AI CMS 무료 체험번호 신청') {
+        targetNeededService = 'AI 통합 CMS';
+        if (selectedPlanHidden) selectedPlanHidden.value = '';
       } else if (inquiryType.includes('AI') || plan.includes('AI') || inquiryType.includes('온라인 데모')) {
         targetNeededService = 'AI 통합 CMS';
       } else if (plan.includes('데이터 이전') || inquiryType.includes('데이터 이전')) {
@@ -408,7 +370,7 @@ function initContactForm() {
         formStatusAlert.style.display = 'block';
         formStatusAlert.className = 'form-status-alert error';
         formStatusAlert.innerHTML = `
-          <strong><i class="fa-solid fa-triangle-exclamation"></i> 접수 중 일시적인 통신 오류가 발생했습니다.</strong>
+          <strong>접수 중 일시적인 통신 오류가 발생했습니다.</strong>
           <p>작성하신 내용은 모두 안전하게 보존되어 있습니다. 잠시 후 [무료 도입 상담 신청하기] 버튼을 다시 눌러주시거나, 직통 번호(<strong>010-9354-7929</strong>)로 문의해 주시기 바랍니다.</p>
         `;
         formStatusAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -442,12 +404,26 @@ function showToast(message, type = 'info') {
   const toast = document.createElement('div');
   toast.className = 'toast toast-' + type;
 
-  let iconClass = 'fa-solid fa-bell icon-accent';
-  if (type === 'success') iconClass = 'fa-solid fa-circle-check';
-  else if (type === 'error') iconClass = 'fa-solid fa-triangle-exclamation';
-  else if (type === 'warning') iconClass = 'fa-solid fa-circle-exclamation';
+  toast.textContent = message;
 
-  toast.innerHTML = '<i class="' + iconClass + '"></i> <span>' + message + '</span>';
+  toastContainer.appendChild(toast);
+
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    toast.style.transition = 'opacity 0.4s ease';
+    setTimeout(() => toast.remove(), 400);
+  }, 4500);
+}
+
+/* Toast Message Utility */
+function showToast(message, type = 'info') {
+  const toastContainer = document.getElementById('toastContainer');
+  if (!toastContainer) return;
+
+  const toast = document.createElement('div');
+  toast.className = 'toast toast-' + type;
+
+  toast.textContent = message;
 
   toastContainer.appendChild(toast);
 
@@ -468,91 +444,28 @@ function initLightbox() {
 
   if (!lightbox || !lightboxImg) return;
 
-  function openLightbox(src, title) {
-    lightboxImg.src = src;
-    lightboxImg.alt = title || '실제 화면 확대 보기';
-    if (lightboxTitle) {
-      lightboxTitle.innerHTML = '<i class="fa-solid fa-image"></i> ' + (title || '실제 화면 확대 보기');
-    }
-    lightbox.classList.add('active');
-    lightbox.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  }
+  let trigger;
+  let clearImageTimer;
 
-  function closeLightbox() {
-    lightbox.classList.remove('active');
-    lightbox.setAttribute('aria-hidden', 'true');
-    lightboxImg.src = '';
-    document.body.style.overflow = '';
-  }
-
-  clickableMockups.forEach(mockup => {
-    mockup.addEventListener('click', () => {
-      const src = mockup.getAttribute('data-src');
-      const title = mockup.getAttribute('data-title');
-      if (src) openLightbox(src, title);
-    });
-  });
-
-  if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-      closeLightbox();
-    }
-  });
-}
-
-/* Toast Message Utility */
-function showToast(message, type = 'info') {
-  const toastContainer = document.getElementById('toastContainer');
-  if (!toastContainer) return;
-
-  const toast = document.createElement('div');
-  toast.className = 'toast toast-' + type;
-
-  let iconClass = 'fa-solid fa-bell icon-accent';
-  if (type === 'success') iconClass = 'fa-solid fa-circle-check';
-  else if (type === 'error') iconClass = 'fa-solid fa-triangle-exclamation';
-  else if (type === 'warning') iconClass = 'fa-solid fa-circle-exclamation';
-
-  toast.innerHTML = '<i class="' + iconClass + '"></i> <span>' + message + '</span>';
-
-  toastContainer.appendChild(toast);
-
-  setTimeout(() => {
-    toast.style.opacity = '0';
-    toast.style.transition = 'opacity 0.4s ease';
-    setTimeout(() => toast.remove(), 400);
-  }, 4500);
-}
-
-/* 3. Image Lightbox for Showcase Screenshots */
-function initLightbox() {
-  const lightbox = document.getElementById('imageLightbox');
-  const lightboxImg = document.getElementById('lightboxImg');
-  const lightboxTitle = document.getElementById('lightboxTitle');
-  const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
-  const clickableMockups = document.querySelectorAll('.mockup-screen-container[data-src]');
-
-  if (!lightbox || !lightboxImg) return;
-
-  function openLightbox(src, title) {
+  function openLightbox(src, title, container) {
+    clearTimeout(clearImageTimer);
+    trigger = container;
     lightboxImg.src = src;
     lightboxImg.alt = title || '스크린샷 원본';
     lightboxImg.classList.remove('zoomed');
     if (lightboxTitle) lightboxTitle.textContent = title || '실제 화면 확대 보기 (클릭 시 100% 확대)';
     lightbox.classList.add('active');
+    lightbox.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    lightboxCloseBtn?.focus();
   }
 
   function closeLightbox() {
     lightbox.classList.remove('active');
+    trigger?.focus();
+    lightbox.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
-    setTimeout(() => {
+    clearImageTimer = setTimeout(() => {
       lightboxImg.src = '';
       lightboxImg.classList.remove('zoomed');
     }, 200);
@@ -571,6 +484,15 @@ function initLightbox() {
   }
 
   clickableMockups.forEach(container => {
+    container.setAttribute('role', 'button');
+    container.tabIndex = 0;
+    container.setAttribute('aria-label', container.dataset.title + ' 확대 보기');
+    container.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        container.click();
+      }
+    });
     container.addEventListener('click', () => {
       const src = container.getAttribute('data-src');
       const title = container.getAttribute('data-title');
@@ -578,7 +500,7 @@ function initLightbox() {
 
       // 실제 이미지 파일이 아직 등록되지 않아 placeholder가 표시된 경우
       if (innerImg && innerImg.style.display === 'none') {
-        showToast(`🔒 ${title} 상세 화면은 언론사 보안 지침에 따라 1:1 온라인 원격 데모로 시연해 드립니다.`, 'info');
+        showToast(`${title} 상세 화면은 언론사 보안 지침에 따라 1:1 온라인 원격 데모로 시연해 드립니다.`, 'info');
         const contactSection = document.getElementById('contact');
         if (contactSection) {
           contactSection.scrollIntoView({ behavior: 'smooth' });
@@ -589,7 +511,7 @@ function initLightbox() {
       }
 
       const activeSrc = (innerImg && (innerImg.currentSrc || innerImg.src)) || container.getAttribute('data-src');
-      if (activeSrc) openLightbox(activeSrc, title);
+      if (activeSrc) openLightbox(activeSrc, title, container);
     });
   });
 
@@ -604,9 +526,9 @@ function initLightbox() {
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-      closeLightbox();
-    }
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Tab') e.preventDefault();
+    if (e.key === 'Escape') closeLightbox();
   });
 }
 

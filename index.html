@@ -1,644 +1,357 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>글로컬소프트 (GLOCALSOFT) - Global & Local Software Innovation</title>
-  <meta name="description" content="글로벌 기술 표준과 로컬 전문성을 결합한 맞춤형 AI, 웹/앱, 클라우드 엔터프라이즈 솔루션 개발 전문기업 글로컬소프트입니다.">
-  <meta name="keywords" content="글로컬소프트, 소프트웨어 개발, AI 솔루션, 웹 개발, 앱 개발, 클라우드, SI, 외주 개발">
-  <meta name="naver-site-verification" content="a7e96c719b32d8865bd96d2694d152a76fff2b6a">
-
-  <!-- Open Graph / Meta -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="글로컬소프트 (GLOCALSOFT)">
-  <meta property="og:description" content="글로벌 기술 표준과 로컬 기술력의 결합, 글로컬소프트">
-  <meta property="og:image" content="assets/hero-bg.png">
-  <meta property="og:url" content="https://glocalsoft.kr/">
-  <link rel="canonical" href="https://glocalsoft.kr/">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>글로컬소프트 | 인터넷신문 AI CMS · 단체 SaaS · 공공서비스</title>
+    <meta name="description" content="지역신문 운영 경험을 바탕으로 인터넷신문 AI CMS, 단체·협회 홈페이지와 SaaS, 공공기관 대민 디지털 서비스를 개발합니다.">
+    <link rel="canonical" href="https://glocalsoft.kr/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:title" content="글로컬소프트 | 인터넷신문 AI CMS · 단체 SaaS · 공공서비스">
+    <meta property="og:description" content="지역신문 운영 경험에서 출발한 웹서비스와 AI 업무 시스템. 실제 개발 화면을 확인하고 도입을 상담하세요.">
+    <meta property="og:url" content="https://glocalsoft.kr/">
+    <meta property="og:image" content="https://glocalsoft.kr/newspaper/assets/public-admin-dashboard.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/assets/logo.png">
+    <link rel="stylesheet" href="/site.css">
+    <script src="/site.js" defer></script>
 </head>
-
-<body class="dark-theme">
-  <!-- Background Glow FX -->
-  <div class="ambient-glow glow-1"></div>
-  <div class="ambient-glow glow-2"></div>
-  <div class="ambient-glow glow-3"></div>
-
-  <!-- Header / Navigation -->
-  <header id="header" class="navbar">
-    <div class="container nav-container">
-      <a href="#hero" class="brand-logo" id="brandLogo">
-        <img src="assets/logo.png" alt="GLOCALSOFT 로고" class="logo-img">
-        <span class="logo-text">GLOCAL<span class="highlight">SOFT</span></span>
-      </a>
-
-      <nav class="nav-menu" id="navMenu">
-        <ul class="nav-list">
-          <li><a href="#hero" class="nav-link active" data-i18n="nav_home">홈</a></li>
-          <li><a href="/newspaper/" class="nav-link" data-i18n="nav_newspaper">인터넷신문사</a></li>
-          <li><a href="#about" class="nav-link" data-i18n="nav_about">회사소개</a></li>
-          <li><a href="#services" class="nav-link" data-i18n="nav_services">서비스</a></li>
-          <li><a href="#tech" class="nav-link" data-i18n="nav_tech">기술스택</a></li>
-          <li><a href="#calculator" class="nav-link" data-i18n="nav_calculator">견적계산기</a></li>
-          <li><a href="#contact" class="nav-link" data-i18n="nav_contact">문의하기</a></li>
-        </ul>
-      </nav>
-
-      <div class="nav-actions">
-        <button class="lang-toggle-btn" id="langToggleBtn" aria-label="Language Toggle">
-          <i class="fa-solid fa-globe"></i> <span id="currentLangLabel">EN</span>
-        </button>
-        <a href="#contact" class="btn btn-primary nav-cta" id="navCta" data-i18n="nav_cta">상담 신청</a>
-        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Menu">
-          <span></span><span></span><span></span>
-        </button>
+  <body>
+    <a class="skip" href="#main">본문 바로가기</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="/" aria-label="글로컬소프트 홈">
+        <img src="/assets/logo.png" alt=""><strong>GLOCAL<span>SOFT</span></strong></a>
+        <button class="menu-button" type="button" aria-controls="site-nav" aria-expanded="false">메뉴 <span aria-hidden="true">☰</span></button>
+        <nav id="site-nav" aria-label="주 메뉴">
+          <a href="/" aria-current="page">홈</a>
+          <a href="/newspaper/">인터넷신문 솔루션</a>
+          <a href="/organization/">단체·협회 SaaS</a>
+          <a href="/public-service/">공공서비스 개발</a>
+          <a href="/#work">개발 사례</a>
+          <a href="/#about">회사 소개</a>
+          <a class="nav-contact" href="/#contact">문의하기</a>
+        </nav>
       </div>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section id="hero" class="hero-section">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span data-i18n="hero_badge">전남에서 펼쳐지는 IT 혁신</span>
-        </div>
-        <h1 class="hero-title" data-i18n="hero_title">
-          농촌형 소도시에서도<br>
-          <span class="gradient-text">IT 기술은 꽃필 수 있습니다</span>
-        </h1>
-        <p class="hero-subtitle" data-i18n="hero_subtitle">
-          여러분의 아이디어를 현실로 구현해 드립니다
-        </p>
-
-        <div class="hero-buttons">
-          <a href="#services" class="btn btn-gradient btn-lg" id="heroServicesBtn" data-i18n="hero_btn_services">
-            <i class="fa-solid fa-layer-group"></i> 서비스 둘러보기
-          </a>
-          <a href="#contact" class="btn btn-outline btn-lg" id="heroContactBtn" data-i18n="hero_btn_contact">
-            <i class="fa-regular fa-paper-plane"></i> 상담 신청
-          </a>
-        </div>
-
-        <div class="hero-stats">
-          <div class="stat-card">
-            <h3 class="stat-number"><span class="counter" data-target="10">0</span>년+</h3>
-            <p class="stat-label" data-i18n="stat_experience">지역언론 기자 실무 경력</p>
-            <span class="stat-subtext" data-i18n="stat_experience_sub">대표자 취재·보도 실무 노하우</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-card">
-            <h3 class="stat-number stat-badge-text">현장 밀착</h3>
-            <p class="stat-label" data-i18n="stat_domain">미디어·신문사 도메인 전문성</p>
-            <span class="stat-subtext" data-i18n="stat_domain_sub">지역 언론 운영 프로세스 최적화</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-card">
-            <h3 class="stat-number stat-badge-text">AI 융합</h3>
-            <p class="stat-label" data-i18n="stat_tech">인터넷신문 & 단체 SaaS 혁신</p>
-            <span class="stat-subtext" data-i18n="stat_tech_sub">AI 취재노트 & CMS 기술 연동</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-visual">
-        <div class="visual-frame glow-border">
-          <img src="assets/hero-bg.png" alt="Glocalsoft Software Architecture Visualization" class="hero-img">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Us Section -->
-  <section id="about" class="section about-section">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-subtitle" data-i18n="about_subtitle">OUR MISSION & VISION</span>
-        <h2 class="section-title" data-i18n="about_title">지방과 소도시도 미래 기술의 중심이 될 수 있습니다</h2>
-        <p class="section-desc" data-i18n="about_desc">
-          글로컬소프트는 10여 년간 지역신문 기자로 현장을 누빈 대표자의 언론·미디어 도메인 실무 노하우를 바탕으로 설립된 기술 혁신 기업입니다. 공간적 한계에 갇히지 않고, 인터넷신문사와 소규모 기업·사회단체가 미래 AI 기술을 손쉽게 활용할 수 있도록 맞춤형 B2B SaaS와 실무 솔루션을 제공합니다.
-        </p>
-      </div>
-
-      <div class="about-grid">
-        <div class="about-card highlight-card">
-          <div class="card-icon"><i class="fa-solid fa-seedling"></i></div>
-          <h3 data-i18n="val1_title">Local & Media Domain</h3>
-          <p data-i18n="val1_desc">10여 년 지역 언론 취재·보도 실무 경험을 바탕으로, 지역 사회와 중소 언론사 및 단체가 미래 디지털 혁신에서 소외되지 않도록 돕습니다.</p>
-        </div>
-
-        <div class="about-card">
-          <div class="card-icon"><i class="fa-solid fa-earth-americas"></i></div>
-          <h3 data-i18n="val2_title">Global Standard</h3>
-          <p data-i18n="val2_desc">수도권과의 격차를 없애는 차세대 웹, 앱, AI 기술력으로 세계적 기준에 부합하는 솔루션을 개발합니다.</p>
-        </div>
-
-        <div class="about-card">
-          <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-          <h3 data-i18n="val3_title">Edu & Talent Hub</h3>
-          <p data-i18n="val3_desc">지역 청소년, 청년, 기업을 위한 실무 중심 코딩 교육으로 지역 인재가 미래 기술 주역으로 성장하도록 양성합니다.</p>
-        </div>
-
-        <div class="about-card">
-          <div class="card-icon"><i class="fa-solid fa-handshake-angle"></i></div>
-          <h3 data-i18n="val4_title">Coexistence & Future</h3>
-          <p data-i18n="val4_desc">농축수산 및 지역 특화 산업의 스마트 디지털 전환(DX)을 이끌며 지역 사회와 함께 지속 가능한 내일을 만듭니다.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="section services-section">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-subtitle" data-i18n="services_subtitle">OUR CORE SERVICES</span>
-        <h2 class="section-title" data-i18n="services_title">지역의 가능성을 기술로 완성하는 핵심 서비스</h2>
-        <p class="section-desc" data-i18n="services_desc">실무 코딩 교육부터 맞춤형 웹/앱 개발, AI 솔루션, 지역 산업 스마트 연동까지 전담 엔지니어가 밀착
-          지원합니다.</p>
-      </div>
-
-      <div class="services-grid">
-        <!-- Flagship Newspaper SaaS Card -->
-        <div class="service-item-card flagship-card" data-service="newspaper-saas">
-          <div class="flagship-badge">B2B SaaS 솔루션</div>
-          <div class="service-icon"><i class="fa-solid fa-newspaper"></i></div>
-          <h3>인터넷신문사 통합 운영 SaaS</h3>
-          <p>10여 년 현장 기자 경험을 담아 취재·기사작성 보조부터 모바일 환경 기사 관리, 지역 광고 운영까지 하나로 묶은 신문사 전용 운영 솔루션입니다.</p>
-          <a href="/newspaper/#pricing" class="flagship-pricing-tag" title="요금제 상세 확인하기">
-            <i class="fa-solid fa-tag"></i>
-            <span><strong>월 129,000원부터</strong> · 초기 구축비 별도</span>
-          </a>
-          <ul class="service-tags">
-            <li>AI 취재·작성 보조</li>
-            <li>보도자료 신속 정리</li>
-            <li>모바일 기사 관리</li>
-          </ul>
-          <div class="flagship-actions">
-            <a href="/newspaper/" class="btn btn-gradient btn-block flagship-link">
-              신문사 솔루션 상세 보기 & 시연 신청 <i class="fa-solid fa-arrow-right"></i>
-            </a>
-            <a href="/newspaper/#pricing" class="flagship-price-link">
-              <i class="fa-solid fa-coins"></i> 요금 안내 및 도입 상담 바로가기 <i class="fa-solid fa-angle-right"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="service-item-card" data-service="web-app">
-          <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
-          <h3 data-i18n="srv1_title">맞춤형 웹 & 앱 개발</h3>
-          <p data-i18n="srv1_desc">반응형 고성능 웹 플랫폼, iOS/Android 하이브리드 및 네이티브 앱 개발로 최상의 사용자 경험을 선물합니다.</p>
-          <ul class="service-tags">
-            <li>React / Next.js</li>
-            <li>Flutter / Native</li>
-            <li>Node.js / Spring</li>
-          </ul>
-          <button class="btn-text service-modal-btn" data-modal="web-app" data-i18n="btn_learn_more">상세보기 <i
-              class="fa-solid fa-arrow-right"></i></button>
-        </div>
-
-        <div class="service-item-card" data-service="ai-data">
-          <div class="service-icon"><i class="fa-solid fa-robot"></i></div>
-          <h3 data-i18n="srv2_title">AI & 데이터 솔루션</h3>
-          <p data-i18n="srv2_desc">기업 전용 LLM 구축, RAG 기반 지식 검색 알고리즘, 머신러닝 데이터 분석 파이프라인을 연동합니다.</p>
-          <ul class="service-tags">
-            <li>OpenAI / Claude API</li>
-            <li>Python / PyTorch</li>
-            <li>Vector DB / RAG</li>
-          </ul>
-          <button class="btn-text service-modal-btn" data-modal="ai-data" data-i18n="btn_learn_more">상세보기 <i
-              class="fa-solid fa-arrow-right"></i></button>
-        </div>
-
-        <div class="service-item-card" data-service="cloud-devops">
-          <div class="service-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
-          <h3 data-i18n="srv3_title">클라우드 & DevOps</h3>
-          <p data-i18n="srv3_desc">AWS/GCP/Azure 인프라 설계, 마이크로서비스(MSA) 전환, CI/CD 파이프라인 자동화로 무장애 시스템 구현.</p>
-          <ul class="service-tags">
-            <li>AWS / GCP</li>
-            <li>Kubernetes / Docker</li>
-            <li>Terraform / GitHub Actions</li>
-          </ul>
-          <button class="btn-text service-modal-btn" data-modal="cloud-devops" data-i18n="btn_learn_more">상세보기 <i
-              class="fa-solid fa-arrow-right"></i></button>
-        </div>
-
-        <div class="service-item-card" data-service="si-enterprise">
-          <div class="service-icon"><i class="fa-solid fa-network-wired"></i></div>
-          <h3 data-i18n="srv4_title">엔터프라이즈 SI & ERP</h3>
-          <p data-i18n="srv4_desc">기업 내 ERP/CRM, 결제 시스템, API 게이트웨이 및 대용량 트래픽 처리 백엔드 시스템 연동 구축.</p>
-          <ul class="service-tags">
-            <li>Legacy Modernization</li>
-            <li>API Mesh</li>
-            <li>Enterprise Security</li>
-          </ul>
-          <button class="btn-text service-modal-btn" data-modal="si-enterprise" data-i18n="btn_learn_more">상세보기 <i
-              class="fa-solid fa-arrow-right"></i></button>
-        </div>
-
-        <div class="service-item-card" data-service="ui-ux">
-          <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-          <h3 data-i18n="srv5_title">UI/UX 디자인 & 브랜드</h3>
-          <p data-i18n="srv5_desc">직관적이고 미려한 디자인 시스템 구축, 사용자 여정 지도(CJMs) 및 인터랙티브 프로토타이핑 설계.</p>
-          <ul class="service-tags">
-            <li>Figma / Design System</li>
-            <li>User Research</li>
-            <li>Micro Animations</li>
-          </ul>
-          <button class="btn-text service-modal-btn" data-modal="ui-ux" data-i18n="btn_learn_more">상세보기 <i
-              class="fa-solid fa-arrow-right"></i></button>
-        </div>
-
-        <div class="service-item-card" data-service="consulting">
-          <div class="service-icon"><i class="fa-solid fa-user-shield"></i></div>
-          <h3 data-i18n="srv6_title">기술 컨설팅 & 유지보수</h3>
-          <p data-i18n="srv6_desc">기존 서비스 리팩토링, 성능 및 보안 진단, 24/7 장애 모니터링과 안정적운영 관리 체계 구축.</p>
-          <ul class="service-tags">
-            <li>24/7 SLA Support</li>
-            <li>Code Audit</li>
-            <li>Security Patch</li>
-          </ul>
-          <button class="btn-text service-modal-btn" data-modal="consulting" data-i18n="btn_learn_more">상세보기 <i
-              class="fa-solid fa-arrow-right"></i></button>
-        </div>
-
-        <div class="service-item-card" data-service="coding-edu">
-          <div class="service-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-          <h3 data-i18n="srv7_title">코딩 교육 & IT 인재 양성</h3>
-          <p data-i18n="srv7_desc">초·중·고 및 대학교, 기업 맞춤형 커리큘럼 기반의 파이썬, AI, 웹/앱 개발 실무 멘토링 프로그램 제공.</p>
-          <ul class="service-tags">
-            <li>AI / SW 커리큘럼</li>
-            <li>기업 맞춤 연수</li>
-            <li>실무 프로젝트 코칭</li>
-          </ul>
-          <button class="btn-text service-modal-btn" data-modal="coding-edu" data-i18n="btn_learn_more">상세보기 <i
-              class="fa-solid fa-arrow-right"></i></button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Tech Stack Section -->
-  <section id="tech" class="section tech-section">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-subtitle" data-i18n="tech_subtitle">TECHNOLOGY STACK</span>
-        <h2 class="section-title" data-i18n="tech_title">최첨단 기술 생태계 및 노하우</h2>
-        <p class="section-desc" data-i18n="tech_desc">검증된 최신 프레임워크와 견고한 클라우드 아키텍처를 도입합니다.</p>
-      </div>
-
-      <div class="tech-tabs">
-        <button class="tech-tab-btn active" data-tech="all" data-i18n="tech_tab_all">전체</button>
-        <button class="tech-tab-btn" data-tech="frontend" data-i18n="tech_tab_fe">프론트엔드</button>
-        <button class="tech-tab-btn" data-tech="backend" data-i18n="tech_tab_be">백엔드</button>
-        <button class="tech-tab-btn" data-tech="ai" data-i18n="tech_tab_ai">AI & ML</button>
-        <button class="tech-tab-btn" data-tech="cloud" data-i18n="tech_tab_cloud">DevOps / Cloud</button>
-      </div>
-
-      <div class="tech-grid" id="techGrid">
-        <!-- JS Dyn Rendered Tech Items -->
-      </div>
-    </div>
-  </section>
-
-
-
-  <!-- Interactive Estimate Calculator -->
-  <section id="calculator" class="section calc-section">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-subtitle" data-i18n="calc_subtitle">INSTANT ESTIMATE CALCULATOR</span>
-        <h2 class="section-title" data-i18n="calc_title">스마트 실시간 프로젝트 견적 계산기</h2>
-        <p class="section-desc" data-i18n="calc_desc">필요한 개발 항목과 기능을 선택하시면 예상 소요 기간과 대략적인 개발 비용을 즉시 산출합니다.</p>
-      </div>
-
-      <div class="calc-wrapper glow-border">
-        <div class="calc-steps-grid">
-          <!-- Step 1 -->
-          <div class="calc-step-box">
-            <div class="step-num">Step 01</div>
-            <h4 data-i18n="calc_step1_title">개발 프로젝트 유형</h4>
-            <div class="calc-options-list" id="projectTypeOptions">
-              <label class="calc-option active">
-                <input type="radio" name="projectType" value="web" checked>
-                <div class="option-content">
-                  <i class="fa-solid fa-globe"></i>
-                  <div>
-                    <strong>반응형 웹 / SaaS 플랫폼</strong>
-                    <span>맞춤형 브랜드 웹사이트, 플랫폼 개발</span>
-                  </div>
-                </div>
-              </label>
-
-              <label class="calc-option">
-                <input type="radio" name="projectType" value="app">
-                <div class="option-content">
-                  <i class="fa-solid fa-mobile-screen"></i>
-                  <div>
-                    <strong>모바일 앱 (iOS / Android)</strong>
-                    <span>하이브리드/네이티브 스마트폰 앱</span>
-                  </div>
-                </div>
-              </label>
-
-              <label class="calc-option">
-                <input type="radio" name="projectType" value="ai">
-                <div class="option-content">
-                  <i class="fa-solid fa-brain"></i>
-                  <div>
-                    <strong>AI & 데이터 솔루션</strong>
-                    <span>LLM 연동, RAG, 챗봇, 빅데이터 모델</span>
-                  </div>
-                </div>
-              </label>
-
-              <label class="calc-option">
-                <input type="radio" name="projectType" value="enterprise">
-                <div class="option-content">
-                  <i class="fa-solid fa-building"></i>
-                  <div>
-                    <strong>엔터프라이즈 SI / Cloud</strong>
-                    <span>대용량 인프라, ERP, 커스텀 시스템</span>
-                  </div>
-                </div>
-              </label>
-            </div>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="calc-step-box">
-            <div class="step-num">Step 02</div>
-            <h4 data-i18n="calc_step2_title">필요 주요 기능 선택 (중복 가능)</h4>
-            <div class="calc-checkbox-grid" id="featureOptions">
-              <label class="checkbox-option active">
-                <input type="checkbox" value="auth" checked>
-                <span><i class="fa-solid fa-user-lock"></i> 회원가입 및 OAuth 소셜 로그인</span>
-              </label>
-              <label class="checkbox-option">
-                <input type="checkbox" value="payment">
-                <span><i class="fa-solid fa-credit-card"></i> 결제 PG 연동 및 구독 결제</span>
-              </label>
-              <label class="checkbox-option">
-                <input type="checkbox" value="admin" checked>
-                <span><i class="fa-solid fa-sliders"></i> 관리자 종합 대시보드</span>
-              </label>
-              <label class="checkbox-option">
-                <input type="checkbox" value="ai">
-                <span><i class="fa-solid fa-robot"></i> AI / Chatbot / RAG 엔진 연동</span>
-              </label>
-              <label class="checkbox-option">
-                <input type="checkbox" value="i18n">
-                <span><i class="fa-solid fa-language"></i> 다국어 및 글로벌 시공간 대응</span>
-              </label>
-              <label class="checkbox-option">
-                <input type="checkbox" value="push">
-                <span><i class="fa-solid fa-bell"></i> 실시간 알림 & Push Notification</span>
-              </label>
-            </div>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="calc-step-box">
-            <div class="step-num">Step 03</div>
-            <h4 data-i18n="calc_step3_title">목표 개발 기간 / 완성도</h4>
-            <div class="calc-options-list" id="timelineOptions">
-              <label class="calc-option">
-                <input type="radio" name="timeline" value="fast">
-                <div class="option-content">
-                  <i class="fa-solid fa-bolt"></i>
-                  <div>
-                    <strong>급속 런칭 (MVP 4~6주)</strong>
-                    <span>빠른 시장 검증용 핵심 기능 집중</span>
-                  </div>
-                </div>
-              </label>
-              <label class="calc-option active">
-                <input type="radio" name="timeline" value="standard" checked>
-                <div class="option-content">
-                  <i class="fa-solid fa-clock"></i>
-                  <div>
-                    <strong>표준 정교 개발 (2~3개월)</strong>
-                    <span>높은 완성도와 검증된 아키텍처</span>
-                  </div>
-                </div>
-              </label>
-              <label class="calc-option">
-                <input type="radio" name="timeline" value="deep">
-                <div class="option-content">
-                  <i class="fa-solid fa-cubes"></i>
-                  <div>
-                    <strong>대규모 프레임워크 (4개월 이상)</strong>
-                    <span>엔터프라이즈 고도화 및 커스텀</span>
-                  </div>
-                </div>
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- Result Card -->
-        <div class="calc-result-card">
-          <div class="result-header">
-            <h4><i class="fa-solid fa-receipt"></i> 실시간 예상 견적 요약</h4>
-            <span class="calc-badge">AI 실시간 산출</span>
-          </div>
-
-          <div class="result-main">
-            <div class="result-price-box">
-              <span class="price-label">예상 개발 비용</span>
-              <div class="price-value" id="calcTotalPrice">₩15,000,000 ~ ₩22,000,000</div>
-            </div>
-
-            <div class="result-time-box">
-              <span class="time-label">예상 소요 기간</span>
-              <div class="time-value" id="calcTotalDuration">약 8주 ~ 10주</div>
-            </div>
-          </div>
-
-          <p class="result-note">※ 위 견적은 선택 항목 기준의 대략적인 추정치이며, 상세 요구사항 명세서 작성 후 정밀 견적이 확정됩니다.</p>
-
-          <button class="btn btn-gradient btn-block" id="applyCalcBtn">
-            <i class="fa-solid fa-paper-plane"></i> 이 견적으로 전문 상담 신청하기
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-  <!-- Contact Section -->
-  <section id="contact" class="section contact-section">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-info-side">
-          <span class="section-subtitle" data-i18n="contact_subtitle">GET IN TOUCH</span>
-          <h2 class="section-title" data-i18n="contact_title">비즈니스의 혁신,<br>지금 바로 시작하세요</h2>
-          <p class="section-desc" data-i18n="contact_desc">
-            아이디어 단계의 구상부터 엔터프라이즈 시스템 구축까지 글로컬소프트의 기술 전문가들이 친절하게 안내해 드립니다.
-          </p>
-
-          <div class="info-items">
-            <div class="info-item">
-              <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
-              <div>
-                <strong>오시는 길</strong>
-                <p>전라남도 영광군 불갑면 방마로2길 84-5</p>
+    </header>
+    <main id="main">
+      <section id="hero" class="showcase" aria-roledescription="캐러셀" aria-label="글로컬소프트 핵심 사업">
+        <div class="slide slide-news" role="group" aria-roledescription="슬라이드" aria-label="1 / 3">
+          <div class="wrap slide-grid">
+            <div class="slide-copy">
+              <p class="eyebrow">AI INTERNET NEWS CMS</p>
+              <h1>10년의 기자 경험을 바탕으로 최적화된 <em>인터넷신문사 홈페이지</em></h1>
+              <p class="lead">지역신문 운영 경험을 바탕으로 기사 작성, 보도자료 자동배포, 광고관리, SNS 홍보까지 하나의 AI CMS로 연결합니다.</p>
+              <div class="actions">
+                <a class="button primary" href="/newspaper/">인터넷신문 솔루션 자세히 보기</a>
+                <a class="button secondary" href="/newspaper/#trial">무료 체험 신청</a>
               </div>
             </div>
-
-            <div class="info-item">
-              <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
-              <div>
-                <strong>이메일 문의</strong>
-                <p>shokun2002@naver.com</p>
-              </div>
-            </div>
-
-            <div class="info-item">
-              <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
-              <div>
-                <strong>대표 전화</strong>
-                <p>010-9354-7929 (평일 09:00 ~ 18:00)</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="social-links">
-            <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#" aria-label="Blog"><i class="fa-solid fa-blog"></i></a>
+            <figure class="hero-visual news-visual">
+              <a class="screen cms-screen" href="/newspaper/#cms-dashboard" aria-label="영광소리 CMS 실제 운영 화면 보기">
+                <div class="screen-bar">영광소리 CMS 관리자</div>
+                <img src="/newspaper/assets/public-admin-dashboard-detail.png" width="1160" height="752" fetchpriority="high" alt="영광소리 CMS 관리자 대시보드의 방문자 통계와 추이">
+              </a>
+              <figcaption><span>영광소리 운영 화면</span> <a href="/newspaper/#cms-dashboard">실제 운영 화면 보기</a></figcaption>
+            </figure>
           </div>
         </div>
-
-        <div class="contact-form-side glow-border">
-          <h3><i class="fa-regular fa-paper-plane"></i> 프로젝트 문의하기</h3>
-          <form id="contactForm" action="https://formspree.io/f/xwllaken" method="POST">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="clientName">담당자 성함 <span class="required">*</span></label>
-                <input type="text" id="clientName" name="name" required placeholder="홍길동">
-              </div>
-              <div class="form-group">
-                <label for="companyName">회사 / 기관명</label>
-                <input type="text" id="companyName" name="company" placeholder="(주) 글로컬소프트">
+        <div class="slide slide-org" role="group" aria-roledescription="슬라이드" aria-label="2 / 3">
+          <div class="wrap slide-grid">
+            <div class="slide-copy">
+              <p class="eyebrow">ORGANIZATION WEBSITE &amp; SaaS</p>
+              <h2>단체의 홍보와 회원 관리를 더욱 편하게 돕는 <em>홈페이지와 SaaS</em></h2>
+              <p class="lead">협회와 사회단체의 소식 전달, 공지·자료 관리, 회원 운영에 필요한 서비스를 실제 업무 방식에 맞춰 개발합니다.</p>
+              <div class="actions">
+                <a class="button primary" href="/organization/">단체·협회 서비스 보기</a>
+                <a class="button secondary" href="/?inquiry=saas-org#contact">제작 상담하기</a>
               </div>
             </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="clientEmail">이메일 주소 <span class="required">*</span></label>
-                <input type="email" id="clientEmail" name="email" required placeholder="example@glocalsoft.co.kr">
+            <figure class="hero-visual">
+              <div class="screen">
+                <div class="screen-bar">
+                  협회 홈페이지
+                </div>
+                <img src="/assets/association-ui-preview.webp" loading="lazy" alt="협회 홈페이지 예시 화면">
               </div>
-              <div class="form-group">
-                <label for="clientPhone">연락처 <span class="required">*</span></label>
-                <input type="tel" id="clientPhone" name="phone" required placeholder="010-1234-5678">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="inquiryType">관심 서비스 분야</label>
-              <select id="inquiryType" name="inquiryType">
-                <option value="saas-newspaper">AI 인터넷신문사 통합 운영 SaaS</option>
-                <option value="ai-reporter-note">AI 취재노트 솔루션</option>
-                <option value="saas-org">기업·사회단체 운영 관리 SaaS</option>
-                <option value="web-app">맞춤형 웹 & 앱 개발</option>
-                <option value="ai">AI & 데이터 솔루션</option>
-                <option value="cloud">클라우드 & DevOps</option>
-                <option value="enterprise">엔터프라이즈 SI / ERP</option>
-                <option value="consulting">기술 컨설팅 및 유지보수</option>
-                <option value="coding-edu">코딩 교육 및 IT 연수</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="projectScope">상세 문의 / 요구사항 내용 <span class="required">*</span></label>
-              <textarea id="projectScope" name="message" rows="5" required minlength="5"
-                placeholder="도입을 구상 중이신 서비스나 솔루션 내용, 주요 기능, 원하는 착수 시기 등을 자유롭게 적어주세요."></textarea>
-            </div>
-
-            <div class="form-group privacy-group">
-              <label class="privacy-agreement-label" for="privacyAgree">
-                <input type="checkbox" id="privacyAgree" name="privacyAgreed" required>
-                <span>[필수] 개인정보 수집 및 이용에 동의합니다.</span>
-              </label>
-              <button type="button" class="btn-text-privacy" id="viewPrivacyInline">약관보기</button>
-            </div>
-
-            <button type="submit" class="btn btn-gradient btn-block" id="submitFormBtn">
-              <i class="fa-solid fa-check-circle"></i> 무료 상담 요청 제출하기
-            </button>
-          </form>
+              <figcaption>협회 홈페이지 예시 화면</figcaption>
+            </figure>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <div class="footer-brand">
-        <a href="#hero" class="brand-logo">
-          <img src="assets/logo.png" alt="GLOCALSOFT 로고" class="logo-img">
-          <span class="logo-text">GLOCAL<span class="highlight">SOFT</span></span>
-        </a>
-        <p>글로벌 기술 표준과 로컬 맞춤 솔루션의 시너지,<br>글로컬소프트가 디지털 성공을 동행합니다.</p>
-      </div>
-
-      <div class="footer-links">
+        <div class="slide slide-public" role="group" aria-roledescription="슬라이드" aria-label="3 / 3">
+          <div class="wrap slide-grid">
+            <div class="slide-copy">
+              <p class="eyebrow">PUBLIC DIGITAL SERVICE</p>
+              <h2>공공기관용 <em>대민 지원 인터넷서비스</em> 개발</h2>
+              <p class="lead">주민 의견수렴, 민원 접수, AI 행정지원 등 공공기관과 주민을 편리하게 연결하는 디지털 서비스를 개발합니다.</p>
+              <div class="actions">
+                <a class="button primary" href="/public-service/#jangheung">공공서비스 사례 보기</a>
+                <a class="button secondary" href="/?inquiry=public-service#contact">개발 상담하기</a>
+              </div>
+            </div>
+            <figure class="hero-visual paired-visual">
+              <div class="screen">
+                <div class="screen-bar">
+                  AI 민원지원
+                </div>
+                <img src="/assets/civic-preview.webp" loading="lazy" alt="AI 민원지원 시제품의 행정정보 안내 화면">
+              </div>
+              <div class="phone">
+                <img src="/assets/civic-mobile-preview.webp" alt="민원지원 시제품 모바일 화면" loading="lazy">
+              </div>
+              <figcaption>AI 민원지원 · PC 및 모바일 시제품 화면</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="wrap slider-controls" hidden>
+          <div class="slide-numbers" aria-label="슬라이드 선택">
+            <button type="button" aria-label="1. 인터넷신문 CMS" aria-current="true"><span>01</span> 신문 CMS</button>
+            <button type="button" aria-label="2. 단체·협회 SaaS"><span>02</span> 단체·협회</button>
+            <button type="button" aria-label="3. 공공서비스"><span>03</span> 공공서비스</button>
+          </div>
+          <span class="slide-progress" aria-hidden="true"><span></span></span>
+          <div class="slider-actions">
+            <button type="button" data-prev aria-label="이전 슬라이드">‹</button>
+            <button type="button" data-next aria-label="다음 슬라이드">›</button>
+            <button type="button" data-play aria-label="자동 전환 일시정지">Ⅱ</button>
+          </div>
+          <span class="sr-only" data-slide-status aria-live="polite"></span>
+        </div>
+      </section>
+      <section id="services" class="section wrap">
+        <p class="eyebrow">OUR SOLUTIONS</p>
+        <h2>현장의 일에 맞춘 세 가지 서비스</h2>
+        <div class="cards">
+          <article class="card">
+            <img src="/newspaper/assets/public-admin-ai-writer.png" alt="영광소리 AI 기사 작성실" loading="lazy">
+            <div>
+              <h3>인터넷신문사 AI CMS</h3>
+              <p>기사와 광고, 독자 홈페이지를 한 곳에서 운영합니다.</p>
+              <ul>
+                <li>AI 기사 초안 작성 및 편집·발행</li>
+                <li>보도자료 처리와 SNS 배포 지원</li>
+                <li>반응형 독자 홈페이지 및 광고 관리</li>
+              </ul>
+              <div class="card-links">
+                <a href="/newspaper/">솔루션 상세 보기</a>
+                <a href="/?inquiry=saas-newspaper#contact">도입 상담</a>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="/assets/association-ui-preview.webp" alt="협회 홈페이지 예시 화면" loading="lazy">
+            <div>
+              <h3>단체·협회 홈페이지 및 운영 SaaS</h3>
+              <p>소식은 쉽게 발행하고, 운영 업무는 단체의 방식에 맞춥니다.</p>
+              <ul>
+                <li>단체 소개, 공지·자료실, 사진·영상</li>
+                <li>행사·일정 안내와 모바일 홈페이지</li>
+                <li>회원관리 및 관리자 업무지원 맞춤 개발</li>
+              </ul>
+              <div class="card-links">
+                <a href="/organization/">서비스 상세 보기</a>
+                <a href="/?inquiry=saas-org#contact">제작 상담</a>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="/assets/civic-preview.webp" alt="공공서비스 시제품 화면" loading="lazy">
+            <div>
+              <h3>공공기관 대민 디지털 서비스</h3>
+              <p>주민이 필요한 행정정보와 민원 절차를 쉽게 찾도록 설계합니다.</p>
+              <ul>
+                <li>AI 민원 안내 및 행정정보 검색</li>
+                <li>민원 접수·조회 흐름 설계</li>
+                <li>주민 의견수렴 및 참여 기능 맞춤 개발</li>
+              </ul>
+              <div class="card-links">
+                <a href="/public-service/">서비스 상세 보기</a>
+                <a href="/?inquiry=public-service#contact">개발 상담</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id="about" class="section detail-intro">
+        <div class="wrap category-inner">
+          <div>
+            <p class="eyebrow">ABOUT GLOCALSOFT</p>
+            <h2 class="category-title">현장을 아는 개발,<br>운영을 이해하는 서비스</h2>
+            <p class="lead">10년 이상의 지역신문 기자 실무와 지역신문 운영 경험을 바탕으로 지역 기업과 기관, 단체의 웹서비스를 개발합니다.</p>
+            <blockquote>농촌형 소도시에서도 IT 기술은 꽃필 수 있습니다.</blockquote>
+            <div class="actions">
+              <a class="button primary" href="#work">개발 사례 보기</a>
+              <a class="button secondary" href="#contact">프로젝트 상담하기</a>
+            </div>
+          </div>
+          <figure class="category-visual">
+            <div class="screen"><img src="/assets/reporter-preview.webp" alt="글로컬소프트에서 개발한 AI 취재노트 화면" loading="lazy"></div>
+            <figcaption>글로컬소프트 개발 사례 · AI 취재노트</figcaption>
+          </figure>
+        </div>
+        <div class="wrap about-copy">
+            <ul>
+              <li>기사 작성이나 민원 안내처럼 반복되는 실제 업무 절차에 AI를 연결합니다.</li>
+              <li>관리자와 방문자가 쓰는 화면을 함께 설계하고 모바일 사용성을 고려합니다.</li>
+              <li>운영 과정에서 발견한 불편을 다음 기능 개선에 반영합니다.</li>
+            </ul>
+        </div>
+      </section>
+      <section id="work" class="section wrap">
+        <p class="eyebrow">SELECTED WORK</p>
+        <h2>실제 개발 사례</h2>
+        <div class="work-list">
+          <article class="work-item">
+            <img src="/newspaper/assets/public-admin-dashboard.png" loading="lazy" alt="영광소리 공개용 CMS 관리자 대시보드">
+            <div class="work-body">
+              <div class="work-meta"><span>AI 인터넷신문 통합 운영 시스템</span><span class="status live">운영 중</span></div>
+              <h3>영광소리 AI 인터넷신문 CMS</h3>
+              <p>기사 검토·승인·발행, AI 기사 작성, 보도자료 처리와 SNS 배포, 광고 관리를 연결했습니다. AI 광고 제작은 시연 범위에 포함됩니다.</p>
+              <a href="/newspaper/#showcase">실제 관리자 화면 보기</a>
+            </div>
+          </article>
+          <article class="work-item">
+            <img src="/assets/association-ui-preview.webp" loading="lazy" alt="협회 공지·자료실 예시 화면">
+            <div class="work-body">
+              <div class="work-meta"><span>협회 홈페이지</span><span class="status">개발 시안</span></div>
+              <h3>한국생활체육파크골프협회 홈페이지</h3>
+              <p>협회 소개와 조직, 정관·사업계획, 공지·자료실과 행사 일정을 PC와 모바일에서 찾기 쉽게 구성했습니다.</p>
+              <a href="/organization/#example">협회 홈페이지 상세</a>
+            </div>
+          </article>
+          <article class="work-item">
+            <img src="/assets/council-preview.webp" loading="lazy" alt="주민 의견수렴 플랫폼 예시 화면">
+            <div class="work-body">
+              <div class="work-meta"><span>공공서비스 · 주민참여 플랫폼</span><span class="status">시연용 개발</span></div>
+              <h3>영광군의회 열린소통 ON</h3>
+              <p>군민이 의회 질문에 의견을 내고, 지역 현안과 정책을 제안하며, 처리 결과를 확인하도록 설계했습니다.</p>
+              <a href="/public-service/#resident-voice">의견수렴 서비스 상세</a>
+            </div>
+          </article>
+        </div>
+        <h3 class="work-more">다른 개발 사례</h3>
+        <div class="work-list">
+          <article class="work-item">
+            <img src="/assets/muan-preview.webp" loading="lazy" alt="시민단체 홈페이지 공지사항 예시 화면">
+            <div class="work-body">
+              <div class="work-meta"><span>시민단체 · 사회단체 홈페이지</span><span class="status">개발본</span></div>
+              <h3>무안 자치주권시민연대 홈페이지</h3>
+              <p>단체 소개, 활동 소식, 공지, 현안 자료와 사진 앨범을 쉽게 찾도록 만든 반응형 홈페이지입니다.</p>
+              <a href="/organization/#muan">시민단체 홈페이지 상세</a>
+            </div>
+          </article>
+          <article class="work-item">
+            <img src="/assets/reporter-preview.webp" loading="lazy" alt="AI 취재노트의 자료 분석과 기사 작성 화면">
+            <div class="work-body">
+              <div class="work-meta"><span>기자 전용 AI 취재 지원</span><span class="status">개발·검증 중</span></div>
+              <h3>AI 취재노트</h3>
+              <p>AI 대화로 취재 방향과 인터뷰 질문을 정리하고, 자료·대화를 프로젝트로 관리하며 기사 초안과 버전을 저장할 수 있도록 개발했습니다.</p>
+              <a href="/reporter-note/">AI 취재노트 상세</a>
+            </div>
+          </article>
+          <article class="work-item">
+            <img src="/assets/jangheung-preview.webp" loading="lazy" alt="간편민원 시제품 예시 화면">
+            <div class="work-body">
+              <div class="work-meta"><span>AI 공공서비스 시제품</span><span class="status">시제품</span></div>
+              <h3>장흥군 AI 간편민원 시제품</h3>
+              <p>민원 내용 입력, AI 요약·작성 보조, 접수와 처리상황 조회를 구성했습니다. 관리자 화면에서 진행 상태를 관리하는 흐름을 구현했습니다.</p>
+              <a href="/public-service/#jangheung">간편민원 시제품 상세</a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="section band">
+        <div class="wrap">
+          <p class="eyebrow">HOW WE WORK</p>
+          <h2>상담부터 제작, 운영까지 함께합니다.</h2>
+          <ol class="steps">
+            <li>상담 및 요구사항 확인</li>
+            <li>업무 분석과 기능 기획</li>
+            <li>화면 설계</li>
+            <li>시제품 개발</li>
+            <li>고객 검토 및 수정</li>
+            <li>배포와 운영 지원</li>
+          </ol>
+        </div>
+      </section>
+      <section class="section callout">
+        <div class="wrap split">
+          <div>
+            <h2>여러분의 아이디어를<br>현실로 구현해 드립니다.</h2>
+            <p>인터넷신문, 협회·단체, 공공기관의 웹서비스와 AI 업무 시스템을 함께 설계합니다.</p>
+          </div>
+          <div class="actions">
+            <a class="button primary" href="#contact">프로젝트 상담하기</a>
+            <a class="button secondary" href="/?inquiry=saas-newspaper#contact">서비스 도입 문의</a>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="section wrap split contact">
         <div>
-          <h4>바로가기</h4>
-          <ul>
-            <li><a href="#about">회사소개</a></li>
-            <li><a href="#services">서비스</a></li>
-            <li><a href="#tech">기술스택</a></li>
-          </ul>
+          <p class="eyebrow">CONTACT</p>
+          <h2>프로젝트 문의</h2>
+          <p>도입을 검토 중인 서비스와 필요한 기능을 알려주세요.</p>
+          <dl class="contact-methods">
+            <div>
+              <dt>대표 전화</dt>
+              <dd><a href="tel:010-9354-7929">010-9354-7929</a></dd>
+              <dd class="contact-hours">평일 09:00–18:00</dd>
+            </div>
+            <div>
+              <dt>이메일</dt>
+              <dd><a href="mailto:shokun2002@naver.com">shokun2002@naver.com</a></dd>
+            </div>
+          </dl>
         </div>
-        <div>
-          <h4>솔루션</h4>
-          <ul>
-            <li><a href="#calculator">견적 계산기</a></li>
-            <li><a href="#contact">프로젝트 문의</a></li>
-            <li><a href="/privacy/">개인정보처리방침</a></li>
-          </ul>
-        </div>
+        <form id="contact-form" action="https://formspree.io/f/xwllaken" method="post">
+          <div class="form-grid">
+            <label>담당자 성함 (필수)<input name="name" autocomplete="name" minlength="2" required>
+            </label>
+            <label>회사·기관명<input name="company" autocomplete="organization">
+            </label>
+            <label>이메일 (필수)<input name="email" type="email" autocomplete="email" required>
+            </label>
+            <label>연락처 (필수)<input name="phone" type="tel" autocomplete="tel" required>
+            </label>
+          </div>
+          <label>문의 유형
+          <select name="inquiryType" id="inquiry-type">
+            <option value="">서비스 선택</option>
+            <option value="saas-newspaper">인터넷신문 CMS</option>
+            <option value="ai-reporter-note">AI 취재노트</option>
+            <option value="saas-org">단체·협회 홈페이지</option>
+            <option value="public-service">공공기관 서비스</option>
+            <option value="custom">기타 맞춤 개발</option>
+          </select>
+          </label>
+          <label>문의 내용 (필수)<textarea name="message" rows="5" minlength="5" required></textarea>
+          </label>
+          <label class="consent"><input name="privacyAgreed" type="checkbox" required> (필수) 개인정보 수집 및 이용에 동의합니다.</label>
+          <details class="consent-details">
+            <summary>개인정보 수집·이용 안내</summary>
+            <p>문의 접수, 견적 검토 및 회신을 위해 성함, 이메일, 연락처, 문의 내용과 선택 항목인 회사·기관명 및 관심 서비스를 수집합니다. 상담 정보는 접수일로부터 1년간 보관합니다. 동의를 거부할 수 있으며, 이 경우 온라인 접수가 제한됩니다. 처리위탁 등은 <a href="/privacy/">개인정보처리방침</a>에서 확인할 수 있습니다.</p>
+          </details>
+          <button class="button primary" type="submit">상담 요청 제출</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-top">
+        <a class="brand" href="/">
+        <img src="/assets/logo.png" alt=""><strong>GLOCAL<span>SOFT</span></strong></a>
+        <nav aria-label="하단 메뉴">
+          <a href="/privacy/">개인정보처리방침</a>
+          <a id="calculator" href="/classic.html#calculator">견적 계산기</a>
+          <a id="tech" href="/classic.html#tech">기술스택</a>
+          <a href="/classic.html?lang=en">English</a>
+        </nav>
       </div>
-    </div>
-
-    <div class="container footer-bottom">
-      <p>© 2026 GLOCALSOFT. All rights reserved.</p>
-      <p class="company-legal">글로컬소프트 | 대표자: 김종훈 | 사업자등록번호: 782-26-02191 | 전라남도 영광군 불갑면 방마로2길 84-5</p>
-    </div>
-  </footer>
-
-  <!-- Detail Modal Dialog -->
-  <div class="modal-backdrop" id="modalBackdrop">
-    <div class="modal-window">
-      <button class="modal-close-btn" id="modalCloseBtn">&times;</button>
-      <div class="modal-content-body" id="modalContentBody">
-        <!-- Dyn Content -->
+      <div class="wrap footer-info">
+        <p>글로컬소프트 · 대표자 김종훈 · 사업자등록번호 782-26-02191<br>전라남도 영광군 불갑면 방마로2길 84-5</p>
+        <p>© 2026 GLOCALSOFT</p>
       </div>
-    </div>
-  </div>
-
-  <!-- Toast Container -->
-  <div class="toast-container" id="toastContainer"></div>
-
-  <!-- JavaScript -->
-  <script src="main.js"></script>
-</body>
-
+    </footer>
+  </body>
 </html>
