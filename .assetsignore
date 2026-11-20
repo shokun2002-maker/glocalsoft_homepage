@@ -1,0 +1,5 @@
+# Authoring tools and private screenshot sources are not public Worker assets.
+/scripts/
+/newspaper/assets/admin-*.png
+/newspaper/assets/raw/
+**/raw-admin/
